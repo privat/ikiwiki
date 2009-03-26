@@ -384,3 +384,11 @@ span.color {
 	border: 1px solid #aaa;
 	padding: 3px;
 }
+
+#createform {
+	padding: 10px 10px;
+	border: 1px solid #aaa;
+	background: #eee;
+	color: black !important;
+}
+
