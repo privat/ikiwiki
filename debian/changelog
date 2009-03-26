@@ -1,3 +1,12 @@
+ikiwiki (3.09+nmu1) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  [ Simon Kjika'qawej ]
+  * Add 'create' plugin and associated files.
+  * Make it build on Lenny. Adjust debhelper dep to 7.0.15.
+
+ -- Simon Kjika'qawej <simonraven@kisikew.org>  Wed, 25 Mar 2009 23:46:36 -0400
+
 ikiwiki (3.09) UNRELEASED; urgency=low
 
   * inline: Add title_natural sort order, using Sort::Naturally
