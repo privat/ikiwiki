@@ -40,6 +40,7 @@ sub include_javascript ($;$) {
 
 	my $wmdjs=urlto("wmd/wmd.js", $page, $absolute);
 	return <<"EOF"
+<script type="text/javascript" src="wmd/wmd.js"></script>
 <script type="text/javascript">
 wmd_options = {
 	output: "Markdown"
