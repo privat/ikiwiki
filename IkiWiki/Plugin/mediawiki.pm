@@ -2,9 +2,12 @@
 # By Scott Bronson.  Licensed under the GPLv2+ License.
 # Extends Ikiwiki to be able to handle Mediawiki markup.
 #
+# Modfied By: simonraven
+# Try to make this work
+#
 # To use the Mediawiki Plugin:
 # - Install Text::MediawikiFormat
-# - Turn of prefix_directives in your setup file.
+# - Turn off prefix_directives in your setup file.
 #     (TODO: we probably don't need to do this anymore?)
 #        prefix_directives => 1,
 # - Add this plugin on Ikiwiki's path (perl -V, look for @INC)
@@ -21,7 +24,7 @@ package IkiWiki::Plugin::mediawiki;
 
 use warnings;
 use strict;
-use IkiWiki 2.00;
+use IkiWiki 3.00;
 use URI;
 
 
@@ -35,6 +38,7 @@ require IkiWiki::Plugin::link;
 # The user will just see Mediawiki markup rather than formatted markup.
 eval q{use Text::MediawikiFormat ()};
 my $markup_disabled = $@;
+my $link_regexp;
 
 # Work around a UTF8 bug in Text::MediawikiFormat
 # http://rt.cpan.org/Public/Bug/Display.html?id=26880
@@ -50,34 +54,67 @@ my %tags;      # keeps track of tags for pagetemplate.
 
 sub import { #{{{
     hook(type => "checkconfig", id => "mediawiki", call => \&checkconfig);
-    hook(type => "scan", id => "mediawiki", call => \&scan);
     hook(type => "linkify", id => "mediawiki", call => \&linkify);
+    hook(type => "scan", id => "mediawiki", call => \&scan);
     hook(type => "htmlize", id => "mediawiki", call => \&htmlize);
     hook(type => "pagetemplate", id => "mediawiki", call => \&pagetemplate);
 } # }}}
 
 
-sub checkconfig
-{
-    return IkiWiki::Plugin::link::checkconfig(@_);
+sub checkconfig (@) {
+    # debug("mediawiki plugin checkconfig");
+    if ($config{prefix_directives}) {
+        $link_regexp = qr{
+            \[\[(?=[^!])            # beginning of link
+            (?:
+                ([^\]\|]+)      # 1: link text
+                \|              # followed by '|'
+            )?                      # optional
+            
+            ([^\n\r\]#]+)           # 2: page to link to
+            (?:
+                \#              # '#', beginning of anchor
+                ([^\s\]]+)      # 3: anchor text
+            )?                      # optional
+            
+            \]\]                    # end of link
+        }x;
+    }
+    else {
+        $link_regexp = qr{
+            \[\[                    # beginning of link
+            (?:
+                ([^\]\|\n\s]+)  # 1: link text
+                \|              # followed by '|'
+            )?                      # optional
+
+            ([^\s\]#]+)             # 2: page to link to
+            (?:
+                \#              # '#', beginning of anchor
+                ([^\s\]]+)      # 3: anchor text
+            )?                      # optional
+
+            \]\]                    # end of link
+        }x,
+    }
 }
 
 
-my $link_regexp = qr{
-			\[\[(?=[^!])        # beginning of link
-			([^\n\r\]#|<>]+)      # 1: page to link to
-			(?:
-			    \#              # '#', beginning of anchor
-			    ([^|\]]+)       # 2: anchor text
-			)?                  # optional
+# my $link_regexp = qr{
+			# \[\[(?=[^!])        # beginning of link
+			# ([^\n\r\]#|<>]+)      # 1: page to link to
+			# (?:
+			    # \#              # '#', beginning of anchor
+			    # ([^|\]]+)       # 2: anchor text
+			# )?                  # optional
 
-			(?:
-			    \|              # followed by '|'
-			    ([^\]\|]*)      # 3: link text
-			)?                  # optional
-			\]\]                # end of link
-			([a-zA-Z]*)   # optional trailing alphas
-		}x;
+			# (?:
+			    # \|              # followed by '|'
+			    # ([^\]\|]*)      # 3: link text
+			# )?                  # optional
+			# \]\]                # end of link
+			# ([a-zA-Z]*)   # optional trailing alphas
+		# }x;
 
 
 # Convert spaces in the passed-in string into underscores.
@@ -240,8 +277,7 @@ sub generate_fragment_link
 }
 
 
-sub generate_internal_link
-{
+sub generate_internal_link {
     my($page, $inlink, $anchor, $title, $trailing, $proc) = @_;
 
     # Ikiwiki's link link plugin wrecks this line when displaying on the site.
@@ -249,10 +285,12 @@ sub generate_internal_link
     # always escape double brackets in double quotes: <span class="createlink"><a href="http://ikiwiki.info/ikiwiki.cgi?page=ho&amp;from=tips%2Fconvert_mediawiki_to_ikiwiki%2Fdiscussion&amp;do=create" rel="nofollow">?</a>
     if($inlink eq '..') {
 	# Mediawiki doesn't touch links like [[..#hi</span>.
-	return '"<span class="createlink"><a href="http://ikiwiki.info/ikiwiki.cgi?page=__36__title__34__%3A__34____34____41___.___34__&amp;from=tips%2Fconvert_mediawiki_to_ikiwiki%2Fdiscussion&amp;do=create" rel="nofollow">?</a>"' . $inlink . ($anchor?"#$anchor":"") . ($title?"</span>") . $trailing;
+	return '<span class="createlink"><a href="http://ikiwiki.info/ikiwiki.cgi?page=__36__title__34__%3A__34____34____41___.___34__&amp;from=tips%2Fconvert_mediawiki_to_ikiwiki%2Fdiscussion&amp;do=create" rel="nofollow">?</a>' . $inlink . ($anchor ? "#$anchor" : "") . ($title ? "</span>" : $trailing);
     }
-    # SKC note: added a ) after the $title bit, and put single quotes around the first bit above
-    # dunno if that'll work or the original was intentional...
+    # SKC note: made the "($title ..." into "($title ? "</span>" : $trailing)",
+    # and put single quotes around the first bit above
+    # dunno if that'll work or the original was intentional... it sure didn't work though.
+    # that $title thing isn't going to work as intended I think, but I kept getting syntax errors.
 
     my($linkpage, $linktext);
     if($inlink =~ /^ (:?) \s* Category (\s* \: \s*) ([^\]]*) $/x) {
@@ -282,8 +320,7 @@ sub generate_internal_link
 }
 
 
-sub check_redirect
-{
+sub check_redirect {
     my %params=@_;
 
     my $page=$params{page};
@@ -345,8 +382,7 @@ sub check_redirect
 # Feed this routine a string containing <nowiki>...</nowiki> sections,
 # this routine calls your callback for every section not within nowikis,
 # collecting its return values and returning the rewritten string.
-sub skip_nowiki
-{
+sub skip_nowiki {
     my $content = shift;
     my $proc = shift;
 
@@ -363,10 +399,10 @@ sub skip_nowiki
 
 
 # Converts all links in the page, wiki and otherwise.
-sub linkify (@)
-{
+sub linkify (@) {
     my %params=@_;
-
+	
+    # debug("mediawiki plugin running as linkify");
     my $page=$params{page};
     my $destpage=$params{destpage};
     my $content=$params{content};
@@ -428,9 +464,10 @@ sub linkify (@)
 
 
 # Find all WikiLinks in the page.
-sub scan (@)
-{
-    my %params = @_;
+sub scan (@) {
+    my %params=@_;
+
+    # debug("mediawiki plugin running as scan");
     my $page=$params{page};
     my $content=$params{content};
 
@@ -456,13 +493,12 @@ sub scan (@)
 
 
 # Convert the page to HTML.
-sub htmlize (@)
-{
+sub htmlize (@) {
     my %params=@_;
     my $page = $params{page};
     my $content = $params{content};
 
-
+    # debug("mediawiki plugin running as htmlize");
     return $content if $markup_disabled;
 
     # Do a little preprocessing to babysit Text::MediawikiFormat
