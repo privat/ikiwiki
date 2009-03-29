@@ -63,59 +63,22 @@ sub import { #{{{
 
 sub checkconfig (@) {
     # debug("mediawiki plugin checkconfig");
-    if ($config{prefix_directives}) {
-        $link_regexp = qr{
-            \[\[(?=[^!])            # beginning of link
-            (?:
-                ([^\]\|]+)      # 1: link text
-                \|              # followed by '|'
-            )?                      # optional
-            
-            ([^\n\r\]#]+)           # 2: page to link to
-            (?:
-                \#              # '#', beginning of anchor
-                ([^\s\]]+)      # 3: anchor text
-            )?                      # optional
-            
-            \]\]                    # end of link
-        }x;
-    }
-    else {
-        $link_regexp = qr{
-            \[\[                    # beginning of link
-            (?:
-                ([^\]\|\n\s]+)  # 1: link text
-                \|              # followed by '|'
-            )?                      # optional
+    $link_regexp = qr{
+        \[\[(?=[^!])               # beginning of link
+        ([^\n\r\]#|<>]+)      # 1: page to link to
+        (?:
+            \#              # '#', beginning of anchor
+            ([^|\]]+)       # 2: anchor text
+        )?                      # optional
 
-            ([^\s\]#]+)             # 2: page to link to
-            (?:
-                \#              # '#', beginning of anchor
-                ([^\s\]]+)      # 3: anchor text
-            )?                      # optional
-
-            \]\]                    # end of link
-        }x,
-    }
+        (?:
+            \|              # followed by '|'
+            ([^\]\|]*)      # 3: link text
+        )?                      # optional
+        \]\]                # end of link
+        ([a-zA-Z]*)   # optional trailing alphas
+    }x,
 }
-
-
-# my $link_regexp = qr{
-			# \[\[(?=[^!])        # beginning of link
-			# ([^\n\r\]#|<>]+)      # 1: page to link to
-			# (?:
-			    # \#              # '#', beginning of anchor
-			    # ([^|\]]+)       # 2: anchor text
-			# )?                  # optional
-
-			# (?:
-			    # \|              # followed by '|'
-			    # ([^\]\|]*)      # 3: link text
-			# )?                  # optional
-			# \]\]                # end of link
-			# ([a-zA-Z]*)   # optional trailing alphas
-		# }x;
-
 
 # Convert spaces in the passed-in string into underscores.
 # If passed in undef, returns undef without throwing errors.
