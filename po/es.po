@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-26 06:59+0000\n"
+"POT-Creation-Date: 2009-04-04 14:59-0400\n"
 "PO-Revision-Date: 2009-03-03 10:48+0100\n"
 "Last-Translator: Víctor Moral <victor@taquiones.net>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -258,19 +258,19 @@ msgstr "Añadir un comentario"
 msgid "Added a comment: %s"
 msgstr "Comentario añadido: %s"
 
-#: ../IkiWiki/Plugin/comments.pm:510 ../IkiWiki/Plugin/websetup.pm:236
+#: ../IkiWiki/Plugin/comments.pm:511 ../IkiWiki/Plugin/websetup.pm:236
 msgid "you are not logged in as an admin"
 msgstr "No está registrado como un administrador"
 
-#: ../IkiWiki/Plugin/comments.pm:561
+#: ../IkiWiki/Plugin/comments.pm:562
 msgid "Comment moderation"
 msgstr "Aprobación de comentarios"
 
-#: ../IkiWiki/Plugin/comments.pm:600
+#: ../IkiWiki/Plugin/comments.pm:601
 msgid "comment moderation"
 msgstr "aprobación de comentarios"
 
-#: ../IkiWiki/Plugin/comments.pm:751
+#: ../IkiWiki/Plugin/comments.pm:752
 msgid "Comments"
 msgstr "Comentarios"
 

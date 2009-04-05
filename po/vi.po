@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-03-26 06:59+0000\n"
+"POT-Creation-Date: 2009-04-04 14:59-0400\n"
 "PO-Revision-Date: 2007-01-13 15:31+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -252,19 +252,19 @@ msgstr ""
 msgid "Added a comment: %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/comments.pm:510 ../IkiWiki/Plugin/websetup.pm:236
+#: ../IkiWiki/Plugin/comments.pm:511 ../IkiWiki/Plugin/websetup.pm:236
 msgid "you are not logged in as an admin"
 msgstr ""
 
-#: ../IkiWiki/Plugin/comments.pm:561
+#: ../IkiWiki/Plugin/comments.pm:562
 msgid "Comment moderation"
 msgstr ""
 
-#: ../IkiWiki/Plugin/comments.pm:600
+#: ../IkiWiki/Plugin/comments.pm:601
 msgid "comment moderation"
 msgstr ""
 
-#: ../IkiWiki/Plugin/comments.pm:751
+#: ../IkiWiki/Plugin/comments.pm:752
 msgid "Comments"
 msgstr ""
 
