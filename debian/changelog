@@ -1,3 +1,11 @@
+ikiwiki (3.10+nmu1) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  * added bottombarleft.pm and bottombarright.pm so we can implement our theme
+    properly.
+
+ -- Simon Raven <simonraven@kisikew.org>  Fri, 10 Apr 2009 13:01:45 -0400
+
 ikiwiki (3.10) UNRELEASED; urgency=low
 
   * darcs: Finally added support for this VCS, thanks to many
