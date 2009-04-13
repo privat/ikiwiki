@@ -77,6 +77,9 @@ sub tagpage ($) {
 		$tag="/".$config{tagbase}."/".$tag;
 		$tag=~y#/#/#s; # squash dups
 	}
+	if (defined $config{tag_autocreate} && $config{tag_autocreate} ) {
+		gen_tag_page($tag);
+	}
 
 	return $tag;
 }
@@ -154,6 +157,20 @@ sub pagetemplate (@) {
 				sort keys %{$tags{$page}}]);
 		}
 	}
+}
+
+sub change(@) {
+	return unless($autocreated_page);
+	$autocreated_page = 0;
+
+	# This refresh/saveindex is to complie the autocreated tag pages
+	IkiWiki::refresh();
+	IkiWiki::saveindex();
+
+	# This refresh/saveindex is to fix the Tags link
+	# With out this additional refresh/saveindex the tag link displays ?tag
+	IkiWiki::refresh();
+	IkiWiki::saveindex();
 }
 
 package IkiWiki::PageSpec;
