@@ -14,6 +14,7 @@ sub import {
 	hook(type => "preprocess", id => "tag", call => \&preprocess_tag, scan => 1);
 	hook(type => "preprocess", id => "taglink", call => \&preprocess_taglink, scan => 1);
 	hook(type => "pagetemplate", id => "tag", call => \&pagetemplate);
+	hook(type => "change", id => "tag", call => \&change);
 }
 
 sub getopt () {
@@ -36,6 +37,36 @@ sub getsetup () {
 			safe => 1,
 			rebuild => 1,
 		},
+		tag_autocreate => {
+			type => "boolean",
+			example => 0,
+			description => "Auto-create the new tag pages, uses autotagpage.tmpl ",
+			safe => 1,
+			rebuild => 1,
+		},
+}
+
+my $autocreated_page = 0;
+
+sub gen_tag_page($) {
+	my $tag=shift;
+
+	my $tag_file=$tag.'.'.$config{default_pageext};
+	return if (-f $config{srcdir}.$tag_file);
+
+	my $template=template("autotagpage.tmpl");
+	$template->param(tag => $tag);
+	writefile($tag_file, $config{srcdir}, $template->output);
+	$autocreated_page = 1;
+
+	if ($config{rcs}) {
+		IkiWiki::disable_commit_hook();
+		IkiWiki::rcs_add($tag_file);
+		IkiWiki::rcs_commit_staged(
+			gettext("Automatic tag page generation"),
+				undef, undef);
+		IkiWiki::enable_commit_hook();
+	}
 }
 
 sub tagpage ($) {
