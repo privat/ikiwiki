@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-12 09:28+0000\n"
+"POT-Creation-Date: 2009-04-13 01:37+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -809,6 +809,10 @@ msgstr ""
 #: ../IkiWiki/Plugin/table.pm:148
 #, perl-format
 msgid "parse fail at line %d: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/tag.pm:66
+msgid "Automatic tag page generation"
 msgstr ""
 
 #: ../IkiWiki/Plugin/template.pm:29

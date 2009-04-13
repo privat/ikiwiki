@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.06\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-04 14:59-0400\n"
+"POT-Creation-Date: 2009-04-13 01:37+0000\n"
 "PO-Revision-Date: 2009-03-02 15:39+0100\n"
 "Last-Translator: Kai Wasserbäch <debian@carbon-project.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -830,6 +830,11 @@ msgstr "Direkter Daten-Download"
 msgid "parse fail at line %d: %s"
 msgstr "Verarbeitungsfehler in Zeile %d: %s"
 
+#: ../IkiWiki/Plugin/tag.pm:66
+#, fuzzy
+msgid "Automatic tag page generation"
+msgstr "automatische Index-Erstellung"
+
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"
 msgstr "fehlender »id«-Parameter"
@@ -978,12 +983,12 @@ msgid "you must enter a wikiname (that contains alphanumerics)"
 msgstr ""
 "Sie müssen einen Wiki-Namen eingeben (der alphanumerische Zeichen enthält)"
 
-#: ../IkiWiki/Setup/Automator.pm:68
+#: ../IkiWiki/Setup/Automator.pm:71
 #, perl-format
 msgid "unsupported revision control system %s"
 msgstr "Nicht unterstütztes Versionskontrollsystem %s"
 
-#: ../IkiWiki/Setup/Automator.pm:94
+#: ../IkiWiki/Setup/Automator.pm:97
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr "Erstellen des Depots mit ikiwiki-makerepo ist fehlgeschlagen"
 
