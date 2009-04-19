@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2007-05-09 21:21+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -824,10 +824,6 @@ msgstr "Stáhnout zdrojová data"
 #, perl-format
 msgid "parse fail at line %d: %s"
 msgstr "zpracovávání selhalo na řádku %d: %s"
-
-#: ../IkiWiki/Plugin/tag.pm:66
-msgid "Automatic tag page generation"
-msgstr ""
 
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"

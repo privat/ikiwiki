@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2008-10-22 19:13+0100\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -820,11 +820,6 @@ msgstr "Direkte datanedlastning"
 msgid "parse fail at line %d: %s"
 msgstr "afkodningsfejl på linje %d: %s"
 
-#: ../IkiWiki/Plugin/tag.pm:66
-#, fuzzy
-msgid "Automatic tag page generation"
-msgstr "automatisk indeks-dannelse"
-
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"
 msgstr "manglende id-parameter"
@@ -1072,6 +1067,10 @@ msgstr "Hvilken wiki bruger (eller openid) skal være administrator?"
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "Hvad er domænenavnet på webserveren?"
+
+#, fuzzy
+#~ msgid "Automatic tag page generation"
+#~ msgstr "automatisk indeks-dannelse"
 
 #~ msgid "failed to write %s: %s"
 #~ msgstr "skrivning ad %s mislykkedes: %s"

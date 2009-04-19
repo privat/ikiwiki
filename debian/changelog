@@ -1,4 +1,4 @@
-ikiwiki (3.10+nmu3) UNRELEASED; urgency=low
+ikiwiki (3.10+nmu3) unstable; urgency=low
 
   * Non-maintainer upload.
   * Re-add those two bottombar plugins.
@@ -6,7 +6,7 @@ ikiwiki (3.10+nmu3) UNRELEASED; urgency=low
 
  -- Simon Raven <simonraven@kisikew.org>  Sat, 18 Apr 2009 18:11:20 -0400
 
-ikiwiki (3.10+nmu2) UNRELEASED; urgency=low
+ikiwiki (3.10+nmu2) unstable; urgency=low
 
   * Non-maintainer upload.
   * Removed the plugins that failed the tests
@@ -16,7 +16,7 @@ ikiwiki (3.10+nmu2) UNRELEASED; urgency=low
 
  -- Simon Raven <simonraven@kisikew.org>  Sun, 12 Apr 2009 23:05:51 -0400
 
-ikiwiki (3.10+nmu1) UNRELEASED; urgency=low
+ikiwiki (3.10+nmu1) unstable; urgency=low
 
   * Non-maintainer upload.
   * added bottombarleft.pm and bottombarright.pm so we can implement our theme
@@ -24,7 +24,7 @@ ikiwiki (3.10+nmu1) UNRELEASED; urgency=low
 
  -- Simon Raven <simonraven@kisikew.org>  Fri, 10 Apr 2009 13:01:45 -0400
 
-ikiwiki (3.10) UNRELEASED; urgency=low
+ikiwiki (3.10) unstable; urgency=low
 
   * darcs: Finally added support for this VCS, thanks to many
     contributors:
@@ -40,7 +40,7 @@ ikiwiki (3.10) UNRELEASED; urgency=low
   * inline: Add author info to archive display.
   * Add a microblog template that is useful for inlining microblogging posts.
 
- -- Joey Hess <joeyh@debian.org>  Sat, 04 Apr 2009 17:47:36 -0400
+ -- Joey Hess <joeyh@debian.org>  Sat, 18 Apr 2009 19:40:25 -0400
 
 ikiwiki (3.09) unstable; urgency=low
 

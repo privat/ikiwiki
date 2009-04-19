@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 1.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2007-04-27 22:05+0200\n"
 "Last-Translator: Pawel Tecza <ptecza@net.icm.edu.pl>\n"
 "Language-Team: Debian L10n Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -847,10 +847,6 @@ msgstr "Bezpośrednie pobieranie danych"
 #, fuzzy, perl-format
 msgid "parse fail at line %d: %s"
 msgstr "awaria w trakcie przetwarzania linii %d: %s"
-
-#: ../IkiWiki/Plugin/tag.pm:66
-msgid "Automatic tag page generation"
-msgstr ""
 
 #: ../IkiWiki/Plugin/template.pm:29
 #, fuzzy

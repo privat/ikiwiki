@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2009-03-15 16:10+0100\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -825,11 +825,6 @@ msgstr "Téléchargement direct des données"
 msgid "parse fail at line %d: %s"
 msgstr "Erreur d'analyse à la ligne %d : %s"
 
-#: ../IkiWiki/Plugin/tag.pm:66
-#, fuzzy
-msgid "Automatic tag page generation"
-msgstr "Génération de l'index automatique"
-
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"
 msgstr "Paramètre d'identification manquant"
@@ -1081,3 +1076,7 @@ msgstr "Identifiant de l'administrateur (utilisateur du wiki ou openid) :"
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "Nom de domaine du serveur HTTP :"
+
+#, fuzzy
+#~ msgid "Automatic tag page generation"
+#~ msgstr "Génération de l'index automatique"

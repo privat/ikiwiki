@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki-gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2007-01-11 16:05+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -825,10 +825,6 @@ msgstr "સીધી માહિતી ડાઉનલોડ"
 #, perl-format
 msgid "parse fail at line %d: %s"
 msgstr "ઉકેલવાનું લીટી %d પર નિષ્ફળ: %s"
-
-#: ../IkiWiki/Plugin/tag.pm:66
-msgid "Automatic tag page generation"
-msgstr ""
 
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"

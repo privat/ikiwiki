@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2009-03-03 10:48+0100\n"
 "Last-Translator: Víctor Moral <victor@taquiones.net>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -833,11 +833,6 @@ msgstr "Enlace directo para descarga"
 msgid "parse fail at line %d: %s"
 msgstr "error de análisis en la línea %d: %s"
 
-#: ../IkiWiki/Plugin/tag.pm:66
-#, fuzzy
-msgid "Automatic tag page generation"
-msgstr "creación de índice automática"
-
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"
 msgstr "falta el parámetro \"id\""
@@ -1092,3 +1087,7 @@ msgstr ""
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "¿ Cuál es el dominio para el servidor web ?"
+
+#, fuzzy
+#~ msgid "Automatic tag page generation"
+#~ msgstr "creación de índice automática"

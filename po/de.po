@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.06\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-13 01:37+0000\n"
+"POT-Creation-Date: 2009-04-18 22:20+0000\n"
 "PO-Revision-Date: 2009-03-02 15:39+0100\n"
 "Last-Translator: Kai Wasserbäch <debian@carbon-project.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -830,11 +830,6 @@ msgstr "Direkter Daten-Download"
 msgid "parse fail at line %d: %s"
 msgstr "Verarbeitungsfehler in Zeile %d: %s"
 
-#: ../IkiWiki/Plugin/tag.pm:66
-#, fuzzy
-msgid "Automatic tag page generation"
-msgstr "automatische Index-Erstellung"
-
 #: ../IkiWiki/Plugin/template.pm:29
 msgid "missing id parameter"
 msgstr "fehlender »id«-Parameter"
@@ -1087,3 +1082,7 @@ msgstr ""
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "Wie lautet der Domainname des Webservers?"
+
+#, fuzzy
+#~ msgid "Automatic tag page generation"
+#~ msgstr "automatische Index-Erstellung"
