@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-18 22:20+0000\n"
+"POT-Creation-Date: 2009-04-23 06:34+0000\n"
 "PO-Revision-Date: 2008-10-22 19:13+0100\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -180,7 +180,7 @@ msgstr "vedhæftningsoplægning"
 msgid "automatic index generation"
 msgstr "automatisk indeks-dannelse"
 
-#: ../IkiWiki/Plugin/blogspam.pm:105
+#: ../IkiWiki/Plugin/blogspam.pm:108
 msgid ""
 "Sorry, but that looks like spam to <a href=\"http://blogspam.net/"
 "\">blogspam</a>: "
@@ -881,10 +881,10 @@ msgstr ""
 "For at opsætningsændringerne vist nedenfor træder fuldt ud i kraft, skal du "
 "muligvis genopbygge wikien."
 
-#: ../IkiWiki/Plugin/websetup.pm:433
+#: ../IkiWiki/Plugin/websetup.pm:436
 #, perl-format
-msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
-msgstr "<p class=\"error\">Fejl: %s sluttede med fejl (%s)"
+msgid "Error: %s exited nonzero (%s). Discarding setup changes."
+msgstr ""
 
 #: ../IkiWiki/Receive.pm:35
 #, perl-format
@@ -1067,6 +1067,9 @@ msgstr "Hvilken wiki bruger (eller openid) skal være administrator?"
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "Hvad er domænenavnet på webserveren?"
+
+#~ msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
+#~ msgstr "<p class=\"error\">Fejl: %s sluttede med fejl (%s)"
 
 #, fuzzy
 #~ msgid "Automatic tag page generation"

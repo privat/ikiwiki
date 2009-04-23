@@ -1082,9 +1082,6 @@ msgstr ""
 msgid "What is the domain name of the web server?"
 msgstr "¿ Cuál es el dominio para el servidor web ?"
 
-<<<<<<< HEAD:po/es.po
 #, fuzzy
 #~ msgid "Automatic tag page generation"
 #~ msgstr "creación de índice automática"
-=======
->>>>>>> 86d6b40070023409882a5768a4db899e523bba71:po/es.po

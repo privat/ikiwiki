@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.06\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-18 22:20+0000\n"
+"POT-Creation-Date: 2009-04-23 06:34+0000\n"
 "PO-Revision-Date: 2009-03-02 15:39+0100\n"
 "Last-Translator: Kai Wasserbäch <debian@carbon-project.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -178,7 +178,7 @@ msgstr "Anhang hochladen"
 msgid "automatic index generation"
 msgstr "automatische Index-Erstellung"
 
-#: ../IkiWiki/Plugin/blogspam.pm:105
+#: ../IkiWiki/Plugin/blogspam.pm:108
 msgid ""
 "Sorry, but that looks like spam to <a href=\"http://blogspam.net/"
 "\">blogspam</a>: "
@@ -891,11 +891,10 @@ msgstr ""
 "Damit die unten aufgeführten Konfigurationsänderungen aktiviert werden, kann "
 "es erforderlich sein, das Wiki neu zu erzeugen."
 
-#: ../IkiWiki/Plugin/websetup.pm:433
+#: ../IkiWiki/Plugin/websetup.pm:436
 #, perl-format
-msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
+msgid "Error: %s exited nonzero (%s). Discarding setup changes."
 msgstr ""
-"<p class=\"error\">Fehler: %s beendete sich mit einem Wert ungleich Null (%s)"
 
 #: ../IkiWiki/Receive.pm:35
 #, perl-format
@@ -1082,6 +1081,11 @@ msgstr ""
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "Wie lautet der Domainname des Webservers?"
+
+#~ msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
+#~ msgstr ""
+#~ "<p class=\"error\">Fehler: %s beendete sich mit einem Wert ungleich Null "
+#~ "(%s)"
 
 #, fuzzy
 #~ msgid "Automatic tag page generation"
