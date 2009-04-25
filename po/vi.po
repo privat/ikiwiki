@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-18 22:20+0000\n"
+"POT-Creation-Date: 2009-04-23 06:34+0000\n"
 "PO-Revision-Date: 2007-01-13 15:31+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -181,7 +181,7 @@ msgstr ""
 msgid "automatic index generation"
 msgstr ""
 
-#: ../IkiWiki/Plugin/blogspam.pm:105
+#: ../IkiWiki/Plugin/blogspam.pm:108
 msgid ""
 "Sorry, but that looks like spam to <a href=\"http://blogspam.net/"
 "\">blogspam</a>: "
@@ -899,9 +899,9 @@ msgid ""
 "to rebuild the wiki."
 msgstr ""
 
-#: ../IkiWiki/Plugin/websetup.pm:433
+#: ../IkiWiki/Plugin/websetup.pm:436
 #, perl-format
-msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
+msgid "Error: %s exited nonzero (%s). Discarding setup changes."
 msgstr ""
 
 #: ../IkiWiki/Receive.pm:35

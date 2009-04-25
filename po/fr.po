@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-18 22:20+0000\n"
+"POT-Creation-Date: 2009-04-23 06:34+0000\n"
 "PO-Revision-Date: 2009-03-15 16:10+0100\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -180,7 +180,7 @@ msgstr "Envoi de la pièce jointe"
 msgid "automatic index generation"
 msgstr "Génération de l'index automatique"
 
-#: ../IkiWiki/Plugin/blogspam.pm:105
+#: ../IkiWiki/Plugin/blogspam.pm:108
 msgid ""
 "Sorry, but that looks like spam to <a href=\"http://blogspam.net/"
 "\">blogspam</a>: "
@@ -886,11 +886,10 @@ msgstr ""
 "Pour que les changements de configuration ci-dessous prennent effet vous "
 "devez recompiler le wiki"
 
-#: ../IkiWiki/Plugin/websetup.pm:433
+#: ../IkiWiki/Plugin/websetup.pm:436
 #, perl-format
-msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
+msgid "Error: %s exited nonzero (%s). Discarding setup changes."
 msgstr ""
-"<p class=\"erreur\">Erreur : %s s'est terminé, valeur de sortie nonzero (%s)"
 
 #: ../IkiWiki/Receive.pm:35
 #, perl-format
@@ -1076,6 +1075,11 @@ msgstr "Identifiant de l'administrateur (utilisateur du wiki ou openid) :"
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "Nom de domaine du serveur HTTP :"
+
+#~ msgid "<p class=\"error\">Error: %s exited nonzero (%s)"
+#~ msgstr ""
+#~ "<p class=\"erreur\">Erreur : %s s'est terminé, valeur de sortie nonzero (%"
+#~ "s)"
 
 #, fuzzy
 #~ msgid "Automatic tag page generation"
