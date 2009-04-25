@@ -183,13 +183,9 @@ sub preprocess_inline (@) {
 		$params{template} = $archive ? "archivepage" : "inlinepage";
 	}
 
-	my @list;
-	foreach my $page (keys %pagesources) {
-		next if $page eq $params{page};
-		if (pagespec_match($page, $params{pages}, location => $params{page})) {
-			push @list, $page;
-		}
-	}
+	my @list=pagespec_match_list(
+		[ grep { $_ ne $params{page} } keys %pagesources ],
+		$params{pages}, location => $params{page});
 
 	if (exists $params{sort} && $params{sort} eq 'title') {
 		@list=sort { pagetitle(basename($a)) cmp pagetitle(basename($b)) } @list;

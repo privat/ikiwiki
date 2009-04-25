@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 06:34+0000\n"
+"POT-Creation-Date: 2009-04-23 14:02-0400\n"
 "PO-Revision-Date: 2007-01-13 15:31+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -188,7 +188,7 @@ msgid ""
 msgstr ""
 
 #: ../IkiWiki/Plugin/brokenlinks.pm:33 ../IkiWiki/Plugin/editpage.pm:233
-#: ../IkiWiki/Plugin/inline.pm:361 ../IkiWiki/Plugin/opendiscussion.pm:26
+#: ../IkiWiki/Plugin/inline.pm:368 ../IkiWiki/Plugin/opendiscussion.pm:26
 #: ../IkiWiki/Plugin/orphans.pm:37 ../IkiWiki/Render.pm:79
 #: ../IkiWiki/Render.pm:149
 msgid "discussion"
@@ -419,29 +419,34 @@ msgstr "không tìm thấy mẫu %s"
 msgid "missing pages parameter"
 msgstr "mẫu thiếu tham số id"
 
-#: ../IkiWiki/Plugin/inline.pm:200
+#: ../IkiWiki/Plugin/inline.pm:198
+#, fuzzy, perl-format
+msgid "cannot match pages: %s"
+msgstr "không thể đọc %s: %s"
+
+#: ../IkiWiki/Plugin/inline.pm:207
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:211
+#: ../IkiWiki/Plugin/inline.pm:218
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "kiểu sắp xếp không rõ %s"
 
-#: ../IkiWiki/Plugin/inline.pm:314
+#: ../IkiWiki/Plugin/inline.pm:321
 msgid "Add a new post titled:"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:334
+#: ../IkiWiki/Plugin/inline.pm:341
 #, perl-format
 msgid "nonexistant template %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:369 ../IkiWiki/Render.pm:83
+#: ../IkiWiki/Plugin/inline.pm:376 ../IkiWiki/Render.pm:83
 msgid "Discussion"
 msgstr "Thảo luận"
 
-#: ../IkiWiki/Plugin/inline.pm:600
+#: ../IkiWiki/Plugin/inline.pm:607
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "Không tìm thấy RPC::XML::Client nên không gửi gói tin ping"
 

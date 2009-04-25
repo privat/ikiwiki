@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 1.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-04-23 06:34+0000\n"
+"POT-Creation-Date: 2009-04-23 14:02-0400\n"
 "PO-Revision-Date: 2007-04-27 22:05+0200\n"
 "Last-Translator: Pawel Tecza <ptecza@net.icm.edu.pl>\n"
 "Language-Team: Debian L10n Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -190,7 +190,7 @@ msgid ""
 msgstr ""
 
 #: ../IkiWiki/Plugin/brokenlinks.pm:33 ../IkiWiki/Plugin/editpage.pm:233
-#: ../IkiWiki/Plugin/inline.pm:361 ../IkiWiki/Plugin/opendiscussion.pm:26
+#: ../IkiWiki/Plugin/inline.pm:368 ../IkiWiki/Plugin/opendiscussion.pm:26
 #: ../IkiWiki/Plugin/orphans.pm:37 ../IkiWiki/Render.pm:79
 #: ../IkiWiki/Render.pm:149
 msgid "discussion"
@@ -421,29 +421,34 @@ msgstr "nieznaleziony kanał RSS"
 msgid "missing pages parameter"
 msgstr "brakujący parametr %s"
 
-#: ../IkiWiki/Plugin/inline.pm:200
+#: ../IkiWiki/Plugin/inline.pm:198
+#, fuzzy, perl-format
+msgid "cannot match pages: %s"
+msgstr "awaria w trakcie odczytu %s: %s"
+
+#: ../IkiWiki/Plugin/inline.pm:207
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:211
+#: ../IkiWiki/Plugin/inline.pm:218
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "nieznany sposób sortowania %s"
 
-#: ../IkiWiki/Plugin/inline.pm:314
+#: ../IkiWiki/Plugin/inline.pm:321
 msgid "Add a new post titled:"
 msgstr "Tytuł nowego wpisu"
 
-#: ../IkiWiki/Plugin/inline.pm:334
+#: ../IkiWiki/Plugin/inline.pm:341
 #, perl-format
 msgid "nonexistant template %s"
 msgstr "brakujący szablon %s"
 
-#: ../IkiWiki/Plugin/inline.pm:369 ../IkiWiki/Render.pm:83
+#: ../IkiWiki/Plugin/inline.pm:376 ../IkiWiki/Render.pm:83
 msgid "Discussion"
 msgstr "Dyskusja"
 
-#: ../IkiWiki/Plugin/inline.pm:600
+#: ../IkiWiki/Plugin/inline.pm:607
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "Nieznaleziony moduł RPC::XML::Client, brak możliwości pingowania"
 
