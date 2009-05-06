@@ -1,6 +1,22 @@
+ikiwiki (3.12) unstable; urgency=low
+
+  * Re-enable python-support and add python:Depends to control file.
+  * ikiwiki-makerepo: Avoid using abs_path, as it apparently
+    fails on nonexistant directories with some broken perl
+    versions.
+  * inline: Minor optimisation.
+  * add_link: New function, which plugins should use rather than
+    modifying %links directly, to avoid it accumulating duplicates.
+  * ikiwiki-transition: Add a deduplinks action, that can be used
+    to remove duplicate links and optimise a wiki w/o rebuilding it.
+  * external: Fix pagespec_match and pagespec_match_list.
+    Closes: #527281
+
+ -- Joey Hess <joeyh@debian.org>  Wed, 06 May 2009 00:31:16 -0400
+
 ikiwiki (3.11) unstable; urgency=low
 
-  * Add python:Depends to control file. Closes: #525086
+  * Avoid using python-support. Closes: #525086
   * websetup: Display stderr in browser if ikiwiki setup fails.
   * blogspam: Load RPC::XML library in checkconfig, so that an
     error can be printed at that point if it's not available,
@@ -22,7 +38,7 @@ ikiwiki (3.11) unstable; urgency=low
   * Updated Danish translation from Jonas Smedegaard. Closes: #525751
   * translation.mdwn: Typo fixes. Closes: #525753
 
- -- Joey Hess <joeyh@debian.org>  Tue, 21 Apr 2009 21:41:38 -0400
+ -- Joey Hess <joeyh@debian.org>  Mon, 04 May 2009 15:45:10 -0400
 
 ikiwiki (3.10+nmu3) unstable; urgency=low
 
