@@ -213,7 +213,7 @@ sub moveprefs {
 }
 
 sub deduplinks {
-	setstatdir(shift);
+	setstatedir(shift);
 	IkiWiki::loadindex();
 	foreach my $page (keys %links) {
 		my %l;
