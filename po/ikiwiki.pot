@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-06 12:58-0400\n"
+"POT-Creation-Date: 2009-05-18 09:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "You are banned."
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1211
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr ""
 
@@ -290,14 +290,14 @@ msgstr ""
 msgid "%s is not an editable page"
 msgstr ""
 
-#: ../IkiWiki/Plugin/editpage.pm:289
+#: ../IkiWiki/Plugin/editpage.pm:290
 #, perl-format
 msgid "creating %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/editpage.pm:307 ../IkiWiki/Plugin/editpage.pm:326
-#: ../IkiWiki/Plugin/editpage.pm:336 ../IkiWiki/Plugin/editpage.pm:380
-#: ../IkiWiki/Plugin/editpage.pm:419
+#: ../IkiWiki/Plugin/editpage.pm:308 ../IkiWiki/Plugin/editpage.pm:327
+#: ../IkiWiki/Plugin/editpage.pm:337 ../IkiWiki/Plugin/editpage.pm:381
+#: ../IkiWiki/Plugin/editpage.pm:420
 #, perl-format
 msgid "editing %s"
 msgstr ""
@@ -1009,29 +1009,29 @@ msgstr ""
 msgid "refreshing wiki.."
 msgstr ""
 
-#: ../IkiWiki.pm:480
+#: ../IkiWiki.pm:487
 msgid "Must specify url to wiki with --url when using --cgi"
 msgstr ""
 
-#: ../IkiWiki.pm:526
+#: ../IkiWiki.pm:533
 msgid "cannot use multiple rcs plugins"
 msgstr ""
 
-#: ../IkiWiki.pm:555
+#: ../IkiWiki.pm:562
 #, perl-format
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1194
+#: ../IkiWiki.pm:1202
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 
-#: ../IkiWiki.pm:1732
+#: ../IkiWiki.pm:1740
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:1860
+#: ../IkiWiki.pm:1868
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr ""
