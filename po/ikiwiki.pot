@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-05-19 06:14+0000\n"
+"POT-Creation-Date: 2009-05-18 18:27+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "You are banned."
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1220
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr ""
 
@@ -1022,16 +1022,16 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1203
+#: ../IkiWiki.pm:1202
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 
-#: ../IkiWiki.pm:1735
+#: ../IkiWiki.pm:1740
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:1867
+#: ../IkiWiki.pm:1868
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr ""
