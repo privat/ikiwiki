@@ -772,8 +772,8 @@ sub prep_writefile ($$) {
 		foreach my $s (split(m!/+!, $dir)) {
 			$d.="$s/";
 			if (! -d $d) {
-			    my $umasq = $config{umask} || 0022;
-				mkdir($d, $umasq) || error("failed to create directory $d: $!");
+			        umask ($config{umask} || 0022);
+				mkdir($d) || error("failed to create directory $d: $!");
 			}
 		}
 	}
