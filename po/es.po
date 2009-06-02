@@ -34,7 +34,8 @@ msgstr ""
 
 #: ../IkiWiki/CGI.pm:149
 msgid "login failed, perhaps you need to turn on cookies?"
-msgstr "registro fallido, ¿ tal vez necesita activar las cookies en el navegador ?"
+msgstr ""
+"registro fallido, ¿ tal vez necesita activar las cookies en el navegador ?"
 
 #: ../IkiWiki/CGI.pm:168 ../IkiWiki/CGI.pm:299
 msgid "Your login session has expired."
@@ -70,7 +71,8 @@ msgstr "Contenido añadido activado vía web."
 
 #: ../IkiWiki/Plugin/aggregate.pm:93
 msgid "Nothing to do right now, all feeds are up-to-date!"
-msgstr "¡ No hay nada que hacer, todas las fuentes de noticias están actualizadas !"
+msgstr ""
+"¡ No hay nada que hacer, todas las fuentes de noticias están actualizadas !"
 
 #: ../IkiWiki/Plugin/aggregate.pm:220
 #, perl-format
@@ -359,7 +361,8 @@ msgstr ""
 
 #: ../IkiWiki/Plugin/google.pm:31
 msgid "Failed to parse url, cannot determine domain name"
-msgstr "Error en el análisis del URL, no puedo determinar el nombre del dominio"
+msgstr ""
+"Error en el análisis del URL, no puedo determinar el nombre del dominio"
 
 #: ../IkiWiki/Plugin/goto.pm:49
 msgid "missing page"
@@ -389,8 +392,11 @@ msgid "Source code: %s"
 msgstr "Código fuente: %s"
 
 #: ../IkiWiki/Plugin/highlight.pm:122
-msgid "warning: highlight perl module not available; falling back to pass through"
-msgstr "aviso: el módulo Perl hightlight no está disponible; retrocedo la entrada para continuar el proceso. "
+msgid ""
+"warning: highlight perl module not available; falling back to pass through"
+msgstr ""
+"aviso: el módulo Perl hightlight no está disponible; retrocedo la entrada "
+"para continuar el proceso. "
 
 #: ../IkiWiki/Plugin/img.pm:62
 msgid "Image::Magick is not installed"
@@ -470,7 +476,8 @@ msgstr "La página %s está bloqueada y no puede modificarse"
 
 #: ../IkiWiki/Plugin/mdwn.pm:44
 msgid "multimarkdown is enabled, but Text::MultiMarkdown is not installed"
-msgstr "el modo multimarkdown está activo, pero no está instalado Text::MultiMarkdown"
+msgstr ""
+"el modo multimarkdown está activo, pero no está instalado Text::MultiMarkdown"
 
 #: ../IkiWiki/Plugin/mdwn.pm:67
 #, perl-format
@@ -892,7 +899,8 @@ msgid "plugins"
 msgstr "complementos"
 
 #: ../IkiWiki/Plugin/websetup.pm:395
-msgid "The configuration changes shown below require a wiki rebuild to take effect."
+msgid ""
+"The configuration changes shown below require a wiki rebuild to take effect."
 msgstr ""
 "Los cambios en la configuración que se muestran más abajo precisan una "
 "reconstrucción del wiki para tener efecto."
@@ -1010,7 +1018,8 @@ msgstr "el programa %s no parece ser ejecutable"
 
 #: ../IkiWiki/Wrapper.pm:20
 msgid "cannot create a wrapper that uses a setup file"
-msgstr "no puedo crear un programa envoltorio que utiliza un archivo de configuración"
+msgstr ""
+"no puedo crear un programa envoltorio que utiliza un archivo de configuración"
 
 #: ../IkiWiki/Wrapper.pm:24
 msgid "wrapper filename not specified"
@@ -1104,4 +1113,3 @@ msgstr ""
 #: ../auto.setup:23
 msgid "What is the domain name of the web server?"
 msgstr "¿ Cuál es el dominio para el servidor web ?"
-
