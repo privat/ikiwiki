@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:21-0400\n"
+"POT-Creation-Date: 2009-06-06 06:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "You are banned."
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1218
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr ""
 
@@ -971,6 +971,11 @@ msgstr ""
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr ""
 
+#: ../IkiWiki/Setup/Automator.pm:115
+#, perl-format
+msgid "** Disabling plugin %s, since it is failing with this message:"
+msgstr ""
+
 #: ../IkiWiki/Wrapper.pm:16
 #, perl-format
 msgid "%s doesn't seem to be executable"
@@ -1033,16 +1038,16 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1201
+#: ../IkiWiki.pm:1202
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 
-#: ../IkiWiki.pm:1733
+#: ../IkiWiki.pm:1734
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:1865
+#: ../IkiWiki.pm:1866
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr ""

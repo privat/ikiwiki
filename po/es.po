@@ -10,7 +10,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:21-0400\n"
+"POT-Creation-Date: 2009-06-06 06:24+0000\n"
 "PO-Revision-Date: 2009-05-25 09:30+0200\n"
 "Last-Translator: Víctor Moral <victor@taquiones.net>\n"
 "Language-Team: spanish <es@li.org>\n"
@@ -61,7 +61,7 @@ msgstr "Las preferencias se han guardado."
 msgid "You are banned."
 msgstr "Ha sido expulsado."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1218
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr "Error"
 
@@ -1007,6 +1007,11 @@ msgstr "el sistema de control de versiones %s no está soportado"
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr "no he podido crear un repositorio con el programa ikiwiki-makerepo"
 
+#: ../IkiWiki/Setup/Automator.pm:115
+#, perl-format
+msgid "** Disabling plugin %s, since it is failing with this message:"
+msgstr ""
+
 #: ../IkiWiki/Wrapper.pm:16
 #, perl-format
 msgid "%s doesn't seem to be executable"
@@ -1072,18 +1077,18 @@ msgstr "no puedo emplear varios complementos rcs"
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr "no he podido cargar el complemento externo %s necesario para %s"
 
-#: ../IkiWiki.pm:1201
+#: ../IkiWiki.pm:1202
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 "se ha detectado en la página %s un bucle de preprocesado en la iteración "
 "número %i"
 
-#: ../IkiWiki.pm:1733
+#: ../IkiWiki.pm:1734
 msgid "yes"
 msgstr "si"
 
-#: ../IkiWiki.pm:1865
+#: ../IkiWiki.pm:1866
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "no encuentro páginas coincidentes: %s"

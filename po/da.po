@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:21-0400\n"
+"POT-Creation-Date: 2009-06-06 06:24+0000\n"
 "PO-Revision-Date: 2009-05-28 14:58+0200\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -59,7 +59,7 @@ msgstr "Indstillinger gemt"
 msgid "You are banned."
 msgstr "Du er banlyst."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1218
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr "Fejl"
 
@@ -990,6 +990,11 @@ msgstr "revisionskontrolsystem %s ikke understøttet"
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr "opsætning af depotet med ikiwiki-makerepo mislykkedes"
 
+#: ../IkiWiki/Setup/Automator.pm:115
+#, perl-format
+msgid "** Disabling plugin %s, since it is failing with this message:"
+msgstr ""
+
 #: ../IkiWiki/Wrapper.pm:16
 #, perl-format
 msgid "%s doesn't seem to be executable"
@@ -1053,16 +1058,16 @@ msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 "indlæsning af ekstern udvidelse krævet af udvidelsen %s mislykkedes: %s"
 
-#: ../IkiWiki.pm:1201
+#: ../IkiWiki.pm:1202
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "forudberegningssløkke fundet på %s ved dybde %i"
 
-#: ../IkiWiki.pm:1733
+#: ../IkiWiki.pm:1734
 msgid "yes"
 msgstr "ja"
 
-#: ../IkiWiki.pm:1865
+#: ../IkiWiki.pm:1866
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "kan ikke få sider til at passe sammen: %s"

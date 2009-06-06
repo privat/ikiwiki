@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.04\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:21-0400\n"
+"POT-Creation-Date: 2009-06-06 06:24+0000\n"
 "PO-Revision-Date: 2009-03-15 16:10+0100\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -57,7 +57,7 @@ msgstr "Les préférences ont été enregistrées."
 msgid "You are banned."
 msgstr "Vous avez été banni."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1218
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr "Erreur"
 
@@ -994,6 +994,11 @@ msgstr "Système de contrôle de version non reconnu : %s"
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr "Échec lors de la création du dépôt avec ikiwiki-makerepo"
 
+#: ../IkiWiki/Setup/Automator.pm:115
+#, perl-format
+msgid "** Disabling plugin %s, since it is failing with this message:"
+msgstr ""
+
 #: ../IkiWiki/Wrapper.pm:16
 #, perl-format
 msgid "%s doesn't seem to be executable"
@@ -1058,16 +1063,16 @@ msgstr "Impossible d'utiliser plusieurs systèmes de contrôle des versions"
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr "Impossible de charger le greffon externe nécessaire au greffon %s : %s"
 
-#: ../IkiWiki.pm:1201
+#: ../IkiWiki.pm:1202
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Une boucle de pré traitement a été détectée sur %s à hauteur de %i"
 
-#: ../IkiWiki.pm:1733
+#: ../IkiWiki.pm:1734
 msgid "yes"
 msgstr "oui"
 
-#: ../IkiWiki.pm:1865
+#: ../IkiWiki.pm:1866
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "Lecture impossible de %s : %s"

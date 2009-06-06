@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-04 13:21-0400\n"
+"POT-Creation-Date: 2009-06-06 06:24+0000\n"
 "PO-Revision-Date: 2007-01-13 15:31+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -55,7 +55,7 @@ msgstr "Tùy thích đã được lưu."
 msgid "You are banned."
 msgstr "Bạn bị cấm ra."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1218
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1219
 msgid "Error"
 msgstr "Lỗi"
 
@@ -1002,6 +1002,11 @@ msgstr ""
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr ""
 
+#: ../IkiWiki/Setup/Automator.pm:115
+#, perl-format
+msgid "** Disabling plugin %s, since it is failing with this message:"
+msgstr ""
+
 #: ../IkiWiki/Wrapper.pm:16
 #, perl-format
 msgid "%s doesn't seem to be executable"
@@ -1064,16 +1069,16 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1201
+#: ../IkiWiki.pm:1202
 #, fuzzy, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "vòng lặp tiền xử lý %s được phát hiện trên %s ở độ sâu %i"
 
-#: ../IkiWiki.pm:1733
+#: ../IkiWiki.pm:1734
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:1865
+#: ../IkiWiki.pm:1866
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "không thể đọc %s: %s"
