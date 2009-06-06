@@ -1,3 +1,22 @@
+ikiwiki (3.15) UNRELEASED; urgency=low
+
+  * comment: Make comment directives no longer use the internal "_comment"
+    form, and document the comment directive syntax.
+  * Avoid relying on translators preserving the case when translating
+    "discussion", which caused Discussion pages to get unwanted Discussion
+    links.
+  * Tighten up matching of bare words inside directives; do not
+    allow an unterminated """ string to be treated as a series
+    of bare words. Fixes runaway regexp recursion/backtracking
+    in strange situations.
+  * Setup automator: Check that each plugin added to the generated
+    setup file can be loaded and that its config is ok. If a plugin
+    fails for any reason, disable it in the generated file.
+    Closes: 532001
+  * pagecount: Fix broken optimisation for * pagespec.
+
+ -- Joey Hess <joeyh@debian.org>  Tue, 02 Jun 2009 17:03:41 -0400
+
 ikiwiki (3.14) unstable; urgency=low
 
   * highlight: New plugin supporting syntax highlighting of pretty much
