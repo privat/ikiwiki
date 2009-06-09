@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-06 06:24+0000\n"
+"POT-Creation-Date: 2009-06-06 08:39+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -351,11 +351,11 @@ msgstr ""
 msgid "Failed to parse url, cannot determine domain name"
 msgstr ""
 
-#: ../IkiWiki/Plugin/goto.pm:49
+#: ../IkiWiki/Plugin/goto.pm:55
 msgid "missing page"
 msgstr ""
 
-#: ../IkiWiki/Plugin/goto.pm:51
+#: ../IkiWiki/Plugin/goto.pm:57
 #, perl-format
 msgid "The page %s does not exist."
 msgstr ""
