@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-10 07:36+0000\n"
+"POT-Creation-Date: 2009-06-13 17:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -83,50 +83,50 @@ msgstr ""
 msgid "new"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:435
+#: ../IkiWiki/Plugin/aggregate.pm:441
 #, perl-format
 msgid "expiring %s (%s days old)"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:442
+#: ../IkiWiki/Plugin/aggregate.pm:448
 #, perl-format
 msgid "expiring %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:469
+#: ../IkiWiki/Plugin/aggregate.pm:475
 #, perl-format
 msgid "last checked %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:473
+#: ../IkiWiki/Plugin/aggregate.pm:479
 #, perl-format
 msgid "checking feed %s ..."
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:478
+#: ../IkiWiki/Plugin/aggregate.pm:484
 #, perl-format
 msgid "could not find feed at %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:497
+#: ../IkiWiki/Plugin/aggregate.pm:503
 msgid "feed not found"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:508
+#: ../IkiWiki/Plugin/aggregate.pm:514
 #, perl-format
 msgid "(invalid UTF-8 stripped from feed)"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:516
+#: ../IkiWiki/Plugin/aggregate.pm:522
 #, perl-format
 msgid "(feed entities escaped)"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:524
+#: ../IkiWiki/Plugin/aggregate.pm:530
 msgid "feed crashed XML::Feed!"
 msgstr ""
 
-#: ../IkiWiki/Plugin/aggregate.pm:610
+#: ../IkiWiki/Plugin/aggregate.pm:616
 #, perl-format
 msgid "creating new page %s"
 msgstr ""
