@@ -16,4 +16,7 @@ However both Perl OpenID 2.x implementations have not been released and are inco
 > above). I've filed a bug in Debian asking for the package to be
 > updated. --[[smcv]]
 
-> Net::OpenID::Consumer 1.x is not in Debian unstable --[[dom]]
+> Net::OpenID::Consumer 1.x is now in Debian unstable --[[dom]]
+
+> I've tested with yahoo, and it works with the updated module. Sweet and
+> [[done]] --[[Joey]] 

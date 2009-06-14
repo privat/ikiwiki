@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-06-13 17:08+0000\n"
+"POT-Creation-Date: 2009-06-12 19:52-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1043,11 +1043,11 @@ msgstr ""
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 
-#: ../IkiWiki.pm:1742
+#: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:1874
+#: ../IkiWiki.pm:1873
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr ""
