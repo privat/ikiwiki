@@ -19,6 +19,7 @@ sub getopt () {
 	error($@) if $@;
 	Getopt::Long::Configure('pass_through');
 	GetOptions("openidsignup=s" => \$config{openidsignup});
+	GetOptions("openidneedscaptcha=s" => \$config{openidneedscaptcha});
 }
 
 sub getsetup () {
@@ -77,6 +78,7 @@ sub formbuilder_setup (@) {
 			# Skip all other required fields in this case.
 			foreach my $field ($form->field) {
 				next if $field eq "openid_url";
+				next if $config{openidneedscaptcha} && $field eq "recaptcha";
 				$form->field(name => $field, required => 0,
 					validate => '/.*/');
 			}
@@ -109,6 +111,18 @@ sub validate ($$$;$) {
 		}
 		else {
 			error($csr->err);
+		}
+	}
+
+	if ($config{openidneedscaptcha} && defined $form->field("recaptcha")) {
+		foreach my $field ($form->field) {
+			next unless ($field eq "recaptcha");
+			if (! $field->validate) {
+				# if they didn't get the captcha right,
+				# then just claim we validated ok so the
+				# captcha can cause a fail
+				return 1;
+			}
 		}
 	}
 
