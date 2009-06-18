@@ -7,11 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD:po/cs.po
-"POT-Creation-Date: 2009-06-06 06:24+0000\n"
-=======
 "POT-Creation-Date: 2009-06-12 19:52-0400\n"
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/cs.po
 "PO-Revision-Date: 2007-05-09 21:21+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -1064,19 +1060,11 @@ msgstr ""
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Byla rozpoznána smyčka direktivy %s na %s v hloubce %i"
 
-<<<<<<< HEAD:po/cs.po
-#: ../IkiWiki.pm:1734
-msgid "yes"
-msgstr ""
-
-#: ../IkiWiki.pm:1866
-=======
 #: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr ""
 
 #: ../IkiWiki.pm:1873
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/cs.po
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "nemohu číst %s: %s"

@@ -7,11 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD:po/da.po
-"POT-Creation-Date: 2009-06-06 06:24+0000\n"
-=======
 "POT-Creation-Date: 2009-06-12 19:52-0400\n"
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/da.po
 "PO-Revision-Date: 2009-05-28 14:58+0200\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -1067,19 +1063,11 @@ msgstr ""
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "forudberegningssløkke fundet på %s ved dybde %i"
 
-<<<<<<< HEAD:po/da.po
-#: ../IkiWiki.pm:1734
-msgid "yes"
-msgstr "ja"
-
-#: ../IkiWiki.pm:1866
-=======
 #: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr "ja"
 
 #: ../IkiWiki.pm:1873
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/da.po
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "kan ikke få sider til at passe sammen: %s"

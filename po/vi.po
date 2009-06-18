@@ -6,11 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD:po/vi.po
-"POT-Creation-Date: 2009-06-06 06:24+0000\n"
-=======
 "POT-Creation-Date: 2009-06-12 19:52-0400\n"
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/vi.po
 "PO-Revision-Date: 2007-01-13 15:31+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -1078,19 +1074,11 @@ msgstr ""
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "vòng lặp tiền xử lý %s được phát hiện trên %s ở độ sâu %i"
 
-<<<<<<< HEAD:po/vi.po
-#: ../IkiWiki.pm:1734
-msgid "yes"
-msgstr ""
-
-#: ../IkiWiki.pm:1866
-=======
 #: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr ""
 
 #: ../IkiWiki.pm:1873
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/vi.po
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "không thể đọc %s: %s"

@@ -8,11 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 1.51\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD:po/pl.po
-"POT-Creation-Date: 2009-06-06 06:24+0000\n"
-=======
 "POT-Creation-Date: 2009-06-12 19:52-0400\n"
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/pl.po
 "PO-Revision-Date: 2007-04-27 22:05+0200\n"
 "Last-Translator: Pawel Tecza <ptecza@net.icm.edu.pl>\n"
 "Language-Team: Debian L10n Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -1090,19 +1086,11 @@ msgstr ""
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "polecenie preprocesora %s wykryte w %s na głębokości %i"
 
-<<<<<<< HEAD:po/pl.po
-#: ../IkiWiki.pm:1734
-msgid "yes"
-msgstr ""
-
-#: ../IkiWiki.pm:1866
-=======
 #: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr ""
 
 #: ../IkiWiki.pm:1873
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/pl.po
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "awaria w trakcie odczytu %s: %s"

@@ -9,11 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.14\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD:po/fr.po
-"POT-Creation-Date: 2009-06-13 17:08+0000\n"
-=======
 "POT-Creation-Date: 2009-06-12 19:52-0400\n"
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/fr.po
 "PO-Revision-Date: 2009-06-08 16:41+0200\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -1074,19 +1070,11 @@ msgstr "Impossible de charger le greffon externe nécessaire au greffon %s : %s
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Une boucle de pré traitement a été détectée sur %s à hauteur de %i"
 
-<<<<<<< HEAD:po/fr.po
-#: ../IkiWiki.pm:1742
-msgid "yes"
-msgstr "oui"
-
-#: ../IkiWiki.pm:1874
-=======
 #: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr "oui"
 
 #: ../IkiWiki.pm:1873
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/fr.po
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "Impossible de trouver les pages %s"

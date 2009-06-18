@@ -6,11 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.06\n"
 "Report-Msgid-Bugs-To: \n"
-<<<<<<< HEAD:po/de.po
-"POT-Creation-Date: 2009-06-06 06:24+0000\n"
-=======
 "POT-Creation-Date: 2009-06-12 19:52-0400\n"
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/de.po
 "PO-Revision-Date: 2009-03-02 15:39+0100\n"
 "Last-Translator: Kai Wasserbäch <debian@carbon-project.org>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -1076,19 +1072,11 @@ msgstr "Laden der für %s benötigten externen Erweiterung fehlgeschlagen: %s"
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Präprozessorschleife auf %s in Tiefe %i erkannt"
 
-<<<<<<< HEAD:po/de.po
-#: ../IkiWiki.pm:1734
-msgid "yes"
-msgstr "ja"
-
-#: ../IkiWiki.pm:1866
-=======
 #: ../IkiWiki.pm:1741
 msgid "yes"
 msgstr "ja"
 
 #: ../IkiWiki.pm:1873
->>>>>>> e0c7fed8e682e4f11a1e90eb98c81ed7087809fe:po/de.po
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "kann %s nicht lesen: %s"
