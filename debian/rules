@@ -4,6 +4,7 @@
 
 override_dh_auto_configure:
 	# keeps it out of /usr/local
+	${prefix}=/usr
 	dh_auto_configure -- PREFIX=/usr
 
 override_dh_compress:
