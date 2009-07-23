@@ -10,7 +10,7 @@ sub import {
 	hook(type => "formbuilder_setup", id => "rename", call => \&formbuilder_setup);
 	hook(type => "formbuilder", id => "rename", call => \&formbuilder);
 	hook(type => "sessioncgi", id => "rename", call => \&sessioncgi);
-
+	hook(type => "rename", id => "rename", call => \&rename_subpages);
 }
 
 sub getsetup () {
@@ -87,6 +87,27 @@ sub check_canrename ($$$$$$) {
 			IkiWiki::Plugin::attachment::check_canattach($session, $dest, $srcfile);
 		}
 	}
+
+	my $canrename;
+	IkiWiki::run_hooks(canrename => sub {
+		return if defined $canrename;
+		my $ret=shift->(cgi => $q, session => $session,
+			src => $src, srcfile => $srcfile,
+			dest => $dest, destfile => $destfile);
+		if (defined $ret) {
+			if ($ret eq "") {
+				$canrename=1;
+			}
+			elsif (ref $ret eq 'CODE') {
+				$ret->();
+				$canrename=0;
+			}
+			elsif (defined $ret) {
+				error($ret);
+				$canrename=0;
+			}
+		}
+	});
 }
 
 sub rename_form ($$$) {
@@ -293,27 +314,13 @@ sub sessioncgi ($$) {
 				required => 1,
 			};
 
-			# See if any subpages need to be renamed.
-			if ($q->param("subpages") && $src ne $dest) {
-				foreach my $p (keys %pagesources) {
-					next unless $pagesources{$p}=~m/^\Q$src\E\//;
-					# If indexpages is enabled, the
-					# srcfile should not be confused
-					# with a subpage.
-					next if $pagesources{$p} eq $srcfile;
+			@torename=rename_hook(
+				torename => \@torename,
+				done => {},
+				cgi => $q,
+				session => $session,
+			);
 
-					my $d=$pagesources{$p};
-					$d=~s/^\Q$src\E\//$dest\//;
-					push @torename, {
-						src => $p,
-						srcfile => $pagesources{$p},
-						dest => pagename($d),
-						destfile => $d,
-						required => 0,
-					};
-				}
-			}
-			
 			require IkiWiki::Render;
 			IkiWiki::disable_commit_hook() if $config{rcs};
 			my %origpagesources=%pagesources;
@@ -407,7 +414,40 @@ sub sessioncgi ($$) {
 		exit 0;
 	}
 }
-						
+
+# Add subpages to the list of pages to be renamed, if needed.
+sub rename_subpages (@) {
+	my %params = @_;
+
+	my %torename = %{$params{torename}};
+	my $q = $params{cgi};
+	my $src = $torename{src};
+	my $srcfile = $torename{src};
+	my $dest = $torename{dest};
+	my $destfile = $torename{dest};
+
+	return () unless ($q->param("subpages") && $src ne $dest);
+
+	my @ret;
+	foreach my $p (keys %pagesources) {
+		next unless $pagesources{$p}=~m/^\Q$src\E\//;
+		# If indexpages is enabled, the srcfile should not be confused
+		# with a subpage.
+		next if $pagesources{$p} eq $srcfile;
+
+		my $d=$pagesources{$p};
+		$d=~s/^\Q$src\E\//$dest\//;
+		push @ret, {
+			src => $p,
+			srcfile => $pagesources{$p},
+			dest => pagename($d),
+			destfile => $d,
+			required => 0,
+		};
+	}
+	return @ret;
+}
+
 sub linklist {
 	# generates a list of links in a form suitable for FormBuilder
 	my $dest=shift;
@@ -439,7 +479,43 @@ sub renamepage_hook ($$$$) {
 
 	return $content;
 }
-			
+
+sub rename_hook {
+	my %params = @_;
+
+	my @torename=@{$params{torename}};
+	my %done=%{$params{done}};
+	my $q=$params{cgi};
+	my $session=$params{session};
+
+	return () unless @torename;
+
+	my @nextset;
+	foreach my $torename (@torename) {
+		unless (exists $done{$torename->{src}} && $done{$torename->{src}}) {
+			IkiWiki::run_hooks(rename => sub {
+				push @nextset, shift->(
+					torename => $torename,
+					cgi => $q,
+					session => $session,
+				);
+			});
+			$done{$torename->{src}}=1;
+		}
+	}
+
+	push @torename, rename_hook(
+		torename => \@nextset,
+		done => \%done,
+		cgi => $q,
+		session => $session,
+	);
+
+	# dedup
+	my %seen;
+	return grep { ! $seen{$_->{src}}++ } @torename;
+}
+
 sub do_rename ($$$) {
 	my $rename=shift;
 	my $q=shift;

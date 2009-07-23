@@ -3,7 +3,6 @@ Projects & Organizations
 
 * [This wiki](http://ikiwiki.info) (of course!)
 * [Planet Debian upstream](http://updo.debian.net/)
-* The [ion window manager homepage](http://modeemi.fi/~tuomov/ion/)
 * [Debian Mentors wiki](http://jameswestby.net/mentors/)
 * The [Sparse wiki](http://kernel.org/pub/linux/kernel/people/josh/sparse).
 * [The BSD Associate Admin Book Project](http://bsdwiki.reedmedia.net/)
@@ -123,6 +122,7 @@ Personal sites and blogs
 * [NeoCarz Wiki](http://www.neocarz.com/wiki/) Yes - its actually Ikiwiki behind that! I'm using Nginx and XSL to transform the ikiwiki renderings thanks to the valid XHTML output of ikiwiki. Great work Joey!!
 * [Natalian - Kai Hendry's personal blog](http://natalian.org/)
 * [Mick Pollard aka \_lunix_ - Personal sysadmin blog and wiki](http://www.lunix.com.au)
+* [tumashu's page](http://tumashu.github.com) This is my personal site in github  created with ikiwiki and only a page,you can get the [source](http://github.com/tumashu/tumashu/tree/master)  
 
 Please feel free to add your own ikiwiki site!
 

@@ -330,6 +330,26 @@ This hook should avoid directly redirecting the user to a signin page,
 since it's sometimes used to test to see which pages in a set of pages a
 user can edit.
 
+### canremove
+
+	hook(type => "canremove", id => "foo", call => \&canremove);
+
+This hook can be used to implement arbitrary access methods to control
+when a page can be removed using the web interface (commits from
+revision control bypass it). It works exactly like the `canedit` hook,
+but is passed the named parameters `cgi` (a CGI object), `session`
+(a session object) and `page` (the page subject to deletion).
+
+### canrename
+
+	hook(type => "canrename", id => "foo", call => \&canrename);
+
+This hook can be used to implement arbitrary access methods to control when
+a page can be renamed using the web interface (commits from revision control
+bypass it). It works exactly like the `canedit` hook,
+but is passed the named parameters `cgi` (a CGI object), `session` (a
+session object), `src`, `srcfile`, `dest` and `destfile`.
+
 ### checkcontent
 	
 	hook(type => "checkcontent", id => "foo", call => \&checkcontent);
@@ -342,8 +362,9 @@ the content the user has entered is a comment, it may also be passed some
 additional parameters: `author`, `url`, and `subject`. The `subject`
 parameter may also be filled with the user's comment about the change.
 
-Note: When the user edits an existing wiki page, the passed `content` will
-include only the lines that they added to the page, or modified.
+Note: When the user edits an existing wiki page, this hook is also
+passed a `diff` named parameter, which will include only the lines
+that they added to the page, or modified.
 
 The hook should return `undef` on success. If the content is disallowed, it
 should return a message stating what the problem is, or a function
@@ -394,9 +415,28 @@ they're saved, etc.
 	hook(type => "renamepage", id => "foo", call => \&renamepage);
 
 This hook is called by the [[plugins/rename]] plugin when it renames
-something. The hook is passed named parameters: `page`, `oldpage`,
-`newpage`, and `content`, and should try to modify the content to reflect
-the name change. For example, by converting links to point to the new page.
+something, once per page linking to the renamed page's old location.
+The hook is passed named parameters: `page`, `oldpage`, `newpage`, and
+`content`, and should try to modify the content of `page` to reflect
+the name change. For example, by converting links to point to the
+new page.
+
+### rename
+
+	hook(type => "rename", id => "foo", call => \&rename);
+
+When a page or set of pages is renamed, the referenced function is
+called for every page, and is passed named parameters:
+
+* `torename`: a reference to a hash with keys: `src`, `srcfile`,
+  `dest`, `destfile`, `required`.
+* `cgi`: a CGI object
+* `session`: a session object.
+
+Such a hook function returns any additional rename hashes it wants to
+add. This hook is applied recursively to returned additional rename
+hashes, so that it handles the case where two plugins use the hook:
+plugin A would see when plugin B adds a new file to be renamed.
 
 ### getsetup
 
