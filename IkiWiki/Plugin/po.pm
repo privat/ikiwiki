@@ -376,11 +376,11 @@ sub change (@) {
 	    && exists $config{meta_overrides_page_title}
 	    && defined $config{meta_overrides_page_title}
 	    && $config{meta_overrides_page_title}) {
-		debug(sprintf(gettext("re-rendering all pages to fix meta titles")));
+		debug(sprintf(gettext("rebuilding all pages to fix meta titles")));
 		resetalreadyfiltered();
 		require IkiWiki::Render;
 		foreach my $file (@rendered) {
-			debug(sprintf(gettext("rendering %s"), $file));
+			debug(sprintf(gettext("building %s"), $file));
 			IkiWiki::render($file);
 		}
 	}
@@ -441,8 +441,8 @@ sub canremove (@) {
 	my %params = @_;
 
 	if (istranslation($params{page})) {
-		return gettext("Can not remove a translation. Removing the master page, ".
-			       "though, removes its translations as well.");
+		return gettext("Can not remove a translation. If the master page is removed, ".
+			       "however, its translations will be removed as well.");
 	}
 	return undef;
 }
@@ -461,8 +461,8 @@ sub canrename (@) {
 		# saved early in the renaming process.
 		my $orig_torename = $session->param("po_orig_torename");
 		unless (grep { $_ eq $masterpage } @{$orig_torename}) {
-			return gettext("Can not rename a translation. Renaming the master page, ".
-				       "though, renames its translations as well.");
+			return gettext("Can not rename a translation. If the master page is renamed, ".
+				       "however, its translations will be renamed as well.");
 		}
 	}
 	return undef;

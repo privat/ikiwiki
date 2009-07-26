@@ -133,7 +133,7 @@ sub getbucket {
 	}
 
 	if (! $bucket) {
-		error(gettext("Failed to create bucket in S3: ").
+		error(gettext("Failed to create S3 bucket: ").
 			$s3->err.": ".$s3->errstr."\n");
 	}
 
