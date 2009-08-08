@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.14159\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-23 01:01+0200\n"
+"POT-Creation-Date: 2009-07-27 09:30+0000\n"
 "PO-Revision-Date: 2009-07-23 01:07+0100\n"
 "Last-Translator: Kurt Gramlich <kurt@skolelinux.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -56,7 +56,7 @@ msgstr "Einstellungen gespeichert."
 msgid "You are banned."
 msgstr "Sie sind ausgeschlossen worden."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1253
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1254
 msgid "Error"
 msgstr "Fehler"
 
@@ -147,15 +147,18 @@ msgid "Must specify %s"
 msgstr "%s muss angegeben werden"
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:136
-msgid "Failed to create bucket inside S3: "
+#, fuzzy
+msgid "Failed to create S3 bucket: "
 msgstr "Konnte Behälter (bucket) in S3 nicht anlegen: "
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:221
-msgid "Failed to save file into S3: "
+#, fuzzy
+msgid "Failed to save file to S3: "
 msgstr "Konnte die Datei nicht in S3 speichern: "
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:243
-msgid "Failed to delete file inside S3: "
+#, fuzzy
+msgid "Failed to delete file from S3: "
 msgstr "Konnte die Datei nicht in S3 löschen: "
 
 #: ../IkiWiki/Plugin/attachment.pm:49
@@ -503,11 +506,11 @@ msgstr "mehr"
 msgid "getctime not implemented"
 msgstr "getctime ist nicht implementiert"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr "Anmelden mit"
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "Eine OpenID anfordern"
 
@@ -1167,16 +1170,16 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr "Laden der für %s benötigten externen Erweiterung fehlgeschlagen: %s"
 
-#: ../IkiWiki.pm:1236
+#: ../IkiWiki.pm:1237
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Präprozessorschleife auf %s in Tiefe %i erkannt"
 
-#: ../IkiWiki.pm:1776
+#: ../IkiWiki.pm:1777
 msgid "yes"
 msgstr "ja"
 
-#: ../IkiWiki.pm:1908
+#: ../IkiWiki.pm:1909
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "Kann die Seiten nicht zuordnen: %s"

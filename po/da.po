@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.14159\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-23 01:01+0200\n"
+"POT-Creation-Date: 2009-07-27 09:30+0000\n"
 "PO-Revision-Date: 2009-07-23 01:07+0200\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -59,7 +59,7 @@ msgstr "Indstillinger gemt"
 msgid "You are banned."
 msgstr "Du er banlyst."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1253
+#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1254
 msgid "Error"
 msgstr "Fejl"
 
@@ -150,15 +150,18 @@ msgid "Must specify %s"
 msgstr "Skal angive %s"
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:136
-msgid "Failed to create bucket inside S3: "
+#, fuzzy
+msgid "Failed to create S3 bucket: "
 msgstr "Oprettelse af bundt i S3 mislykkedes: "
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:221
-msgid "Failed to save file into S3: "
+#, fuzzy
+msgid "Failed to save file to S3: "
 msgstr "Arkivering af fil i S3 mislykkedes: "
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:243
-msgid "Failed to delete file inside S3: "
+#, fuzzy
+msgid "Failed to delete file from S3: "
 msgstr "Sletning af fil fra S3 mislykkedes: "
 
 #: ../IkiWiki/Plugin/attachment.pm:49
@@ -502,11 +505,11 @@ msgstr "mere"
 msgid "getctime not implemented"
 msgstr "getctime ikke implementeret"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr "Log på med"
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "Skaf en OpenID"
 
@@ -1153,16 +1156,16 @@ msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 "indlæsning af ekstern udvidelse krævet af udvidelsen %s mislykkedes: %s"
 
-#: ../IkiWiki.pm:1236
+#: ../IkiWiki.pm:1237
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "forudberegningssløkke fundet på %s ved dybde %i"
 
-#: ../IkiWiki.pm:1776
+#: ../IkiWiki.pm:1777
 msgid "yes"
 msgstr "ja"
 
-#: ../IkiWiki.pm:1908
+#: ../IkiWiki.pm:1909
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "kan ikke få sider til at passe sammen: %s"
