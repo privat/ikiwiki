@@ -1,5 +1,5 @@
 [[!tag patch plugins/pagestats]]
-[[!template id=gitbranch branch=smcv/among author="[[smcv]]"]]
+[[!template id=gitbranch branch=smcv/ready/among author="[[smcv]]"]]
 
 My `among` branch fixes [[todo/backlinks_result_is_lossy]], then uses that
 to provide pagestats for links from a subset of pages. From the docs included
@@ -25,3 +25,5 @@ I use this on my tag pages on one site, with the following template:
       archive="yes" quick="yes" reverse="yes" timeformat="%x"]]
 
 --[[smcv]]
+
+> [[merged|done]] thanks --[[Joey]] 

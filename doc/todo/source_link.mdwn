@@ -4,12 +4,14 @@ How about a direct link from the page header to the source of the latest version
 
 I just implemented this.  There is one [[patch]] to the default page template, and a new plugin.  -- [[Will]]
 
+All of this code is licensed under the GPLv2+. -- [[Will]]
+
 > The use of sessioncgi here seems undesirable: on wikis where anonymity is
 > not allowed, you'll be asked to log in. Couldn't you achieve the same thing
 > by loading the index with IkiWiki::loadindex, like [[plugins/goto]] does?
 > --[[smcv]]
 
-[[!template id=gitbranch branch=smcv/getsource
+[[!template id=gitbranch branch=smcv/ready/getsource
   author="[[Will]]/[[smcv]]"]]
 
 >> I've applied the patch below in a git branch, fixed my earlier criticism,
@@ -24,8 +26,13 @@ I just implemented this.  There is one [[patch]] to the default page template, a
 >>
 >> --[[smcv]]
 
+>>> I need a copyright&license statement, so debian/copyright can be updated for
+>>> the plugin, before I can merge this. Otherwise ready. --[[Joey]]
+
 >>> That looks like a nice set of fixes.  One more that might be worthwhile: instead of reading the page source into a var, and then writing it out later, it might be nice to just
 >>>  `print readfile(srcfile(pagesources{$page}));` at the appropriate point. -- [[Will]]
+
+>>>> OK, I've committed that. --[[smcv]]
 
 ----
 
