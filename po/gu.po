@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki-gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-07-27 09:30+0000\n"
+"POT-Creation-Date: 2009-08-08 01:42+0000\n"
 "PO-Revision-Date: 2007-01-11 16:05+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -187,10 +187,10 @@ msgid ""
 msgstr ""
 
 #: ../IkiWiki/Plugin/brokenlinks.pm:33 ../IkiWiki/Plugin/editpage.pm:233
-#: ../IkiWiki/Plugin/inline.pm:357 ../IkiWiki/Plugin/inline.pm:365
+#: ../IkiWiki/Plugin/inline.pm:376 ../IkiWiki/Plugin/inline.pm:384
 #: ../IkiWiki/Plugin/opendiscussion.pm:26 ../IkiWiki/Plugin/orphans.pm:37
 #: ../IkiWiki/Plugin/po.pm:289 ../IkiWiki/Plugin/po.pm:292
-#: ../IkiWiki/Render.pm:80 ../IkiWiki/Render.pm:84 ../IkiWiki/Render.pm:150
+#: ../IkiWiki/Render.pm:86 ../IkiWiki/Render.pm:90 ../IkiWiki/Render.pm:156
 msgid "Discussion"
 msgstr "ચર્ચા"
 
@@ -392,28 +392,28 @@ msgid ""
 "warning: highlight perl module not available; falling back to pass through"
 msgstr ""
 
-#: ../IkiWiki/Plugin/img.pm:62
+#: ../IkiWiki/Plugin/img.pm:63
 #, fuzzy
 msgid "Image::Magick is not installed"
 msgstr "પોલિગોન સ્થાપિત નથી"
 
-#: ../IkiWiki/Plugin/img.pm:69
+#: ../IkiWiki/Plugin/img.pm:72
 #, perl-format
 msgid "wrong size format \"%s\" (should be WxH)"
 msgstr ""
 
-#: ../IkiWiki/Plugin/img.pm:80 ../IkiWiki/Plugin/img.pm:84
-#: ../IkiWiki/Plugin/img.pm:101
+#: ../IkiWiki/Plugin/img.pm:83 ../IkiWiki/Plugin/img.pm:87
+#: ../IkiWiki/Plugin/img.pm:104
 #, perl-format
 msgid "failed to read %s: %s"
 msgstr "%s વાંચવામાં નિષ્ફળ: %s"
 
-#: ../IkiWiki/Plugin/img.pm:87
+#: ../IkiWiki/Plugin/img.pm:90
 #, perl-format
 msgid "failed to resize: %s"
 msgstr "માપ બદલવામાં નિષ્ફળ: %s"
 
-#: ../IkiWiki/Plugin/img.pm:118
+#: ../IkiWiki/Plugin/img.pm:119
 #, fuzzy, perl-format
 msgid "failed to determine size of image %s"
 msgstr "માપ બદલવામાં નિષ્ફળ: %s"
@@ -432,25 +432,30 @@ msgstr "ફીડ મળ્યું નહી"
 msgid "missing pages parameter"
 msgstr "ખોવાયેલ %s વિકલ્પ"
 
-#: ../IkiWiki/Plugin/inline.pm:196
+#: ../IkiWiki/Plugin/inline.pm:192
+#, perl-format
+msgid "the %s and %s parameters cannot be used together"
+msgstr ""
+
+#: ../IkiWiki/Plugin/inline.pm:214
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:207
+#: ../IkiWiki/Plugin/inline.pm:225
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "અજાણ્યો ગોઠવણી પ્રકાર %s"
 
-#: ../IkiWiki/Plugin/inline.pm:310
+#: ../IkiWiki/Plugin/inline.pm:329
 msgid "Add a new post titled:"
 msgstr "આ શિર્ષકથી નવું પોસ્ટ ઉમેરો:"
 
-#: ../IkiWiki/Plugin/inline.pm:330
+#: ../IkiWiki/Plugin/inline.pm:349
 #, perl-format
 msgid "nonexistant template %s"
 msgstr "અસ્તિત્વમાં ન હોય તેવું ટેમ્પલેટ %s"
 
-#: ../IkiWiki/Plugin/inline.pm:596
+#: ../IkiWiki/Plugin/inline.pm:615
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "RPC::XML::Client મળ્યું નહી, પિંગ કરવામાં આવતું નથી"
 
@@ -596,7 +601,7 @@ msgstr "ચર્ચા"
 msgid "rebuilding all pages to fix meta titles"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:383 ../IkiWiki/Render.pm:415
+#: ../IkiWiki/Plugin/po.pm:383 ../IkiWiki/Render.pm:421
 #, fuzzy, perl-format
 msgid "building %s"
 msgstr "%s સુધારે છે"
@@ -1009,54 +1014,54 @@ msgstr ""
 msgid "bad file name %s"
 msgstr "ખરાબ ફાઇલ નામ છોડી દે છે %s"
 
-#: ../IkiWiki/Render.pm:254
+#: ../IkiWiki/Render.pm:260
 #, perl-format
 msgid ""
 "symlink found in srcdir path (%s) -- set allow_symlinks_before_srcdir to "
 "allow this"
 msgstr ""
 
-#: ../IkiWiki/Render.pm:277 ../IkiWiki/Render.pm:302
+#: ../IkiWiki/Render.pm:283 ../IkiWiki/Render.pm:308
 #, perl-format
 msgid "skipping bad filename %s"
 msgstr "ખરાબ ફાઇલ નામ છોડી દે છે %s"
 
-#: ../IkiWiki/Render.pm:284
+#: ../IkiWiki/Render.pm:290
 #, perl-format
 msgid "%s has multiple possible source pages"
 msgstr ""
 
-#: ../IkiWiki/Render.pm:370
+#: ../IkiWiki/Render.pm:376
 #, perl-format
 msgid "removing old page %s"
 msgstr "જુનાં પાનાં દૂર કરે છે %s"
 
-#: ../IkiWiki/Render.pm:410
+#: ../IkiWiki/Render.pm:416
 #, perl-format
 msgid "scanning %s"
 msgstr "%s શોધે છે"
 
-#: ../IkiWiki/Render.pm:436
+#: ../IkiWiki/Render.pm:442
 #, fuzzy, perl-format
 msgid "building %s, which links to %s"
 msgstr "રેન્ડર કરે છે %s, જે %s સાથે જોડાણ ધરાવે છે"
 
-#: ../IkiWiki/Render.pm:457
+#: ../IkiWiki/Render.pm:463
 #, fuzzy, perl-format
 msgid "building %s, which depends on %s"
 msgstr "રેન્ડર કરે છે %s, જે %s પર આધારિત છે"
 
-#: ../IkiWiki/Render.pm:496
+#: ../IkiWiki/Render.pm:502
 #, fuzzy, perl-format
 msgid "building %s, to update its backlinks"
 msgstr "રેન્ડર કરે છે %s, તેનાં પાછળનાં જોડાણો સુધારવા માટે"
 
-#: ../IkiWiki/Render.pm:508
+#: ../IkiWiki/Render.pm:514
 #, fuzzy, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "દૂર કરે છે %s, હવે %s વડે રેન્ડર કરાતું નથી"
 
-#: ../IkiWiki/Render.pm:532
+#: ../IkiWiki/Render.pm:538
 #, fuzzy, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki: %s રેન્ડર કરી શકાતું નથી"
