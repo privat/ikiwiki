@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.141\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 01:42+0000\n"
+"POT-Creation-Date: 2009-08-11 15:00-0400\n"
 "PO-Revision-Date: 2009-06-29 16:42+0200\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -336,6 +336,25 @@ msgstr "le format et le texte doivent être indiqués"
 msgid "fortune failed"
 msgstr "Échec du lancement de « fortune »"
 
+#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+msgid "missing page"
+msgstr "Page manquante"
+
+#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#, perl-format
+msgid "The page %s does not exist."
+msgstr "La page %s n'existe pas."
+
+#: ../IkiWiki/Plugin/getsource.pm:73
+#, fuzzy
+msgid "not a page"
+msgstr "Impossible de trouver les pages %s"
+
+#: ../IkiWiki/Plugin/getsource.pm:75
+#, fuzzy, perl-format
+msgid "%s is an attachment, not a page."
+msgstr "%s n'est pas une page éditable"
+
 #: ../IkiWiki/Plugin/git.pm:626 ../IkiWiki/Plugin/git.pm:644
 #: ../IkiWiki/Receive.pm:129
 #, perl-format
@@ -360,15 +379,6 @@ msgstr "Vous devez indiquer %s lors de l'utilisation du greffon « search »."
 #: ../IkiWiki/Plugin/google.pm:31
 msgid "Failed to parse url, cannot determine domain name"
 msgstr "Impossible d'analyser l'url, pas de nom de domaine"
-
-#: ../IkiWiki/Plugin/goto.pm:55
-msgid "missing page"
-msgstr "Page manquante"
-
-#: ../IkiWiki/Plugin/goto.pm:57
-#, perl-format
-msgid "The page %s does not exist."
-msgstr "La page %s n'existe pas."
 
 #: ../IkiWiki/Plugin/graphviz.pm:67
 msgid "failed to run graphviz"
@@ -632,46 +642,51 @@ msgstr ""
 msgid "POT file (%s) does not exist"
 msgstr "La page %s n'existe pas."
 
-#: ../IkiWiki/Plugin/po.pm:833
+#: ../IkiWiki/Plugin/po.pm:839
+#, fuzzy, perl-format
+msgid "failed to copy underlay PO file to %s"
+msgstr "Échec de la compilation de %s"
+
+#: ../IkiWiki/Plugin/po.pm:848
 #, fuzzy, perl-format
 msgid "failed to update %s"
 msgstr "Échec de la compilation de %s"
 
-#: ../IkiWiki/Plugin/po.pm:839
+#: ../IkiWiki/Plugin/po.pm:854
 #, fuzzy, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "Échec de la compilation de %s"
 
-#: ../IkiWiki/Plugin/po.pm:875
+#: ../IkiWiki/Plugin/po.pm:890
 msgid "N/A"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:888
+#: ../IkiWiki/Plugin/po.pm:903
 #, fuzzy, perl-format
 msgid "failed to translate %s"
 msgstr "Échec du redimensionnement : %s"
 
-#: ../IkiWiki/Plugin/po.pm:964
+#: ../IkiWiki/Plugin/po.pm:979
 msgid "removed obsolete PO files"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:1027 ../IkiWiki/Plugin/po.pm:1041
-#: ../IkiWiki/Plugin/po.pm:1081
+#: ../IkiWiki/Plugin/po.pm:1042 ../IkiWiki/Plugin/po.pm:1056
+#: ../IkiWiki/Plugin/po.pm:1096
 #, fuzzy, perl-format
 msgid "failed to write %s"
 msgstr "Échec du redimensionnement : %s"
 
-#: ../IkiWiki/Plugin/po.pm:1039
+#: ../IkiWiki/Plugin/po.pm:1054
 #, fuzzy
 msgid "failed to translate"
 msgstr "Échec du lancement de dot"
 
-#: ../IkiWiki/Plugin/po.pm:1044
+#: ../IkiWiki/Plugin/po.pm:1059
 #, fuzzy, perl-format
 msgid "failed to read %s"
 msgstr "Échec de la lecture de %s : %s"
 
-#: ../IkiWiki/Plugin/po.pm:1093
+#: ../IkiWiki/Plugin/po.pm:1108
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 

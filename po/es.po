@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 01:42+0000\n"
+"POT-Creation-Date: 2009-08-11 15:00-0400\n"
 "PO-Revision-Date: 2009-06-14 12:32+0200\n"
 "Last-Translator: Victor Moral <victor@taquiones.net>\n"
 "Language-Team:  <en@li.org>\n"
@@ -340,6 +340,25 @@ msgstr "se deben especificar tanto el formato como el texto"
 msgid "fortune failed"
 msgstr "el programa fortune ha fallado"
 
+#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+msgid "missing page"
+msgstr "página no encontrada"
+
+#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#, perl-format
+msgid "The page %s does not exist."
+msgstr "No existe la página %s."
+
+#: ../IkiWiki/Plugin/getsource.pm:73
+#, fuzzy
+msgid "not a page"
+msgstr "no encuentro páginas coincidentes: %s"
+
+#: ../IkiWiki/Plugin/getsource.pm:75
+#, fuzzy, perl-format
+msgid "%s is an attachment, not a page."
+msgstr "la página %s no es modificable"
+
 #: ../IkiWiki/Plugin/git.pm:626 ../IkiWiki/Plugin/git.pm:644
 #: ../IkiWiki/Receive.pm:129
 #, perl-format
@@ -365,15 +384,6 @@ msgstr "Es obligatorio indicar %s cuando se utiliza el complemento de búsqueda"
 msgid "Failed to parse url, cannot determine domain name"
 msgstr ""
 "Error en el análisis del URL, no puedo determinar el nombre del dominio"
-
-#: ../IkiWiki/Plugin/goto.pm:55
-msgid "missing page"
-msgstr "página no encontrada"
-
-#: ../IkiWiki/Plugin/goto.pm:57
-#, perl-format
-msgid "The page %s does not exist."
-msgstr "No existe la página %s."
 
 #: ../IkiWiki/Plugin/graphviz.pm:67
 msgid "failed to run graphviz"
@@ -641,46 +651,51 @@ msgstr ""
 msgid "POT file (%s) does not exist"
 msgstr "No existe la página %s."
 
-#: ../IkiWiki/Plugin/po.pm:833
+#: ../IkiWiki/Plugin/po.pm:839
+#, fuzzy, perl-format
+msgid "failed to copy underlay PO file to %s"
+msgstr "ha fallado la compilación del programa %s"
+
+#: ../IkiWiki/Plugin/po.pm:848
 #, fuzzy, perl-format
 msgid "failed to update %s"
 msgstr "ha fallado la compilación del programa %s"
 
-#: ../IkiWiki/Plugin/po.pm:839
+#: ../IkiWiki/Plugin/po.pm:854
 #, fuzzy, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "ha fallado la compilación del programa %s"
 
-#: ../IkiWiki/Plugin/po.pm:875
+#: ../IkiWiki/Plugin/po.pm:890
 msgid "N/A"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:888
+#: ../IkiWiki/Plugin/po.pm:903
 #, fuzzy, perl-format
 msgid "failed to translate %s"
 msgstr "dimensionamiento fallido: %s"
 
-#: ../IkiWiki/Plugin/po.pm:964
+#: ../IkiWiki/Plugin/po.pm:979
 msgid "removed obsolete PO files"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:1027 ../IkiWiki/Plugin/po.pm:1041
-#: ../IkiWiki/Plugin/po.pm:1081
+#: ../IkiWiki/Plugin/po.pm:1042 ../IkiWiki/Plugin/po.pm:1056
+#: ../IkiWiki/Plugin/po.pm:1096
 #, fuzzy, perl-format
 msgid "failed to write %s"
 msgstr "dimensionamiento fallido: %s"
 
-#: ../IkiWiki/Plugin/po.pm:1039
+#: ../IkiWiki/Plugin/po.pm:1054
 #, fuzzy
 msgid "failed to translate"
 msgstr "no he podido ejecutar el programa dot"
 
-#: ../IkiWiki/Plugin/po.pm:1044
+#: ../IkiWiki/Plugin/po.pm:1059
 #, fuzzy, perl-format
 msgid "failed to read %s"
 msgstr "no puedo leer de %s: %s "
 
-#: ../IkiWiki/Plugin/po.pm:1093
+#: ../IkiWiki/Plugin/po.pm:1108
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 

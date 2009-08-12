@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.14159\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 01:42+0000\n"
+"POT-Creation-Date: 2009-08-11 15:00-0400\n"
 "PO-Revision-Date: 2009-07-23 01:07+0100\n"
 "Last-Translator: Kurt Gramlich <kurt@skolelinux.de>\n"
 "Language-Team: German <debian-l10n-german@lists.debian.org>\n"
@@ -336,6 +336,25 @@ msgstr "Format und Text müssen spezifiziert werden"
 msgid "fortune failed"
 msgstr "fortune fehlgeschlagen"
 
+#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+msgid "missing page"
+msgstr "fehlende Seite"
+
+#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#, perl-format
+msgid "The page %s does not exist."
+msgstr "Die Seite %s existiert nicht."
+
+#: ../IkiWiki/Plugin/getsource.pm:73
+#, fuzzy
+msgid "not a page"
+msgstr "Kann die Seiten nicht zuordnen: %s"
+
+#: ../IkiWiki/Plugin/getsource.pm:75
+#, fuzzy, perl-format
+msgid "%s is an attachment, not a page."
+msgstr "Seite %s kann nicht bearbeitet werden"
+
 #: ../IkiWiki/Plugin/git.pm:626 ../IkiWiki/Plugin/git.pm:644
 #: ../IkiWiki/Receive.pm:129
 #, perl-format
@@ -360,15 +379,6 @@ msgstr "%s muss angegeben werden, wenn die %s Erweiterung verwandt wird"
 #: ../IkiWiki/Plugin/google.pm:31
 msgid "Failed to parse url, cannot determine domain name"
 msgstr "auswerten der URL fehlgeschlagen, konnte Domainnamen nicht feststellen"
-
-#: ../IkiWiki/Plugin/goto.pm:55
-msgid "missing page"
-msgstr "fehlende Seite"
-
-#: ../IkiWiki/Plugin/goto.pm:57
-#, perl-format
-msgid "The page %s does not exist."
-msgstr "Die Seite %s existiert nicht."
 
 #: ../IkiWiki/Plugin/graphviz.pm:67
 msgid "failed to run graphviz"
@@ -640,45 +650,50 @@ msgstr ""
 msgid "POT file (%s) does not exist"
 msgstr "POT-Datei (%s) existiert nicht"
 
-#: ../IkiWiki/Plugin/po.pm:833
+#: ../IkiWiki/Plugin/po.pm:839
+#, fuzzy, perl-format
+msgid "failed to copy underlay PO file to %s"
+msgstr "kopieren der POT-Datei nach %s fehlgeschlagen"
+
+#: ../IkiWiki/Plugin/po.pm:848
 #, perl-format
 msgid "failed to update %s"
 msgstr "aktualisieren von %s fehlgeschlagen"
 
-#: ../IkiWiki/Plugin/po.pm:839
+#: ../IkiWiki/Plugin/po.pm:854
 #, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "kopieren der POT-Datei nach %s fehlgeschlagen"
 
-#: ../IkiWiki/Plugin/po.pm:875
+#: ../IkiWiki/Plugin/po.pm:890
 msgid "N/A"
 msgstr "N/A"
 
-#: ../IkiWiki/Plugin/po.pm:888
+#: ../IkiWiki/Plugin/po.pm:903
 #, perl-format
 msgid "failed to translate %s"
 msgstr "übersetzen von %s fehlgeschlagen"
 
-#: ../IkiWiki/Plugin/po.pm:964
+#: ../IkiWiki/Plugin/po.pm:979
 msgid "removed obsolete PO files"
 msgstr "überflüssige PO-Dateien wurden entfernt"
 
-#: ../IkiWiki/Plugin/po.pm:1027 ../IkiWiki/Plugin/po.pm:1041
-#: ../IkiWiki/Plugin/po.pm:1081
+#: ../IkiWiki/Plugin/po.pm:1042 ../IkiWiki/Plugin/po.pm:1056
+#: ../IkiWiki/Plugin/po.pm:1096
 #, perl-format
 msgid "failed to write %s"
 msgstr "schreiben von %s fehlgeschlagen"
 
-#: ../IkiWiki/Plugin/po.pm:1039
+#: ../IkiWiki/Plugin/po.pm:1054
 msgid "failed to translate"
 msgstr "übersetzen fehlgeschlagen"
 
-#: ../IkiWiki/Plugin/po.pm:1044
+#: ../IkiWiki/Plugin/po.pm:1059
 #, perl-format
 msgid "failed to read %s"
 msgstr "lesen von %s fehlgeschlagen"
 
-#: ../IkiWiki/Plugin/po.pm:1093
+#: ../IkiWiki/Plugin/po.pm:1108
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 "ungültige gettext Datei, gehe zurück zur vorherigen Seite um weiter zu "

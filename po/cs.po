@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-08 01:42+0000\n"
+"POT-Creation-Date: 2009-08-11 15:00-0400\n"
 "PO-Revision-Date: 2007-05-09 21:21+0200\n"
 "Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
 "Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
@@ -333,6 +333,26 @@ msgstr ""
 msgid "fortune failed"
 msgstr "fortune selhal"
 
+#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+#, fuzzy
+msgid "missing page"
+msgstr "chybí hodnoty"
+
+#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#, perl-format
+msgid "The page %s does not exist."
+msgstr ""
+
+#: ../IkiWiki/Plugin/getsource.pm:73
+#, fuzzy
+msgid "not a page"
+msgstr "nemohu číst %s: %s"
+
+#: ../IkiWiki/Plugin/getsource.pm:75
+#, fuzzy, perl-format
+msgid "%s is an attachment, not a page."
+msgstr "%s není editovatelná stránka"
+
 #: ../IkiWiki/Plugin/git.pm:626 ../IkiWiki/Plugin/git.pm:644
 #: ../IkiWiki/Receive.pm:129
 #, perl-format
@@ -356,16 +376,6 @@ msgstr "Při používání vyhledávacího modulu musíte zadat %s"
 
 #: ../IkiWiki/Plugin/google.pm:31
 msgid "Failed to parse url, cannot determine domain name"
-msgstr ""
-
-#: ../IkiWiki/Plugin/goto.pm:55
-#, fuzzy
-msgid "missing page"
-msgstr "chybí hodnoty"
-
-#: ../IkiWiki/Plugin/goto.pm:57
-#, perl-format
-msgid "The page %s does not exist."
 msgstr ""
 
 #: ../IkiWiki/Plugin/graphviz.pm:67
@@ -627,46 +637,51 @@ msgstr ""
 msgid "POT file (%s) does not exist"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:833
+#: ../IkiWiki/Plugin/po.pm:839
+#, fuzzy, perl-format
+msgid "failed to copy underlay PO file to %s"
+msgstr "nelze zkompilovat %s"
+
+#: ../IkiWiki/Plugin/po.pm:848
 #, fuzzy, perl-format
 msgid "failed to update %s"
 msgstr "nelze zkompilovat %s"
 
-#: ../IkiWiki/Plugin/po.pm:839
+#: ../IkiWiki/Plugin/po.pm:854
 #, fuzzy, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "nelze zkompilovat %s"
 
-#: ../IkiWiki/Plugin/po.pm:875
+#: ../IkiWiki/Plugin/po.pm:890
 msgid "N/A"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:888
+#: ../IkiWiki/Plugin/po.pm:903
 #, fuzzy, perl-format
 msgid "failed to translate %s"
 msgstr "nelze změnit velikost: %s"
 
-#: ../IkiWiki/Plugin/po.pm:964
+#: ../IkiWiki/Plugin/po.pm:979
 msgid "removed obsolete PO files"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:1027 ../IkiWiki/Plugin/po.pm:1041
-#: ../IkiWiki/Plugin/po.pm:1081
+#: ../IkiWiki/Plugin/po.pm:1042 ../IkiWiki/Plugin/po.pm:1056
+#: ../IkiWiki/Plugin/po.pm:1096
 #, fuzzy, perl-format
 msgid "failed to write %s"
 msgstr "nelze zapsat %s: %s"
 
-#: ../IkiWiki/Plugin/po.pm:1039
+#: ../IkiWiki/Plugin/po.pm:1054
 #, fuzzy
 msgid "failed to translate"
 msgstr "nepodařilo se spustit dot"
 
-#: ../IkiWiki/Plugin/po.pm:1044
+#: ../IkiWiki/Plugin/po.pm:1059
 #, fuzzy, perl-format
 msgid "failed to read %s"
 msgstr "nelze číst %s: %s"
 
-#: ../IkiWiki/Plugin/po.pm:1093
+#: ../IkiWiki/Plugin/po.pm:1108
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 
