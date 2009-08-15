@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.14159\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-11 15:00-0400\n"
+"POT-Creation-Date: 2009-08-12 19:00+0000\n"
 "PO-Revision-Date: 2009-07-23 01:07+0200\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -194,9 +194,9 @@ msgstr ""
 "a>: "
 
 #: ../IkiWiki/Plugin/brokenlinks.pm:33 ../IkiWiki/Plugin/editpage.pm:233
-#: ../IkiWiki/Plugin/inline.pm:376 ../IkiWiki/Plugin/inline.pm:384
+#: ../IkiWiki/Plugin/inline.pm:374 ../IkiWiki/Plugin/inline.pm:382
 #: ../IkiWiki/Plugin/opendiscussion.pm:26 ../IkiWiki/Plugin/orphans.pm:37
-#: ../IkiWiki/Plugin/po.pm:289 ../IkiWiki/Plugin/po.pm:292
+#: ../IkiWiki/Plugin/po.pm:294 ../IkiWiki/Plugin/po.pm:297
 #: ../IkiWiki/Render.pm:86 ../IkiWiki/Render.pm:90 ../IkiWiki/Render.pm:156
 msgid "Discussion"
 msgstr "Diskussion"
@@ -372,7 +372,7 @@ msgstr "du kan ikke påvirke en fil med modus %s"
 msgid "you are not allowed to change file modes"
 msgstr "du har ikke lov til at ændre modus for filer"
 
-#: ../IkiWiki/Plugin/google.pm:27 ../IkiWiki/Plugin/po.pm:124
+#: ../IkiWiki/Plugin/google.pm:27 ../IkiWiki/Plugin/po.pm:129
 #: ../IkiWiki/Plugin/search.pm:36
 #, perl-format
 msgid "Must specify %s when using the %s plugin"
@@ -444,30 +444,30 @@ msgstr "sideredigering er ikke tilladt"
 msgid "missing pages parameter"
 msgstr "mangler pages-parametren"
 
-#: ../IkiWiki/Plugin/inline.pm:192
+#: ../IkiWiki/Plugin/inline.pm:191
 #, perl-format
 msgid "the %s and %s parameters cannot be used together"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:214
+#: ../IkiWiki/Plugin/inline.pm:212
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr "Sort::Naturally krævet for title_natural sortering"
 
-#: ../IkiWiki/Plugin/inline.pm:225
+#: ../IkiWiki/Plugin/inline.pm:223
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "ukendt sorteringsform %s"
 
-#: ../IkiWiki/Plugin/inline.pm:329
+#: ../IkiWiki/Plugin/inline.pm:327
 msgid "Add a new post titled:"
 msgstr "Tilføj nyt indlæg med følgende titel:"
 
-#: ../IkiWiki/Plugin/inline.pm:349
+#: ../IkiWiki/Plugin/inline.pm:347
 #, perl-format
 msgid "nonexistant template %s"
 msgstr "ikke-eksisterende skabelon: %s"
 
-#: ../IkiWiki/Plugin/inline.pm:615
+#: ../IkiWiki/Plugin/inline.pm:613
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "RPC::XML::Client ikke fundet, pinger ikke"
 
@@ -587,12 +587,16 @@ msgstr "ignorerer ping-direktiv for wiki %s (denne wiki er %s)"
 msgid "LWP not found, not pinging"
 msgstr "LWP ikke fundet, pinger ikke"
 
-#: ../IkiWiki/Plugin/po.pm:131
+#: ../IkiWiki/Plugin/po.pm:15
+msgid "warning: Old po4a detected! Recommend upgrade to 0.35."
+msgstr ""
+
+#: ../IkiWiki/Plugin/po.pm:136
 #, perl-format
 msgid "%s is not a valid language code"
 msgstr "%s er ikke en gyldig sprogkode"
 
-#: ../IkiWiki/Plugin/po.pm:143
+#: ../IkiWiki/Plugin/po.pm:148
 #, perl-format
 msgid ""
 "%s is not a valid value for po_link_to, falling back to po_link_to=default"
@@ -600,7 +604,7 @@ msgstr ""
 "%s er ikke en gyldig værdi for po_link_to, falder tilbage til "
 "po_link_to=default"
 
-#: ../IkiWiki/Plugin/po.pm:148
+#: ../IkiWiki/Plugin/po.pm:153
 msgid ""
 "po_link_to=negotiated requires usedirs to be enabled, falling back to "
 "po_link_to=default"
@@ -608,25 +612,25 @@ msgstr ""
 "po_link_to=negotiated kræver at usedirs er aktiveret, falder tilbage til "
 "po_link_to=default"
 
-#: ../IkiWiki/Plugin/po.pm:282
+#: ../IkiWiki/Plugin/po.pm:287
 msgid "discussion"
 msgstr "diskussion"
 
-#: ../IkiWiki/Plugin/po.pm:379
+#: ../IkiWiki/Plugin/po.pm:384
 #, perl-format
 msgid "rebuilding all pages to fix meta titles"
 msgstr "gendanner alle sider for at korrigere meta titler"
 
-#: ../IkiWiki/Plugin/po.pm:383 ../IkiWiki/Render.pm:421
+#: ../IkiWiki/Plugin/po.pm:388 ../IkiWiki/Render.pm:422
 #, perl-format
 msgid "building %s"
 msgstr "danner %s"
 
-#: ../IkiWiki/Plugin/po.pm:420
+#: ../IkiWiki/Plugin/po.pm:425
 msgid "updated PO files"
 msgstr "opdaterer PO-filer"
 
-#: ../IkiWiki/Plugin/po.pm:444
+#: ../IkiWiki/Plugin/po.pm:449
 msgid ""
 "Can not remove a translation. If the master page is removed, however, its "
 "translations will be removed as well."
@@ -634,7 +638,7 @@ msgstr ""
 "Kan ikke fjerne en oversættelse. Fjern i stedet hovedsiden, så fjernes dens "
 "oversættelser også."
 
-#: ../IkiWiki/Plugin/po.pm:464
+#: ../IkiWiki/Plugin/po.pm:469
 msgid ""
 "Can not rename a translation. If the master page is renamed, however, its "
 "translations will be renamed as well."
@@ -642,55 +646,55 @@ msgstr ""
 "Kan ikke omdøbe en oversættelse. Omdøb i stedet hovedsiden, så omdøbes dens "
 "oversættelser også."
 
-#: ../IkiWiki/Plugin/po.pm:825
+#: ../IkiWiki/Plugin/po.pm:830
 #, perl-format
 msgid "POT file (%s) does not exist"
 msgstr "POT-filen %s eksisterer ikke"
 
-#: ../IkiWiki/Plugin/po.pm:839
+#: ../IkiWiki/Plugin/po.pm:844
 #, fuzzy, perl-format
 msgid "failed to copy underlay PO file to %s"
 msgstr "kopiering af POT-filen til %s mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:848
+#: ../IkiWiki/Plugin/po.pm:853
 #, perl-format
 msgid "failed to update %s"
 msgstr "opdatering af %s mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:854
+#: ../IkiWiki/Plugin/po.pm:859
 #, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "kopiering af POT-filen til %s mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:890
+#: ../IkiWiki/Plugin/po.pm:895
 msgid "N/A"
 msgstr "N/A"
 
-#: ../IkiWiki/Plugin/po.pm:903
+#: ../IkiWiki/Plugin/po.pm:908
 #, perl-format
 msgid "failed to translate %s"
 msgstr "oversættelse af %s mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:979
+#: ../IkiWiki/Plugin/po.pm:984
 msgid "removed obsolete PO files"
 msgstr "forældede PO filer fjernet"
 
-#: ../IkiWiki/Plugin/po.pm:1042 ../IkiWiki/Plugin/po.pm:1056
-#: ../IkiWiki/Plugin/po.pm:1096
+#: ../IkiWiki/Plugin/po.pm:1047 ../IkiWiki/Plugin/po.pm:1061
+#: ../IkiWiki/Plugin/po.pm:1101
 #, perl-format
 msgid "failed to write %s"
 msgstr "skrivning af %s mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:1054
+#: ../IkiWiki/Plugin/po.pm:1059
 msgid "failed to translate"
 msgstr "oversættelse mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:1059
+#: ../IkiWiki/Plugin/po.pm:1064
 #, perl-format
 msgid "failed to read %s"
 msgstr "læsning af %s mislykkedes"
 
-#: ../IkiWiki/Plugin/po.pm:1108
+#: ../IkiWiki/Plugin/po.pm:1113
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 "forkert gettext-data, gå tilbage til forrige side og fortsæt redigering"
@@ -1058,32 +1062,32 @@ msgstr "%s har flere mulige kildesider"
 msgid "removing old page %s"
 msgstr "fjerner gammel side %s"
 
-#: ../IkiWiki/Render.pm:416
+#: ../IkiWiki/Render.pm:417
 #, perl-format
 msgid "scanning %s"
 msgstr "gennemlæser %s"
 
-#: ../IkiWiki/Render.pm:442
+#: ../IkiWiki/Render.pm:443
 #, perl-format
 msgid "building %s, which links to %s"
 msgstr "danner %s, som henviser til %s"
 
-#: ../IkiWiki/Render.pm:463
+#: ../IkiWiki/Render.pm:464
 #, perl-format
 msgid "building %s, which depends on %s"
 msgstr "danner %s, som afhænger af %s"
 
-#: ../IkiWiki/Render.pm:502
+#: ../IkiWiki/Render.pm:503
 #, perl-format
 msgid "building %s, to update its backlinks"
 msgstr "danner %s, for at opdatere dens krydshenvisninger (backlinks)"
 
-#: ../IkiWiki/Render.pm:514
+#: ../IkiWiki/Render.pm:515
 #, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "fjerner %s, ikke længere dannet af %s"
 
-#: ../IkiWiki/Render.pm:538
+#: ../IkiWiki/Render.pm:539
 #, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki: kan ikke danne %s"
