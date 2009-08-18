@@ -99,7 +99,7 @@ sub getsetup () {
 			type => "string",
 			example => {
 				'fr' => 'Français',
-				'es' => 'Castellano',
+				'es' => 'Español',
 				'de' => 'Deutsch'
 			},
 			description => "slave languages (PO files)",
@@ -934,7 +934,7 @@ sub otherlanguagesloop ($) {
 				master => 1,
 			};
 		}
-		else {
+		elsif (istranslation($otherpage)) {
 			push @ret, {
 				url => urlto_with_orig_beautiful_urlpath($otherpage, $page),
 				code => $lang,
