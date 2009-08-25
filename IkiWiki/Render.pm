@@ -455,20 +455,26 @@ sub refresh () {
 		my @changed=(keys %rendered, @del);
 
 		# rebuild dependant pages
-		foreach my $f (@$files) {
+		F: foreach my $f (@$files) {
 			next if $rendered{$f};
 			my $p=pagename($f);
 			if (exists $depends{$p}) {
-				# only consider internal files
-				# if the page explicitly depends on such files
-				foreach my $file (@changed, $depends{$p}=~/internal\(/ ? @internal : ()) {
-					next if $f eq $file;
-					my $page=pagename($file);
-					if (pagespec_match($page, $depends{$p}, location => $p)) {
-						debug(sprintf(gettext("building %s, which depends on %s"), $f, $page));
-						render($f);
-						$rendered{$f}=1;
-						last;
+				foreach my $d (keys %{$depends{$p}}) {
+					my $sub=pagespec_translate($d);
+					next if $@ || ! defined $sub;
+
+					# only consider internal files
+					# if the page explicitly depends
+					# on such files
+					foreach my $file (@changed, $d =~ /internal\(/ ? @internal : ()) {
+						next if $file eq $f;
+						my $page=pagename($file);
+						if ($sub->($page, location => $p)) {
+							debug(sprintf(gettext("building %s, which depends on %s"), $f, $page));
+							render($f);
+							$rendered{$f}=1;
+							next F;
+						}
 					}
 				}
 			}
