@@ -184,7 +184,9 @@ msgstr "Génération de l'index automatique"
 msgid ""
 "Sorry, but that looks like spam to <a href=\"http://blogspam.net/"
 "\">blogspam</a>: "
-msgstr "Désolé, mais cela ressemble à un « spam » selon les critères de <a href=\"http://blogspam.net/\">blogspam</a> : "
+msgstr ""
+"Désolé, mais cela ressemble à un « spam » selon les critères de <a href="
+"\"http://blogspam.net/\">blogspam</a> : "
 
 #: ../IkiWiki/Plugin/brokenlinks.pm:42
 #, perl-format
@@ -531,7 +533,9 @@ msgstr "Erreur lors de la création du compte."
 
 #: ../IkiWiki/Plugin/passwordauth.pm:258
 msgid "No email address, so cannot email password reset instructions."
-msgstr "Aucune adresse indiquée. Impossible d'envoyer les instructions pour réinitialiser le mot de passe."
+msgstr ""
+"Aucune adresse indiquée. Impossible d'envoyer les instructions pour "
+"réinitialiser le mot de passe."
 
 #: ../IkiWiki/Plugin/passwordauth.pm:292
 msgid "Failed to send mail"
@@ -1106,7 +1110,9 @@ msgstr "Échec lors de la création du dépôt avec ikiwiki-makerepo"
 #: ../IkiWiki/Setup/Automator.pm:115
 #, perl-format
 msgid "** Disabling plugin %s, since it is failing with this message:"
-msgstr "** Désactivation du greffon %s, l'installation a échoué avec le message suivant :"
+msgstr ""
+"** Désactivation du greffon %s, l'installation a échoué avec le message "
+"suivant :"
 
 #: ../IkiWiki/Wrapper.pm:16
 #, perl-format
