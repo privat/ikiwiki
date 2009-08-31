@@ -504,11 +504,11 @@ msgstr "altro"
 msgid "getctime not implemented"
 msgstr "getctime non implementata"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr "Accedi tramite"
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "Ottieni un OpenID"
 
