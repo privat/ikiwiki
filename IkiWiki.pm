@@ -344,7 +344,7 @@ sub getsetup () {
 			qr/\.x?html?$/, qr/\.ikiwiki-new$/,
 			qr/(^|\/).svn\//, qr/.arch-ids\//, qr/{arch}\//,
 			qr/(^|\/)_MTN\//, qr/(^|\/)_darcs\//,
-			qr/\.dpkg-tmp$/],
+			qr/(^|\/)CVS\//, qr/\.dpkg-tmp$/],
 		description => "regexps of source files to ignore",
 		safe => 0,
 		rebuild => 1,
@@ -364,7 +364,7 @@ sub getsetup () {
 	},
 	web_commit_regexp => {
 		type => "internal",
-		default => qr/^web commit (by (.*?(?=: |$))|from (\d+\.\d+\.\d+\.\d+)):?(.*)/,
+		default => qr/^web commit (by (.*?(?=: |$))|from ([0-9a-fA-F:.]+[0-9a-fA-F])):?(.*)/,
 		description => "regexp to parse web commits from logs",
 		safe => 0,
 		rebuild => 0,
