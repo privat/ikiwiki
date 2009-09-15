@@ -1,7 +1,7 @@
-#!/usr/pkg/bin/perl
+#!/usr/bin/perl
 package IkiWiki::Plugin::cvs;
 
-# Copyright (c) 2008 Amitai Schlair
+# Copyright (c) 2009 Amitai Schlair
 # All rights reserved.
 #
 # This code is derived from software contributed to ikiwiki
@@ -322,7 +322,7 @@ sub rcs_recentchanges($) {
 	eval q{use File::ReadBackwards};
 	error($@) if $@;
 
-	my (undef, $tmpfile) = tempfile(OPEN=>0);
+	my ($tmphandle, $tmpfile) = tempfile();
 	system("env TZ=UTC cvsps -q --cvs-direct -z 30 -x >$tmpfile");
 	if ($? == -1) {
 		error "couldn't run cvsps: $!\n";
