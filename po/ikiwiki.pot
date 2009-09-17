@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-11 06:01+0000\n"
+"POT-Creation-Date: 2009-09-15 20:08+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -843,6 +843,16 @@ msgstr ""
 #: ../IkiWiki/Plugin/rename.pm:571
 #, perl-format
 msgid "update for rename of %s to %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/rsync.pm:37
+#, perl-format
+msgid "failed to execute rsync_command: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/rsync.pm:40
+#, perl-format
+msgid "rsync_command exited %d"
 msgstr ""
 
 #: ../IkiWiki/Plugin/search.pm:182

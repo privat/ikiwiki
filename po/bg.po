@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki-bg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-08-30 15:25-0400\n"
+"POT-Creation-Date: 2009-09-15 20:08+0000\n"
 "PO-Revision-Date: 2007-01-12 01:19+0200\n"
 "Last-Translator: Damyan Ivanov <dam@modsodtsys.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "login failed, perhaps you need to turn on cookies?"
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:168 ../IkiWiki/CGI.pm:299
+#: ../IkiWiki/CGI.pm:168 ../IkiWiki/CGI.pm:313
 msgid "Your login session has expired."
 msgstr ""
 
@@ -51,11 +51,11 @@ msgstr ""
 msgid "Preferences saved."
 msgstr "Предпочитанията са запазени."
 
-#: ../IkiWiki/CGI.pm:262
+#: ../IkiWiki/CGI.pm:277
 msgid "You are banned."
 msgstr "Достъпът ви е забранен."
 
-#: ../IkiWiki/CGI.pm:390 ../IkiWiki/CGI.pm:391 ../IkiWiki.pm:1269
+#: ../IkiWiki/CGI.pm:404 ../IkiWiki/CGI.pm:405 ../IkiWiki.pm:1278
 msgid "Error"
 msgstr "Грешка"
 
@@ -137,7 +137,7 @@ msgstr "създаване на нова страницa „%s”"
 msgid "deleting bucket.."
 msgstr ""
 
-#: ../IkiWiki/Plugin/amazon_s3.pm:38 ../ikiwiki.in:210
+#: ../IkiWiki/Plugin/amazon_s3.pm:38 ../ikiwiki.in:206
 msgid "done"
 msgstr "готово"
 
@@ -348,18 +348,18 @@ msgstr "грешка при четене на „%s”: %s"
 msgid "%s is an attachment, not a page."
 msgstr ""
 
-#: ../IkiWiki/Plugin/git.pm:626 ../IkiWiki/Plugin/git.pm:644
-#: ../IkiWiki/Receive.pm:129
+#: ../IkiWiki/Plugin/git.pm:645 ../IkiWiki/Plugin/git.pm:663
+#: ../IkiWiki/Receive.pm:130
 #, perl-format
 msgid "you are not allowed to change %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/git.pm:666
+#: ../IkiWiki/Plugin/git.pm:685
 #, perl-format
 msgid "you cannot act on a file with mode %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/git.pm:670
+#: ../IkiWiki/Plugin/git.pm:689
 msgid "you are not allowed to change file modes"
 msgstr ""
 
@@ -875,6 +875,16 @@ msgstr ""
 msgid "update for rename of %s to %s"
 msgstr "обновяване на страниците от уики „%s”: %s от потребител „%s”"
 
+#: ../IkiWiki/Plugin/rsync.pm:37
+#, fuzzy, perl-format
+msgid "failed to execute rsync_command: %s"
+msgstr "грешка при запис на файла „%s”: %s"
+
+#: ../IkiWiki/Plugin/rsync.pm:40
+#, perl-format
+msgid "rsync_command exited %d"
+msgstr ""
+
 #: ../IkiWiki/Plugin/search.pm:182
 #, perl-format
 msgid "need Digest::SHA1 to index %s"
@@ -1026,12 +1036,12 @@ msgstr ""
 msgid "Error: %s exited nonzero (%s). Discarding setup changes."
 msgstr ""
 
-#: ../IkiWiki/Receive.pm:35
+#: ../IkiWiki/Receive.pm:34
 #, perl-format
 msgid "cannot determine id of untrusted committer %s"
 msgstr ""
 
-#: ../IkiWiki/Receive.pm:85
+#: ../IkiWiki/Receive.pm:86
 #, fuzzy, perl-format
 msgid "bad file name %s"
 msgstr "пропускане на невалидното име на файл „%s”"
@@ -1127,13 +1137,13 @@ msgid "wrapper filename not specified"
 msgstr "не е указан файл на обвивката"
 
 #. translators: The parameter is a C filename.
-#: ../IkiWiki/Wrapper.pm:152
+#: ../IkiWiki/Wrapper.pm:148
 #, perl-format
 msgid "failed to compile %s"
 msgstr "крешка при компилиране на файла %s"
 
 #. translators: The parameter is a filename.
-#: ../IkiWiki/Wrapper.pm:172
+#: ../IkiWiki/Wrapper.pm:168
 #, perl-format
 msgid "successfully generated %s"
 msgstr "успешно генериране на %s"
@@ -1154,43 +1164,43 @@ msgstr ""
 msgid "generating wrappers.."
 msgstr "генериране на обвивки..."
 
-#: ../ikiwiki.in:199
+#: ../ikiwiki.in:195
 msgid "rebuilding wiki.."
 msgstr "обновяване на уики..."
 
-#: ../ikiwiki.in:202
+#: ../ikiwiki.in:198
 msgid "refreshing wiki.."
 msgstr "осъвременяване на уики..."
 
-#: ../IkiWiki.pm:225
+#: ../IkiWiki.pm:233
 msgid "Discussion"
 msgstr "Дискусия"
 
-#: ../IkiWiki.pm:494
+#: ../IkiWiki.pm:502
 msgid "Must specify url to wiki with --url when using --cgi"
 msgstr ""
 "При използване на пареметъра „--cgi” е необходимо да се укаже и "
 "местоположението на уикито чрез параметъра „--url”"
 
-#: ../IkiWiki.pm:540
+#: ../IkiWiki.pm:548
 msgid "cannot use multiple rcs plugins"
 msgstr ""
 
-#: ../IkiWiki.pm:569
+#: ../IkiWiki.pm:577
 #, perl-format
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1251
+#: ../IkiWiki.pm:1260
 #, fuzzy, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "открита е циклична завидимост при %s на „%s” на дълбочина %i"
 
-#: ../IkiWiki.pm:1808
+#: ../IkiWiki.pm:1818
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:1932
+#: ../IkiWiki.pm:1942
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "грешка при четене на „%s”: %s"
