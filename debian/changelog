@@ -1,3 +1,12 @@
+ikiwiki (3.14159266) UNRELEASED; urgency=low
+
+  * parentlinks: Add has_parentlinks template parameter to allow styling
+    the toplevel index differently etc.
+  * img: Correct bug in image size calculation code.
+  * img: Fix dependency code for full size images.
+
+ -- Joey Hess <joeyh@debian.org>  Sun, 27 Sep 2009 17:40:03 -0400
+
 ikiwiki (3.14159265) unstable; urgency=low
 
   * Add complete French basewiki and underlays translation from the Debian
@@ -208,7 +217,7 @@ ikiwiki (3.11) unstable; urgency=low
     and throws an error if the pagespec is bad.
   * inline, brokenlinks, calendar, linkmap, map, orphans, pagecount,
     pagestate, postsparkline: Display a handy error message if the pagespec
-    is erroneous.
+    is erronious.
   * comments: Add link to comment post form to allow user to sign in
     if they wish to, if the configuration makes signin optional
     for commenting.
@@ -216,32 +225,6 @@ ikiwiki (3.11) unstable; urgency=low
   * translation.mdwn: Typo fixes. Closes: #525753
 
  -- Joey Hess <joeyh@debian.org>  Mon, 04 May 2009 15:45:10 -0400
-
-ikiwiki (3.10+nmu3) unstable; urgency=low
-
-  * Non-maintainer upload.
-  * Re-add those two bottombar plugins.
-  * Removed autocreatetagpage.patch.
-
- -- Simon Raven <simonraven@kisikew.org>  Sat, 18 Apr 2009 18:11:20 -0400
-
-ikiwiki (3.10+nmu2) unstable; urgency=low
-
-  * Non-maintainer upload.
-  * Removed the plugins that failed the tests
-    (bottombarleft.pm and bottombarright.pm)
-    (need to find out why...)
-  * Added autocreatetagpage.patch to tag.pm
-
- -- Simon Raven <simonraven@kisikew.org>  Sun, 12 Apr 2009 23:05:51 -0400
-
-ikiwiki (3.10+nmu1) unstable; urgency=low
-
-  * Non-maintainer upload.
-  * added bottombarleft.pm and bottombarright.pm so we can implement our theme
-    properly.
-
- -- Simon Raven <simonraven@kisikew.org>  Fri, 10 Apr 2009 13:01:45 -0400
 
 ikiwiki (3.10) unstable; urgency=low
 
