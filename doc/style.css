@@ -402,13 +402,6 @@ span.color {
 	padding: 3px;
 }
 
-#createform {
-	padding: 10px 10px;
-	border: 1px solid #aaa;
-	background: #eee;
-	color: black !important;
-}
-
 /* Used by the highlight plugin. */
 
 pre.hl { color:#000000; background-color:#ffffff; }
@@ -426,3 +419,10 @@ pre.hl { color:#000000; background-color:#ffffff; }
 .hl.kwb { color:#830000; }
 .hl.kwc { color:#000000; font-weight:bold; }
 .hl.kwd { color:#010181; }
+
+#createform {
+	padding: 10px 10px;
+	border: 1px solid #aaa;
+	background: #eee;
+	color: black !important;
+}
