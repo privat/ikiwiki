@@ -323,7 +323,7 @@ sub find_src_files () {
 				else {
 					# avoid underlaydir override
 					# attacks; see security.mdwn
-					if (! -l "$config{srcdir}/$f" &&
+					if (! -l "$config{srcdir}/$f" && 
 					    ! -e _) {
 						if (! $pages{$page}) {
 							push @files, $f;

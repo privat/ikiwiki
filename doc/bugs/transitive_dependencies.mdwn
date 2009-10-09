@@ -68,7 +68,7 @@ Downsides here:
 --[[Joey]] 
 
 > Some questions/comments...  I've thought about this a lot for [[todo/tracking_bugs_with_dependencies]].
->
+> 
 >  * When you say that anything that causes a rebuild of B is treated as a change of B, are you: i) Treating
 > any rebuild as a change, or ii) Treating any rebuild that gives a new result as a change?  Option ii) would
 > lead to fewer rebuilds.  Implementation is easy: when you're about to rebuild a page, load the old rendered html in.  Do the rebuild.  Compare
@@ -80,7 +80,7 @@ Downsides here:
 >> reading back in the html of every page before building actually is a
 >> win though. So far, I've focused on avoiding unnecessary rebuilds, and
 >> there is still some room for more dependency types doing so.
->> (Particularly for metadata dependencies..) --[[Joey]]
+>> (Particularly for metadata dependencies..) --[[Joey]] 
 
 >  * The second comment I have relates to cycles in transitive dependencies.  At the moment I don't think this is
 > possible, but with some additions it may well become so.  This could be problematic as it could lead to a)
@@ -91,4 +91,4 @@ Downsides here:
 > given run of ikiwiki.  Say, only allow a page to rebuild twice on any run, regardless of whether a page it depends on changes.
 > This is not a perfect solution, but would be a good approximation. -- [[Will]]
 
->> Ikiwiki only builds any given output file once per run, already. --[[Joey]]
+>> Ikiwiki only builds any given output file once per run, already. --[[Joey]] 

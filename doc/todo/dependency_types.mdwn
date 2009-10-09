@@ -173,7 +173,7 @@ just add all the pages that currently exist as traditional content dependencies.
 > As I note below, a problem with this approach is that it has to try
 > matching the pagespec against every page, redundantly with the work done
 > by the plugin. (But there are ways to avoid that redundant matching.)
-> --[[Joey]]
+> --[[Joey]] 
 
 Getting back to commenting on your proposal:
 
@@ -185,7 +185,7 @@ after `test_page`.  `new_page` will not match the spec.  Now we'll delete and th
 `new_page` will match the spec, and yet `new_page` itself hasn't changed.  Nor has its 'presence' - it was present
 before and it is present now.  Should this cause a re-build of any page that has a 'presence' dependency on the spec?
 
-> Yes, a presence dep will trigger when a page is added, or removed.
+> Yes, a presence dep will trigger when a page is added, or removed. 
 
 > Your example is valid.. but it's also not handled right by normal,
 > (content) dependencies, for the same reasons. Still, I think I've
@@ -230,14 +230,14 @@ sigh.
 
 > I have also been thinking about some sort of analysis pass over pagespecs
 > to determine what metadata, pages, etc they depend on. It is indeed
-> tricky to do. More thoughts on influence lists a bit below. --[[Joey]]
+> tricky to do. More thoughts on influence lists a bit below. --[[Joey]] 
 
 >> The big part of what makes this tricky is that there may be cycles in the
 >> dependency graph.  This can lead to situations where the result is just not
 >> well defined.  This is what I was trying to get at above. -- [[Will]]
 
 >>> Hmm, I'm not seeing cycles be a problem, at least with the current
->>> pagespec terms. --[[Joey]]
+>>> pagespec terms. --[[Joey]] 
 
 >>>> Oh, they're not with current pagespec terms.  But this is really close to extending to handle
 >>>> functional pagespecs, etc.  And I think I'd like to think about that now.
@@ -264,7 +264,7 @@ sigh.
 
 >>>>>> Yes - that's what I'm talking about - I'll add some comments there.  -- [[Will]]
 
-----
+---- 
 
 ### Link dependencies
 
@@ -348,7 +348,7 @@ can indirectly influence what pages a pagespec matches.
 > of pages are both considered changes.  This base mechanism will catch:
 >
 >  * The addition of any page to the matching set through its own modification/creation
->  * The removal of any page *that would still match while non-existant* from the matching set through its own removal.  (Note: The base mechanism cannot remove a page cannot from the matching set because of that page's own modification (not deletion).  If the page should be removed matching set, then it obviously cannot match the spec after the change.)
+>  * The removal of any page *that would still match while non-existant* from the matching set through its own removal.  (Note: The base mechanism cannot remove a page cannot from the matching set because of that page's own modification (not deletion).  If the page should be removed matching set, then it obviously cannot match the spec after the change.) 
 >  * The modification (not deletion) of any page that still matches after the modification.
 >
 > The base mechanism may therefore not catch:
@@ -360,7 +360,7 @@ can indirectly influence what pages a pagespec matches.
 >
 > --[[Will]]
 
->> I appreciate the formalism!
+>> I appreciate the formalism! 
 >>
 >> Only existing pages need to be in these sets, because if a page is added
 >> in the future, the existing dependency code will always test to see
@@ -383,7 +383,7 @@ can indirectly influence what pages a pagespec matches.
 >> The problem with your definition of direct influence set seems to be
 >> that it doesn't allow `link()` and `title()` to have as an indirect
 >> influence, the page that matches. But I'm quite sure we need those.
->>  --[[Joey]]
+>>  --[[Joey]] 
 
 >>> I see what you mean.  Does the revised definition capture this effectively?
 >>> The problem with this revised definition is that it still doesn't match your examples below.
@@ -449,7 +449,7 @@ can indirectly influence what pages a pagespec matches.
 
 >>> The regular dependency calculation code will check if every changed
 >>> page matches every dependency. So it will notice the link was added.
->>> --[[Joey]]
+>>> --[[Joey]] 
 
 #### Low-level Calculation
 
@@ -503,7 +503,7 @@ successful match, we get the right result.
 > `or` short-circuits too, but the implementation correctly uses `|`,
 > which I assume is what you meant. --[[smcv]]
 
->> Er, yeah. --[[Joey]]
+>> Er, yeah. --[[Joey]] 
 
 ----
 
@@ -553,7 +553,7 @@ SuccessReason(page, index) => right
 `SuccessReason(index)` => right
 
 "!bugs/* and link(patch)" =>
-`HardFailReason() | SuccessReason(bugs/foo)` =>
+`HardFailReason() | SuccessReason(bugs/foo)` =>  
 `HardFailReason()` => right
 
 #### High-level Calculation and Storage
@@ -605,7 +605,7 @@ it's calculated more smartly, and is added automatically.
 
 > I've implemented influence calculation in `add_depends`. As expected,
 > it means rather a lot more work, and makes some things much slower.
-> Optimisations next.. --[[Joey]]
+> Optimisations next.. --[[Joey]] 
 
 #### Influence types
 
