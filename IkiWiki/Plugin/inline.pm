@@ -195,41 +195,38 @@ sub preprocess_inline (@) {
 
 		@list = map { bestlink($params{page}, $_) }
 		        split ' ', $params{pagenames};
+
+		if (yesno($params{reverse})) {
+			@list=reverse(@list);
+		}
+
+		foreach my $p (@list) {
+			add_depends($params{page}, $p, deptype($quick ? "presence" : "content"));
+		}
 	}
 	else {
-		add_depends($params{page}, $params{pages});
+		my $num=0;
+		if ($params{show}) {
+			$num=$params{show};
+		}
+		if ($params{feedshow} && $num < $params{feedshow}) {
+			$num=$params{feedshow};
+		}
+		if ($params{skip}) {
+			$num+=$params{skip};
+		}
 
-		@list = pagespec_match_list(
-			[ grep { $_ ne $params{page} } keys %pagesources ],
-			$params{pages}, location => $params{page});
-
-		if (exists $params{sort} && $params{sort} eq 'title') {
-			@list=sort { pagetitle(basename($a)) cmp pagetitle(basename($b)) } @list;
-		}
-		elsif (exists $params{sort} && $params{sort} eq 'title_natural') {
-			eval q{use Sort::Naturally};
-			if ($@) {
-				error(gettext("Sort::Naturally needed for title_natural sort"));
-			}
-			@list=sort { Sort::Naturally::ncmp(pagetitle(basename($a)), pagetitle(basename($b))) } @list;
-		}
-		elsif (exists $params{sort} && $params{sort} eq 'mtime') {
-			@list=sort { $pagemtime{$b} <=> $pagemtime{$a} } @list;
-		}
-		elsif (! exists $params{sort} || $params{sort} eq 'age') {
-			@list=sort { $pagectime{$b} <=> $pagectime{$a} } @list;
-		}
-		else {
-			error sprintf(gettext("unknown sort type %s"), $params{sort});
-		}
-	}
-
-	if (yesno($params{reverse})) {
-		@list=reverse(@list);
+		@list = pagespec_match_list($params{page}, $params{pages},
+			deptype => deptype($quick ? "presence" : "content"),
+			filter => sub { $_[0] eq $params{page} },
+			sort => exists $params{sort} ? $params{sort} : "age",
+			reverse => yesno($params{reverse}),
+			num => $num,
+		);
 	}
 
 	if (exists $params{skip}) {
-		@list=@list[$params{skip} .. scalar @list - 1];
+		@list=@list[$params{skip} .. $#list];
 	}
 	
 	my @feedlist;
@@ -247,15 +244,12 @@ sub preprocess_inline (@) {
 		@list=@list[0..$params{show} - 1];
 	}
 
-	# Explicitly add all currently displayed pages as dependencies, so
-	# that if they are removed or otherwise changed, the inline will be
-	# sure to be updated.
-	foreach my $p ($#list >= $#feedlist ? @list : @feedlist) {
-		add_depends($params{page}, $p);
-	}
-	
 	if ($feeds && exists $params{feedpages}) {
-		@feedlist=pagespec_match_list(\@feedlist, $params{feedpages}, location => $params{page});
+		@feedlist = pagespec_match_list(
+			$params{page}, "($params{pages}) and ($params{feedpages})",
+			deptype => deptype($quick ? "presence" : "content"),
+			list => \@feedlist,
+		);
 	}
 
 	my ($feedbase, $feednum);
@@ -338,12 +332,13 @@ sub preprocess_inline (@) {
 			error sprintf(gettext("nonexistant template %s"), $params{template});
 		}
 		my $template=HTML::Template->new(@params) unless $raw;
+		my $needcontent=!($archive && $quick) && $template->query(name => 'content');
 	
 		foreach my $page (@list) {
 			my $file = $pagesources{$page};
 			my $type = pagetype($file);
 			if (! $raw || ($raw && ! defined $type)) {
-				unless ($archive && $quick) {
+				if ($needcontent) {
 					# Get the content before populating the
 					# template, since getting the content uses
 					# the same template if inlines are nested.

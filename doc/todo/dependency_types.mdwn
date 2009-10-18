@@ -280,6 +280,7 @@ sigh.
   that the page links to, which is just what link dependencies are
   triggered on.
 
+[[done]]
 ----
 
 ### the removal problem
@@ -348,7 +349,7 @@ can indirectly influence what pages a pagespec matches.
 > of pages are both considered changes.  This base mechanism will catch:
 >
 >  * The addition of any page to the matching set through its own modification/creation
->  * The removal of any page *that would still match while non-existant* from the matching set through its own removal.  (Note: The base mechanism cannot remove a page cannot from the matching set because of that page's own modification (not deletion).  If the page should be removed matching set, then it obviously cannot match the spec after the change.) 
+>  * The removal of any page *that would still match while non-existant* from the matching set through its own removal.  (Note: The base mechanism cannot remove a page from the matching set because of that page's own modification (not deletion).  If the page should be removed matching set, then it obviously cannot match the spec after the change.) 
 >  * The modification (not deletion) of any page that still matches after the modification.
 >
 > The base mechanism may therefore not catch:
@@ -397,8 +398,21 @@ can indirectly influence what pages a pagespec matches.
   The removal or (re)creation of foo changes what pages match it. Note that
   this is true even if the pagespec currently fails to match.
 
->>> This is an annoying example (hence well worth having :) ).  I think the indirect influence list must contain 'foo' and all currently matching pages.  `created_before(foo)` will not match
->>> a deleted page, and so the base mechanism would not cause a rebuild.  The removal problem strikes. -- [[Will]]
+>>> This is an annoying example (hence well worth having :) ).  I think the
+>>> indirect influence list must contain 'foo' and all currently matching
+>>> pages.  `created_before(foo)` will not match
+>>> a deleted page, and so the base mechanism would not cause a rebuild.  The
+>>> removal problem strikes. -- [[Will]]
+
+>>>> But `created_before` can in fact match a deleted page. Because the mtime
+>>>> of a deleted page is temporarily set to 0 while the base mechanism runs to
+>>>> find changes in deleted pages. (I verified this works by experiment,
+>>>> also that `created_after` is triggered by a deleted page.) --[[Joey]]
+
+>>>>> Oh, okie.  I looked at the source, saw the `if (exists $IkiWiki::pagectime{$testpage})` and assumed it would fail.
+>>>>> Of course, having it succeed doesn't cure all the issues -- just moves them.  With `created_before()` succeeding
+>>>>> for deleted files, this pagespec will be match any removal in the entire wiki with the base mechanism.  Whether this is
+>>>>> better or worse than the longer indirect influence list is an empirical question. -- [[Will]]
 
 * The pagespec "foo" has an empty influence list. This is because a
   modification/creation/removal of foo directly changes what the pagespec
@@ -539,73 +553,16 @@ operators. Currently, this turns into roughly:
 `FailReason() & SuccessReason(patch)`
 
 Let's say that the glob instead returns a HardFailReason, which when
-ANDed with another object, drops their influences. (But when ORed, combines
-them.) Fixes the above, but does it always work?
+ANDed with another object, blocks their influences. (But when ORed,
+combines them.)
 
-"(bugs/* or link(patch)) and backlink(index)" =>
-`( HardFailReason() | SuccessReason(page) ) & SuccessReason(index)`` =>
-`SuccessReason(page & SuccessReason(index)` =>
-SuccessReason(page, index) => right
+Question: Are all pagespec terms that return reason objects w/o any
+influence info, suitable to block influence in this way? 
 
-"(bugs/* and link(patch)) or backlink(index)" =>
-`( HardFailReason() & SuccessReason(page) ) | SuccessReason(index)`` =>
-`HardFailReason() | SuccessReason(index)` =>
-`SuccessReason(index)` => right
-
-"!bugs/* and link(patch)" =>
-`HardFailReason() | SuccessReason(bugs/foo)` =>  
-`HardFailReason()` => right
-
-#### High-level Calculation and Storage
-
-Naively calculating the full influence list for a pagespec requires trying
-to match it against every page in the wiki. I'd like to avoid doing such
-expensive matching redundantly.
-
-It may be possible, for some types of pagespecs, to just try matching a
-single, arbitrary page against it, and know the full influence list has
-been obtained. It seems to be that case that if a pagespec has any
-influences, matching any page will return at least one. So if none are
-returned, we can skip trying other pages.
-
-If the influence list does not include the page that was tried, we know
-that the pagespec does not things like `link()` and `title()`, that are
-influenced by the page's own content. So it *might* be safe to not try
-matching any more pages in this case too. I think it would work for all
-current pagespec terms. There might be a hypothetical term where this
-optimisation doesn't work. We could add a special case to ensure it can
-work: If a term declares it is unfluenced by "", then it means it is
-always influenced by the matching page.
-
-Anyway, this seems worth doing: Add a `pagespec_match_all`, which returns a
-list of all pages in the whole wiki that match the pagespec, and also adds
-the pagespec as a dependency, and while it's at it, calculates and stores
-the influence list.
-
-It could have an optional sort parameter, and limit parameter, to control
-how many items to return and the sort order. So when inline wants to
-display the 10 newest, only the influence lists for those ten are added.
-
-If `pagespec_match_depends` can be used by all plugins, then great,
-influences are automatically calculated, no extra work needs to be done.
-
-If not, and some plugins still need to use `pagespec_match_list` or
-`pagespec_match`, and `add_depends`, then I guess that `add_depends` can do
-a slightly more expensive influence calculation.
-
-Bonus: If `add_depends` is doing an influence calculation, then I can remove
-the nasty hack it currently uses to decide if a given pagespec is safe to use
-with an existence or links dependency.
-
-Where to store the influence list? Well, it appears that we can just add
-(content) dependencies for each item on the list, to the page's
-regular list of simple dependencies. So, the data stored ends up looking
-just like what is stored today by the explicit dependency hacks. Except,
-it's calculated more smartly, and is added automatically.
-
-> I've implemented influence calculation in `add_depends`. As expected,
-> it means rather a lot more work, and makes some things much slower.
-> Optimisations next.. --[[Joey]] 
+To be suitable to block, a term should never change from failing to match a
+page to successfully matching it, unless that page is directly changed in a
+way that influences are not needed for ikiwiki to notice. But, if a term
+did not meet these criteria, it would have an influence. QED.
 
 #### Influence types
 

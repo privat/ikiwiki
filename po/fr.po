@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.141\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-09-24 18:53-0400\n"
+"POT-Creation-Date: 2009-10-17 21:39+0000\n"
 "PO-Revision-Date: 2009-08-17 10:06+0200\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -57,7 +57,7 @@ msgstr "Les préférences ont été enregistrées."
 msgid "You are banned."
 msgstr "Vous avez été banni."
 
-#: ../IkiWiki/CGI.pm:404 ../IkiWiki/CGI.pm:405 ../IkiWiki.pm:1277
+#: ../IkiWiki/CGI.pm:404 ../IkiWiki/CGI.pm:405 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Erreur"
 
@@ -188,12 +188,12 @@ msgstr ""
 "Désolé, mais cela ressemble à un « spam » selon les critères de <a href="
 "\"http://blogspam.net/\">blogspam</a> : "
 
-#: ../IkiWiki/Plugin/brokenlinks.pm:42
+#: ../IkiWiki/Plugin/brokenlinks.pm:38
 #, perl-format
 msgid "%s from %s"
 msgstr "%s sur %s"
 
-#: ../IkiWiki/Plugin/brokenlinks.pm:50
+#: ../IkiWiki/Plugin/brokenlinks.pm:46
 msgid "There are no broken links!"
 msgstr "Aucun lien cassé !"
 
@@ -343,18 +343,18 @@ msgstr "Ce n'est pas une page."
 msgid "%s is an attachment, not a page."
 msgstr "%s est une pièce jointe, pas une page."
 
-#: ../IkiWiki/Plugin/git.pm:645 ../IkiWiki/Plugin/git.pm:663
+#: ../IkiWiki/Plugin/git.pm:651 ../IkiWiki/Plugin/git.pm:669
 #: ../IkiWiki/Receive.pm:130
 #, perl-format
 msgid "you are not allowed to change %s"
 msgstr "Vous n'êtes pas autorisé à modifier %s"
 
-#: ../IkiWiki/Plugin/git.pm:685
+#: ../IkiWiki/Plugin/git.pm:691
 #, perl-format
 msgid "you cannot act on a file with mode %s"
 msgstr "Vous ne pouvez pas modifier un fichier dont le mode est %s"
 
-#: ../IkiWiki/Plugin/git.pm:689
+#: ../IkiWiki/Plugin/git.pm:695
 msgid "you are not allowed to change file modes"
 msgstr "Vous n'êtes pas autorisé à modifier le mode des fichiers"
 
@@ -398,27 +398,26 @@ msgstr ""
 msgid "htmltidy failed to parse this html"
 msgstr "Aucun smiley n'a pu être analysé"
 
-#: ../IkiWiki/Plugin/img.pm:63
+#: ../IkiWiki/Plugin/img.pm:64
 msgid "Image::Magick is not installed"
 msgstr "Image::Magick n'est pas installé"
+
+#: ../IkiWiki/Plugin/img.pm:68 ../IkiWiki/Plugin/img.pm:112
+#, perl-format
+msgid "failed to read %s: %s"
+msgstr "Échec de la lecture de %s : %s"
 
 #: ../IkiWiki/Plugin/img.pm:74
 #, perl-format
 msgid "wrong size format \"%s\" (should be WxH)"
 msgstr "Format de la taille incorrect \"%s\", (devrait être LxH)"
 
-#: ../IkiWiki/Plugin/img.pm:85 ../IkiWiki/Plugin/img.pm:89
-#: ../IkiWiki/Plugin/img.pm:135
-#, perl-format
-msgid "failed to read %s: %s"
-msgstr "Échec de la lecture de %s : %s"
-
-#: ../IkiWiki/Plugin/img.pm:100
+#: ../IkiWiki/Plugin/img.pm:120
 #, perl-format
 msgid "failed to resize: %s"
 msgstr "Échec du redimensionnement : %s"
 
-#: ../IkiWiki/Plugin/img.pm:152
+#: ../IkiWiki/Plugin/img.pm:140
 #, perl-format
 msgid "failed to determine size of image %s"
 msgstr "Échec de la détermination de la taille de l'image : %s"
@@ -442,29 +441,20 @@ msgstr "Paramètre « pages » manquant"
 msgid "the %s and %s parameters cannot be used together"
 msgstr "Les paramètres %s et %s ne peuvent être utilisés ensemble."
 
-#: ../IkiWiki/Plugin/inline.pm:212
-msgid "Sort::Naturally needed for title_natural sort"
-msgstr "Sort::Naturally est nécessaire pour un tri « title_natural »"
-
-#: ../IkiWiki/Plugin/inline.pm:223
-#, perl-format
-msgid "unknown sort type %s"
-msgstr "Type de tri %s inconnu"
-
-#: ../IkiWiki/Plugin/inline.pm:318
+#: ../IkiWiki/Plugin/inline.pm:312
 msgid "Add a new post titled:"
 msgstr "Ajouter un nouvel article dont le titre est :"
 
-#: ../IkiWiki/Plugin/inline.pm:338
+#: ../IkiWiki/Plugin/inline.pm:332
 #, perl-format
 msgid "nonexistant template %s"
 msgstr "Le modèle de page %s n'existe pas"
 
-#: ../IkiWiki/Plugin/inline.pm:603
+#: ../IkiWiki/Plugin/inline.pm:598
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "RPC::XML::Client introuvable, pas de réponse au ping"
 
-#: ../IkiWiki/Plugin/linkmap.pm:106
+#: ../IkiWiki/Plugin/linkmap.pm:101
 msgid "failed to run dot"
 msgstr "Échec du lancement de dot"
 
@@ -496,11 +486,11 @@ msgstr "Page de redirection introuvable"
 msgid "redir cycle is not allowed"
 msgstr "Redirection cyclique non autorisée"
 
-#: ../IkiWiki/Plugin/mirrorlist.pm:42
+#: ../IkiWiki/Plugin/mirrorlist.pm:43
 msgid "Mirrors"
 msgstr "Miroirs"
 
-#: ../IkiWiki/Plugin/mirrorlist.pm:42
+#: ../IkiWiki/Plugin/mirrorlist.pm:43
 msgid "Mirror"
 msgstr "Miroir"
 
@@ -520,7 +510,7 @@ msgstr "S'identifier en tant que"
 msgid "Get an OpenID"
 msgstr "Obtenir un compte OpenID"
 
-#: ../IkiWiki/Plugin/orphans.pm:45
+#: ../IkiWiki/Plugin/orphans.pm:55
 msgid "All pages have other pages linking to them."
 msgstr "Toutes les pages sont liées à d'autres pages."
 
@@ -616,7 +606,7 @@ msgstr ""
 "Reconstruction de toutes les pages pour corriger les titres (greffon "
 "« meta »)."
 
-#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:428
+#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:638
 #, perl-format
 msgid "building %s"
 msgstr "construction de %s"
@@ -711,11 +701,11 @@ msgstr "polygen n'est pas installé"
 msgid "command failed"
 msgstr "Échec de la commande"
 
-#: ../IkiWiki/Plugin/postsparkline.pm:41
+#: ../IkiWiki/Plugin/postsparkline.pm:46
 msgid "missing formula"
 msgstr "formule manquante"
 
-#: ../IkiWiki/Plugin/postsparkline.pm:48
+#: ../IkiWiki/Plugin/postsparkline.pm:53
 msgid "unknown formula"
 msgstr "formule inconnue"
 
@@ -788,7 +778,7 @@ msgstr "%A, à midi"
 msgid "illegal percent value %s"
 msgstr "pourcentage %s illégal"
 
-#: ../IkiWiki/Plugin/progress.pm:59
+#: ../IkiWiki/Plugin/progress.pm:55
 msgid "need either `percent` or `totalpages` and `donepages` parameters"
 msgstr ""
 "L'un des paramètres « percent », « totalpages » ou « donepages » est nécessaire."
@@ -1042,7 +1032,12 @@ msgstr ""
 msgid "bad file name %s"
 msgstr "Nom de fichier incorrect %s"
 
-#: ../IkiWiki/Render.pm:266
+#: ../IkiWiki/Render.pm:150
+#, perl-format
+msgid "scanning %s"
+msgstr "Examen de %s"
+
+#: ../IkiWiki/Render.pm:271
 #, perl-format
 msgid ""
 "symlink found in srcdir path (%s) -- set allow_symlinks_before_srcdir to "
@@ -1051,47 +1046,42 @@ msgstr ""
 "Lien symbolique trouvé dans l'adresse de srcdir (%s) -- pour l'autoriser, "
 "activez le paramètre « allow_symlinks_before_srcdir »."
 
-#: ../IkiWiki/Render.pm:289 ../IkiWiki/Render.pm:314
+#: ../IkiWiki/Render.pm:300 ../IkiWiki/Render.pm:327
 #, perl-format
 msgid "skipping bad filename %s"
 msgstr "Omission du fichier au nom incorrect %s"
 
-#: ../IkiWiki/Render.pm:296
+#: ../IkiWiki/Render.pm:305
 #, perl-format
 msgid "%s has multiple possible source pages"
 msgstr "%s peut être associé à plusieurs pages source."
 
-#: ../IkiWiki/Render.pm:382
+#: ../IkiWiki/Render.pm:395
 #, perl-format
 msgid "removing old page %s"
 msgstr "Suppression de l'ancienne page %s"
 
-#: ../IkiWiki/Render.pm:423
-#, perl-format
-msgid "scanning %s"
-msgstr "Examen de %s"
-
-#: ../IkiWiki/Render.pm:450
+#: ../IkiWiki/Render.pm:471
 #, perl-format
 msgid "building %s, which links to %s"
 msgstr "Reconstruction de %s, qui est lié à %s"
 
-#: ../IkiWiki/Render.pm:497
-#, perl-format
-msgid "building %s, which depends on %s"
-msgstr "Reconstruction de %s, qui dépend de %s"
-
-#: ../IkiWiki/Render.pm:533
-#, perl-format
-msgid "building %s, to update its backlinks"
-msgstr "Reconstruction de %s, afin de mettre à jour ses rétroliens"
-
-#: ../IkiWiki/Render.pm:545
+#: ../IkiWiki/Render.pm:480
 #, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "Suppression de %s, qui n'est plus rendu par %s"
 
-#: ../IkiWiki/Render.pm:569
+#: ../IkiWiki/Render.pm:603
+#, perl-format
+msgid "building %s, which depends on %s"
+msgstr "Reconstruction de %s, qui dépend de %s"
+
+#: ../IkiWiki/Render.pm:616
+#, perl-format
+msgid "building %s, to update its backlinks"
+msgstr "Reconstruction de %s, afin de mettre à jour ses rétroliens"
+
+#: ../IkiWiki/Render.pm:679
 #, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki : impossible de reconstruire %s"
@@ -1175,34 +1165,43 @@ msgstr "Reconstruction du wiki..."
 msgid "refreshing wiki.."
 msgstr "Rafraîchissement du wiki..."
 
-#: ../IkiWiki.pm:233
+#: ../IkiWiki.pm:238
 msgid "Discussion"
 msgstr "Discussion"
 
-#: ../IkiWiki.pm:502
+#: ../IkiWiki.pm:507
 msgid "Must specify url to wiki with --url when using --cgi"
 msgstr ""
 "Vous devez indiquer l'URL du wiki par --url lors de l'utilisation de --cgi"
 
-#: ../IkiWiki.pm:548
+#: ../IkiWiki.pm:553
 msgid "cannot use multiple rcs plugins"
 msgstr "Impossible d'utiliser plusieurs systèmes de contrôle des versions"
 
-#: ../IkiWiki.pm:577
+#: ../IkiWiki.pm:582
 #, perl-format
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr "Impossible de charger le greffon externe nécessaire au greffon %s : %s"
 
-#: ../IkiWiki.pm:1259
+#: ../IkiWiki.pm:1264
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Une boucle de prétraitement a été détectée sur %s à hauteur de %i"
 
-#: ../IkiWiki.pm:1817
+#: ../IkiWiki.pm:1863
 msgid "yes"
 msgstr "oui"
 
-#: ../IkiWiki.pm:1941
+#: ../IkiWiki.pm:2006
+msgid "Sort::Naturally needed for title_natural sort"
+msgstr "Sort::Naturally est nécessaire pour un tri « title_natural »"
+
+#: ../IkiWiki.pm:2017
+#, perl-format
+msgid "unknown sort type %s"
+msgstr "Type de tri %s inconnu"
+
+#: ../IkiWiki.pm:2036
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "Impossible de trouver les pages %s"
