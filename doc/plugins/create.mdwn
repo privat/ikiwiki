@@ -1,0 +1,13 @@
+[[template id=plugin name=create included=1 author="[[JamesWestby]]"]]
+
+This is a [[PreProcessorDirective]] that adds a form to create a page.
+Simply add 
+
+	\[[!create]]
+
+to a page, and it will be replaced by a form.
+
+If the plugin is turned on you will see one below.
+
+[[!create]]
+
