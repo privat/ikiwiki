@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 1.51\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-17 21:39+0000\n"
+"POT-Creation-Date: 2009-10-17 20:47-0400\n"
 "PO-Revision-Date: 2007-04-27 22:05+0200\n"
 "Last-Translator: Pawel Tecza <ptecza@net.icm.edu.pl>\n"
 "Language-Team: Debian L10n Polish <debian-l10n-polish@lists.debian.org>\n"
@@ -616,72 +616,72 @@ msgstr ""
 msgid "building %s"
 msgstr "edycja %s"
 
-#: ../IkiWiki/Plugin/po.pm:426
+#: ../IkiWiki/Plugin/po.pm:428
 msgid "updated PO files"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:450
+#: ../IkiWiki/Plugin/po.pm:452
 msgid ""
 "Can not remove a translation. If the master page is removed, however, its "
 "translations will be removed as well."
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:470
+#: ../IkiWiki/Plugin/po.pm:472
 msgid ""
 "Can not rename a translation. If the master page is renamed, however, its "
 "translations will be renamed as well."
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:869
+#: ../IkiWiki/Plugin/po.pm:871
 #, perl-format
 msgid "POT file (%s) does not exist"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:883
+#: ../IkiWiki/Plugin/po.pm:885
 #, fuzzy, perl-format
 msgid "failed to copy underlay PO file to %s"
 msgstr "awaria w trakcie kompilowania %s"
 
-#: ../IkiWiki/Plugin/po.pm:892
+#: ../IkiWiki/Plugin/po.pm:894
 #, fuzzy, perl-format
 msgid "failed to update %s"
 msgstr "awaria w trakcie kompilowania %s"
 
-#: ../IkiWiki/Plugin/po.pm:898
+#: ../IkiWiki/Plugin/po.pm:900
 #, fuzzy, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "awaria w trakcie kompilowania %s"
 
-#: ../IkiWiki/Plugin/po.pm:934
+#: ../IkiWiki/Plugin/po.pm:936
 msgid "N/A"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:947
+#: ../IkiWiki/Plugin/po.pm:949
 #, fuzzy, perl-format
 msgid "failed to translate %s"
 msgstr "awaria w trakcie zmiany rozmiaru: %s"
 
-#: ../IkiWiki/Plugin/po.pm:1031
+#: ../IkiWiki/Plugin/po.pm:1033
 msgid "removed obsolete PO files"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:1094 ../IkiWiki/Plugin/po.pm:1108
-#: ../IkiWiki/Plugin/po.pm:1148
+#: ../IkiWiki/Plugin/po.pm:1096 ../IkiWiki/Plugin/po.pm:1110
+#: ../IkiWiki/Plugin/po.pm:1150
 #, fuzzy, perl-format
 msgid "failed to write %s"
 msgstr "awaria w trakcie zapisu %s: %s"
 
-#: ../IkiWiki/Plugin/po.pm:1106
+#: ../IkiWiki/Plugin/po.pm:1108
 #, fuzzy
 msgid "failed to translate"
 msgstr "awaria w trakcie uruchamiania dot"
 
-#: ../IkiWiki/Plugin/po.pm:1111
+#: ../IkiWiki/Plugin/po.pm:1113
 #, fuzzy, perl-format
 msgid "failed to read %s"
 msgstr "awaria w trakcie odczytu %s: %s"
 
-#: ../IkiWiki/Plugin/po.pm:1160
+#: ../IkiWiki/Plugin/po.pm:1162
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 

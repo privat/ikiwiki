@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.141\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-17 21:39+0000\n"
+"POT-Creation-Date: 2009-10-17 20:47-0400\n"
 "PO-Revision-Date: 2009-08-17 10:06+0200\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -611,11 +611,11 @@ msgstr ""
 msgid "building %s"
 msgstr "construction de %s"
 
-#: ../IkiWiki/Plugin/po.pm:426
+#: ../IkiWiki/Plugin/po.pm:428
 msgid "updated PO files"
 msgstr "Fichiers PO mis à jour."
 
-#: ../IkiWiki/Plugin/po.pm:450
+#: ../IkiWiki/Plugin/po.pm:452
 msgid ""
 "Can not remove a translation. If the master page is removed, however, its "
 "translations will be removed as well."
@@ -623,7 +623,7 @@ msgstr ""
 "Impossible de supprimer cette traduction. Si la page maître est supprimée, "
 "alors ses traductions seront supprimées."
 
-#: ../IkiWiki/Plugin/po.pm:470
+#: ../IkiWiki/Plugin/po.pm:472
 msgid ""
 "Can not rename a translation. If the master page is renamed, however, its "
 "translations will be renamed as well."
@@ -631,55 +631,55 @@ msgstr ""
 "Impossible de renommer cette traduction. Si la page maître est renommée, "
 "alors ses traductions pourront être renommées."
 
-#: ../IkiWiki/Plugin/po.pm:869
+#: ../IkiWiki/Plugin/po.pm:871
 #, perl-format
 msgid "POT file (%s) does not exist"
 msgstr "Le fichier POT %s n'existe pas."
 
-#: ../IkiWiki/Plugin/po.pm:883
+#: ../IkiWiki/Plugin/po.pm:885
 #, perl-format
 msgid "failed to copy underlay PO file to %s"
 msgstr "Impossible de copier le fichier PO underlay dans %s"
 
-#: ../IkiWiki/Plugin/po.pm:892
+#: ../IkiWiki/Plugin/po.pm:894
 #, perl-format
 msgid "failed to update %s"
 msgstr "Impossible de mettre à jour %s"
 
-#: ../IkiWiki/Plugin/po.pm:898
+#: ../IkiWiki/Plugin/po.pm:900
 #, perl-format
 msgid "failed to copy the POT file to %s"
 msgstr "Impossible de copier le fichier POT dans %s"
 
-#: ../IkiWiki/Plugin/po.pm:934
+#: ../IkiWiki/Plugin/po.pm:936
 msgid "N/A"
 msgstr "N/A"
 
-#: ../IkiWiki/Plugin/po.pm:947
+#: ../IkiWiki/Plugin/po.pm:949
 #, perl-format
 msgid "failed to translate %s"
 msgstr "Impossible de traduire %s"
 
-#: ../IkiWiki/Plugin/po.pm:1031
+#: ../IkiWiki/Plugin/po.pm:1033
 msgid "removed obsolete PO files"
 msgstr "Fichiers PO obsolètes supprimés."
 
-#: ../IkiWiki/Plugin/po.pm:1094 ../IkiWiki/Plugin/po.pm:1108
-#: ../IkiWiki/Plugin/po.pm:1148
+#: ../IkiWiki/Plugin/po.pm:1096 ../IkiWiki/Plugin/po.pm:1110
+#: ../IkiWiki/Plugin/po.pm:1150
 #, perl-format
 msgid "failed to write %s"
 msgstr "Impossible de modifier %s"
 
-#: ../IkiWiki/Plugin/po.pm:1106
+#: ../IkiWiki/Plugin/po.pm:1108
 msgid "failed to translate"
 msgstr "Impossible de traduire"
 
-#: ../IkiWiki/Plugin/po.pm:1111
+#: ../IkiWiki/Plugin/po.pm:1113
 #, perl-format
 msgid "failed to read %s"
 msgstr "Impossible de lire %s"
 
-#: ../IkiWiki/Plugin/po.pm:1160
+#: ../IkiWiki/Plugin/po.pm:1162
 msgid "invalid gettext data, go back to previous page to continue edit"
 msgstr ""
 "Données gettext incorrectes, retour à la page précédente pour la poursuite "

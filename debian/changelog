@@ -1,4 +1,4 @@
-ikiwiki (3.20091017+nmu2) UNRELEASED; urgency=low
+ikiwiki (3.20091017+nmu2) unstable; urgency=low
 
   * Non-maintainer upload.
   * re-add missing create plugin,
@@ -6,13 +6,13 @@ ikiwiki (3.20091017+nmu2) UNRELEASED; urgency=low
 
  -- Simon Raven <simonraven@kisikew.org>  Sun, 18 Oct 2009 03:37:24 +0000
 
-ikiwiki (3.20091017+nmu1) UNRELEASED; urgency=low
+ikiwiki (3.20091017+nmu1) unstable; urgency=low
 
   * Non-maintainer upload.
 
  -- Simon Raven <simonraven@kisikew.org>  Sun, 18 Oct 2009 02:16:57 +0000
 
-ikiwiki (3.20091017) UNRELEASED; urgency=low
+ikiwiki (3.20091017) unstable; urgency=low
 
   * Added support framework for multiple types of dependencies, including
     dependncies that are only affected by page precence or link changes.
@@ -54,7 +54,7 @@ ikiwiki (3.20091017) UNRELEASED; urgency=low
   * inline: Optimize generation of archives, etc by not getting inlined page
     content if the template does not use it.
 
- -- Joey Hess <joeyh@debian.org>  Fri, 09 Oct 2009 19:53:50 -0400
+ -- Joey Hess <joeyh@debian.org>  Sat, 17 Oct 2009 15:37:04 -0400
 
 ikiwiki (3.20091009) unstable; urgency=low
 
