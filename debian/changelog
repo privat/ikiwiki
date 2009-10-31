@@ -1,3 +1,10 @@
+ikiwiki (3.20091024+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * local build, as usual
+
+ -- Simon Raven <simonraven@kisikew.org>  Sat, 31 Oct 2009 19:37:49 +0000
+
 ikiwiki (3.20091024) UNRELEASED; urgency=low
 
   * po: Fix breakage caused by changes to render code.
