@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.141\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 19:46+0000\n"
+"POT-Creation-Date: 2009-10-31 18:31-0400\n"
 "PO-Revision-Date: 2009-08-17 10:06+0200\n"
 "Last-Translator: Philippe Batailler <philippe.batailler@free.fr>\n"
 "Language-Team: French <debian-l10n-french@lists.debian.org>\n"
@@ -57,7 +57,7 @@ msgstr "Les préférences ont été enregistrées."
 msgid "You are banned."
 msgstr "Vous avez été banni."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1283
+#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Erreur"
 
@@ -503,11 +503,11 @@ msgstr "lire la suite"
 msgid "getctime not implemented"
 msgstr "getctime n'est pas implémenté"
 
-#: ../IkiWiki/Plugin/openid.pm:62
+#: ../IkiWiki/Plugin/openid.pm:61
 msgid "Log in with"
 msgstr "S'identifier en tant que"
 
-#: ../IkiWiki/Plugin/openid.pm:65
+#: ../IkiWiki/Plugin/openid.pm:64
 msgid "Get an OpenID"
 msgstr "Obtenir un compte OpenID"
 
@@ -1184,25 +1184,25 @@ msgstr "Impossible d'utiliser plusieurs systèmes de contrôle des versions"
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr "Impossible de charger le greffon externe nécessaire au greffon %s : %s"
 
-#: ../IkiWiki.pm:1265
+#: ../IkiWiki.pm:1264
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "Une boucle de prétraitement a été détectée sur %s à hauteur de %i"
 
-#: ../IkiWiki.pm:1864
+#: ../IkiWiki.pm:1863
 msgid "yes"
 msgstr "oui"
 
-#: ../IkiWiki.pm:2007
+#: ../IkiWiki.pm:2006
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr "Sort::Naturally est nécessaire pour un tri « title_natural »"
 
-#: ../IkiWiki.pm:2018
+#: ../IkiWiki.pm:2017
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "Type de tri %s inconnu"
 
-#: ../IkiWiki.pm:2037
+#: ../IkiWiki.pm:2036
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "Impossible de trouver les pages %s"

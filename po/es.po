@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: es\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 19:46+0000\n"
+"POT-Creation-Date: 2009-10-31 18:31-0400\n"
 "PO-Revision-Date: 2009-06-14 12:32+0200\n"
 "Last-Translator: Victor Moral <victor@taquiones.net>\n"
 "Language-Team:  <en@li.org>\n"
@@ -60,7 +60,7 @@ msgstr "Las preferencias se han guardado."
 msgid "You are banned."
 msgstr "Ha sido expulsado."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1283
+#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Error"
 
@@ -512,11 +512,11 @@ msgstr "ver más"
 msgid "getctime not implemented"
 msgstr "la funcionalidad getctime no está incluida"
 
-#: ../IkiWiki/Plugin/openid.pm:62
+#: ../IkiWiki/Plugin/openid.pm:61
 msgid "Log in with"
 msgstr "Identificarse mediante "
 
-#: ../IkiWiki/Plugin/openid.pm:65
+#: ../IkiWiki/Plugin/openid.pm:64
 msgid "Get an OpenID"
 msgstr "Consiga un identificador OpenID"
 
@@ -1185,29 +1185,29 @@ msgstr "no puedo emplear varios complementos rcs"
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr "no he podido cargar el complemento externo %s necesario para %s"
 
-#: ../IkiWiki.pm:1265
+#: ../IkiWiki.pm:1264
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 "se ha detectado en la página %s un bucle de preprocesado en la iteración "
 "número %i"
 
-#: ../IkiWiki.pm:1864
+#: ../IkiWiki.pm:1863
 msgid "yes"
 msgstr "si"
 
-#: ../IkiWiki.pm:2007
+#: ../IkiWiki.pm:2006
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 "Se necesita el módulo Sort::Naturally para el tipo de ordenación "
 "title_natural"
 
-#: ../IkiWiki.pm:2018
+#: ../IkiWiki.pm:2017
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "no conozco este tipo de ordenación %s"
 
-#: ../IkiWiki.pm:2037
+#: ../IkiWiki.pm:2036
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr "no encuentro páginas coincidentes: %s"

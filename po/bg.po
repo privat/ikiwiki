@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki-bg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 19:46+0000\n"
+"POT-Creation-Date: 2009-10-31 18:31-0400\n"
 "PO-Revision-Date: 2007-01-12 01:19+0200\n"
 "Last-Translator: Damyan Ivanov <dam@modsodtsys.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -55,7 +55,7 @@ msgstr "Предпочитанията са запазени."
 msgid "You are banned."
 msgstr "Достъпът ви е забранен."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1283
+#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Грешка"
 
@@ -514,11 +514,11 @@ msgstr ""
 msgid "getctime not implemented"
 msgstr "функцията „getctime” не е реализирана"
 
-#: ../IkiWiki/Plugin/openid.pm:62
+#: ../IkiWiki/Plugin/openid.pm:61
 msgid "Log in with"
 msgstr ""
 
-#: ../IkiWiki/Plugin/openid.pm:65
+#: ../IkiWiki/Plugin/openid.pm:64
 msgid "Get an OpenID"
 msgstr "Получаване на OpenID номер"
 
@@ -1181,25 +1181,25 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1265
+#: ../IkiWiki.pm:1264
 #, fuzzy, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "открита е циклична завидимост при %s на „%s” на дълбочина %i"
 
-#: ../IkiWiki.pm:1864
+#: ../IkiWiki.pm:1863
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:2007
+#: ../IkiWiki.pm:2006
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki.pm:2018
+#: ../IkiWiki.pm:2017
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "непознат вид сортиране „%s”"
 
-#: ../IkiWiki.pm:2037
+#: ../IkiWiki.pm:2036
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "грешка при четене на „%s”: %s"

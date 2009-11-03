@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 19:46+0000\n"
+"POT-Creation-Date: 2009-10-31 18:31-0400\n"
 "PO-Revision-Date: 2007-01-13 15:31+1030\n"
 "Last-Translator: Clytie Siddall <clytie@riverland.net.au>\n"
 "Language-Team: Vietnamese <vi-VN@googlegroups.com>\n"
@@ -55,7 +55,7 @@ msgstr "Tùy thích đã được lưu."
 msgid "You are banned."
 msgstr "Bạn bị cấm ra."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1283
+#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Lỗi"
 
@@ -511,11 +511,11 @@ msgstr ""
 msgid "getctime not implemented"
 msgstr "chưa thực hiện getctime"
 
-#: ../IkiWiki/Plugin/openid.pm:62
+#: ../IkiWiki/Plugin/openid.pm:61
 msgid "Log in with"
 msgstr ""
 
-#: ../IkiWiki/Plugin/openid.pm:65
+#: ../IkiWiki/Plugin/openid.pm:64
 msgid "Get an OpenID"
 msgstr "Lấy OpenID"
 
@@ -1175,25 +1175,25 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1265
+#: ../IkiWiki.pm:1264
 #, fuzzy, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr "vòng lặp tiền xử lý %s được phát hiện trên %s ở độ sâu %i"
 
-#: ../IkiWiki.pm:1864
+#: ../IkiWiki.pm:1863
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:2007
+#: ../IkiWiki.pm:2006
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki.pm:2018
+#: ../IkiWiki.pm:2017
 #, perl-format
 msgid "unknown sort type %s"
 msgstr "kiểu sắp xếp không rõ %s"
 
-#: ../IkiWiki.pm:2037
+#: ../IkiWiki.pm:2036
 #, fuzzy, perl-format
 msgid "cannot match pages: %s"
 msgstr "không thể đọc %s: %s"
