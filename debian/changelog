@@ -1,4 +1,11 @@
-ikiwiki (3.20091032) UNRELEASED; urgency=low
+ikiwiki (3.20091032+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * hmm, maybe a fix for the missing top directories?
+
+ -- Simon Raven <simonraven@kisikew.org>  Mon, 09 Nov 2009 04:08:33 +0000
+
+ikiwiki (3.20091032) unstable; urgency=low
 
   * underlay: Fix example values put in setup file to be array
     references.
