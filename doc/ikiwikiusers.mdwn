@@ -47,6 +47,7 @@ Projects & Organizations
 * [MIT Student Information Processing Board](http://sipb.mit.edu/)
 * [Tinc VPN](http://tinc-vpn.org/)
 * [The XCB library](http://xcb.freedesktop.org/)
+* [The Philolexian Society of Columbia University](http://www.columbia.edu/cu/philo/)
 
 Personal sites and blogs
 ========================
