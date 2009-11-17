@@ -159,7 +159,7 @@ sub preprocess_inline (@) {
 	my $rss=(($config{rss} || $config{allowrss}) && exists $params{rss}) ? yesno($params{rss}) : $config{rss};
 	my $atom=(($config{atom} || $config{allowatom}) && exists $params{atom}) ? yesno($params{atom}) : $config{atom};
 	my $quick=exists $params{quick} ? yesno($params{quick}) : 0;
-	my $feeds=exists $params{feeds} ? yesno($params{feeds}) : !$quick;
+	my $feeds=! $nested && (exists $params{feeds} ? yesno($params{feeds}) : !$quick);
 	my $emptyfeeds=exists $params{emptyfeeds} ? yesno($params{emptyfeeds}) : 1;
 	my $feedonly=yesno($params{feedonly});
 	if (! exists $params{show} && ! $archive) {
@@ -212,7 +212,7 @@ sub preprocess_inline (@) {
 		if ($params{feedshow} && $num < $params{feedshow}) {
 			$num=$params{feedshow};
 		}
-		if ($params{skip}) {
+		if ($params{skip} && $num) {
 			$num+=$params{skip};
 		}
 
@@ -221,7 +221,7 @@ sub preprocess_inline (@) {
 			filter => sub { $_[0] eq $params{page} },
 			sort => exists $params{sort} ? $params{sort} : "age",
 			reverse => yesno($params{reverse}),
-			num => $num,
+			($num ? (num => $num) : ()),
 		);
 	}
 
@@ -337,7 +337,7 @@ sub preprocess_inline (@) {
 		foreach my $page (@list) {
 			my $file = $pagesources{$page};
 			my $type = pagetype($file);
-			if (! $raw || ($raw && ! defined $type)) {
+			if (! $raw) {
 				if ($needcontent) {
 					# Get the content before populating the
 					# template, since getting the content uses
@@ -390,6 +390,10 @@ sub preprocess_inline (@) {
 					      preprocess($page, $params{destpage},
 					      filter($page, $params{destpage},
 					      readfile(srcfile($file)))));
+				}
+				else {
+					$ret.="\n".
+					      readfile(srcfile($file));
 				}
 			}
 		}

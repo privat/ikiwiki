@@ -88,7 +88,7 @@ sub preprocess (@) {
 	# Metadata collection that needs to happen during the scan pass.
 	if ($key eq 'title') {
 		$pagestate{$page}{meta}{title}=HTML::Entities::encode_numeric($value);
-		# fallthrough
+		return "";
 	}
 	elsif ($key eq 'description') {
 		$pagestate{$page}{meta}{description}=HTML::Entities::encode_numeric($value);
@@ -239,6 +239,10 @@ sub preprocess (@) {
 		push @{$metaheaders{$page}}, '<meta name="robots"'.
 			' content="'.encode_entities($value).'" />';
 	}
+	elsif ($key eq 'description') {
+		push @{$metaheaders{$page}}, '<meta name="'.encode_entities($key).
+			'" content="'.encode_entities($value).'" />';
+	}
 	else {
 		push @{$metaheaders{$page}}, scrub('<meta name="'.encode_entities($key).
 			'" content="'.encode_entities($value).'" />', $destpage);
@@ -263,7 +267,7 @@ sub pagetemplate (@) {
 		$template->param(title_overridden => 1);
 	}
 
-	foreach my $field (qw{author authorurl permalink}) {
+	foreach my $field (qw{author authorurl description permalink}) {
 		$template->param($field => $pagestate{$page}{meta}{$field})
 			if exists $pagestate{$page}{meta}{$field} && $template->query(name => $field);
 	}

@@ -5,6 +5,7 @@ sysadmins.
 
 * my edits should appear either as 'Jon' (if I've used
   [[tips/untrusted_git_push]]); 'jmtd.net', 'jmtd.livejournal.com', 
+  'jmtd' if I've forgotten to set my local git config properly,
   or once upon a time 'alcopop.org/me/openid/' or 'jondowland'.
 * My [homepage](http://jmtd.net/) is powered by ikiwiki
 
@@ -28,6 +29,7 @@ I am mostly interested in ikiwiki usability issues:
  * [[bugs/the login page is unclear when multiple methods exist]]
  * [[bugs/backlinks onhover thing can go weird]]
  * [[todo/CSS classes for links]]
+ * [[todo/adjust commit message for rename, remove]]
 
 The following I have been looking at, but are on the back-burner:
 
@@ -38,3 +40,14 @@ The following I have been looking at, but are on the back-burner:
 * a system for [[forum/managing_todo_lists]] (see also
   [[todo/interactive todo lists]] and <http://dev.jmtd.net/outliner/> for the
   current WIP).
+* a `tag2` plugin, which does the same thing as [[plugins/tag]], but
+  does not sit on top of [[ikiwiki/wikilink]]s, so does not result in
+  bugs such as [[bugs/tagged() matching wikilinks]]. Code for this lives
+  in my github `tag2` branch: <http://github.com/jmtd/ikiwiki>
+
+Finally, the following are merely half-formed thoughts:
+
+ * adding and removing tags to pages via the edit form by ticking and
+   unticking checkboxes next to a tag name (rather than entering the 
+   directive into the text of the page directly)
+ * perhaps the same for meta
