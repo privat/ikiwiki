@@ -1,3 +1,10 @@
+ikiwiki (3.20091114+nmu1) UNRELEASED; urgency=low
+
+  * Non-maintainer upload.
+  * build date: 16/11/2009
+
+ -- Simon Raven <simonraven@kisikew.org>  Tue, 17 Nov 2009 00:58:58 +0000
+
 ikiwiki (3.20091114) UNRELEASED; urgency=low
 
   * meta: Generate meta description tags even when the html scrubber is
