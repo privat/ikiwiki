@@ -1,3 +1,27 @@
+ikiwiki (3.20091114+nmu3) unstable; urgency=low
+
+  * Non-maintainer upload.
+
+  [ Simon Raven ]
+  * build date 2009/11/25
+
+  [ Joey Hess ]
+  * add page listing some alternatives to ikiwiki
+  * inline: Use caching of inlined pages to speed up builds of inlines
+    that include feeds.
+  * Added (incomplete) Turkish po file. Closes: #556744 Thanks, Recai
+    Oktaş
+  * date: New plugin that allows inserting date directives that expand
+    to pretty-printed dates, using the same formatting as used for page
+    modification date display, etc.
+  * remove info about how to manually add relativedates
+
+  [ Jon Dowland ]
+  * escape something being interpreted as a directive
+  * shuffle commit symbol around
+
+ -- Simon Raven <simonraven@kisikew.org>  Wed, 25 Nov 2009 04:05:12 -0500
+
 ikiwiki (3.20091114+nmu2) unstable; urgency=low
 
   * Non-maintainer upload.
