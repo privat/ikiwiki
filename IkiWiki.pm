@@ -1066,7 +1066,7 @@ sub htmllink ($$$;@) {
 				        page => $link,
 					from => $lpage
 				).
-				"\" rel=\"nofollow\">&nbsp;?${linktext}&nbsp;</a></span>"
+				"\" rel=\"nofollow\">&nbsp;?<span>${linktext}</span>&nbsp;</a></span>"
 		}
 	}
 	

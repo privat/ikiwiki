@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-13 20:53-0500\n"
+"POT-Creation-Date: 2009-11-25 09:44+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "You are banned."
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
+#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1283
 msgid "Error"
 msgstr ""
 
@@ -436,7 +436,7 @@ msgstr ""
 msgid "nonexistant template %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:602
+#: ../IkiWiki/Plugin/inline.pm:621
 msgid "RPC::XML::Client not found, not pinging"
 msgstr ""
 
@@ -490,11 +490,11 @@ msgstr ""
 msgid "getctime not implemented"
 msgstr ""
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr ""
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr ""
 
@@ -1139,25 +1139,25 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1264
+#: ../IkiWiki.pm:1265
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 
-#: ../IkiWiki.pm:1863
+#: ../IkiWiki.pm:1864
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:2006
+#: ../IkiWiki.pm:2007
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki.pm:2017
+#: ../IkiWiki.pm:2018
 #, perl-format
 msgid "unknown sort type %s"
 msgstr ""
 
-#: ../IkiWiki.pm:2036
+#: ../IkiWiki.pm:2037
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr ""
