@@ -136,7 +136,7 @@ sub format_month (@) {
 		$purl = htmllink($params{page}, $params{destpage}, 
 			"$archivebase/$pyear/$pmonth",
 			noimageinline => 1,
-			linktext => "\&larr");
+			linktext => '\&#8592;');
 	}
 	add_depends($params{page}, "$archivebase/$pyear/$pmonth",
 		deptype("presence"));
@@ -144,7 +144,7 @@ sub format_month (@) {
 		$nurl = htmllink($params{page}, $params{destpage}, 
 			"$archivebase/$nyear/$nmonth",
 			noimageinline => 1,
-			linktext => "\&rarr");
+			linktext => '&#8594;');
 	}
 	add_depends($params{page}, "$archivebase/$nyear/$nmonth",
 		deptype("presence"));
@@ -184,7 +184,7 @@ EOF
 	# we start with a week_start_day, and skip until we get to the first
 	for ($wday=$week_start_day; $wday != $monthstart[6]; $wday++, $wday %= 7) {
 		$calendar.=qq{\t<tr>\n} if $wday == $week_start_day;
-		$calendar.=qq{\t\t<td class="month-calendar-day-noday $downame{$wday}">&nbsp;</td>\n};
+		$calendar.=qq{\t\t<td class="month-calendar-day-noday $downame{$wday}">&#160;</td>\n};
 	}
 
 	# At this point, either the first is a week_start_day, in which case
@@ -230,7 +230,7 @@ EOF
 
 	# finish off the week
 	for (; $wday != $week_start_day; $wday++, $wday %= 7) {
-		$calendar.=qq{\t\t<td class="month-calendar-day-noday $downame{$wday}">&nbsp;</td>\n};
+		$calendar.=qq{\t\t<td class="month-calendar-day-noday $downame{$wday}">&#160;</td>\n};
 	}
 	$calendar.=<<EOF;
 	</tr>
@@ -283,14 +283,14 @@ sub format_year (@) {
 		$purl = htmllink($params{page}, $params{destpage}, 
 			"$archivebase/$pyear",
 			noimageinline => 1,
-			linktext => "\&larr;");
+			linktext => '&#8592;');
 	}
 	add_depends($params{page}, "$archivebase/$pyear", deptype("presence"));
 	if (exists $pagesources{"$archivebase/$nyear"}) {
 		$nurl = htmllink($params{page}, $params{destpage}, 
 			"$archivebase/$nyear",
 			noimageinline => 1,
-			linktext => "\&rarr;");
+			linktext => &#8594;');
 	}
 	add_depends($params{page}, "$archivebase/$nyear", deptype("presence"));
 
