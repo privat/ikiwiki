@@ -136,7 +136,7 @@ sub format_month (@) {
 		$purl = htmllink($params{page}, $params{destpage}, 
 			"$archivebase/$pyear/$pmonth",
 			noimageinline => 1,
-			linktext => '\&#8592;');
+			linktext => '&#8592;');
 	}
 	add_depends($params{page}, "$archivebase/$pyear/$pmonth",
 		deptype("presence"));
@@ -290,7 +290,7 @@ sub format_year (@) {
 		$nurl = htmllink($params{page}, $params{destpage}, 
 			"$archivebase/$nyear",
 			noimageinline => 1,
-			linktext => &#8594;');
+			linktext => '&#8594;');
 	}
 	add_depends($params{page}, "$archivebase/$nyear", deptype("presence"));
 
