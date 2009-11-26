@@ -1,3 +1,11 @@
+ikiwiki (3.20091114+nmu5) UNRELEASED; urgency=low
+
+  [ Simon Kjikàqawej Côté ]
+  * release
+  * really fix up IkiWiki.pm (and now calendar.pm) to be XML-friendly
+
+ -- Simon Raven <simonraven@kisikew.org>  Thu, 26 Nov 2009 18:50:59 +0000
+
 ikiwiki (3.20091114+nmu4) unstable; urgency=low
 
   * fix up IkiWiki.pm createlink thingy so that we don't confuse W3C
