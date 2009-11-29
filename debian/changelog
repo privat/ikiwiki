@@ -1,3 +1,11 @@
+ikiwiki (3.20091114+nmu8) unstable; urgency=low
+
+  [ Simon Kjikàqawej ]
+  * [d11164] changelog commit
+  * [9283ce] urg, forgotten </span> making xml parsing puke in browsers
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Sun, 29 Nov 2009 05:48:42 +0000
+
 ikiwiki (3.20091114+nmu7) unstable; urgency=low
 
   * Non-maintainer upload
