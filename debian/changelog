@@ -1,3 +1,21 @@
+ikiwiki (3.20091114+nmu9) unstable; urgency=low
+
+  * Non-maintainer upload
+
+  [ Joey Hess ]
+  * [09dbba] fix hook names
+  * [f0d1c3] google's openid support announced today does work
+  * [d334e0] remove videntity, site not in english now, and does not
+    appear in openid directory
+  * [268a2d] htmllink: allow a title attribute to be specified
+  * [2255a6] calendar: Add title attributes for all links in the
+    calendars.
+
+  [ Simon Kjikàqawej ]
+  * latest pull, 2009/11/29
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Sun, 29 Nov 2009 07:44:55 +0000
+
 ikiwiki (3.20091114+nmu8) unstable; urgency=low
 
   [ Simon Kjikàqawej ]
@@ -16,7 +34,7 @@ ikiwiki (3.20091114+nmu7) unstable; urgency=low
 
 ikiwiki (3.20091114+nmu6) unstable; urgency=low
 
-  [ Simon Kjikàqawej]
+  [ Simon Kjikàqawej ]
   * release
   * really fix up IkiWiki.pm (and now calendar.pm) to be XML-friendly
 
