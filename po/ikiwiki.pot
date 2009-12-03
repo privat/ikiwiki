@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-11-29 05:56+0000\n"
+"POT-Creation-Date: 2009-11-29 07:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "You are banned."
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1283
+#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr ""
 
@@ -1139,25 +1139,25 @@ msgstr ""
 msgid "failed to load external plugin needed for %s plugin: %s"
 msgstr ""
 
-#: ../IkiWiki.pm:1265
+#: ../IkiWiki.pm:1264
 #, perl-format
 msgid "preprocessing loop detected on %s at depth %i"
 msgstr ""
 
-#: ../IkiWiki.pm:1864
+#: ../IkiWiki.pm:1863
 msgid "yes"
 msgstr ""
 
-#: ../IkiWiki.pm:2007
+#: ../IkiWiki.pm:2006
 msgid "Sort::Naturally needed for title_natural sort"
 msgstr ""
 
-#: ../IkiWiki.pm:2018
+#: ../IkiWiki.pm:2017
 #, perl-format
 msgid "unknown sort type %s"
 msgstr ""
 
-#: ../IkiWiki.pm:2037
+#: ../IkiWiki.pm:2036
 #, perl-format
 msgid "cannot match pages: %s"
 msgstr ""
