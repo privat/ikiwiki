@@ -1,3 +1,11 @@
+ikiwiki (3.20091203+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Release it locally, has some minor frontend changes I want,
+    and we haven't had a build in a while, too.
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Sun, 13 Dec 2009 18:09:54 +0000
+
 ikiwiki (3.20091203) UNRELEASED; urgency=low
 
   * cvs: Add missing bit to Automator.
