@@ -3,6 +3,9 @@ ikiwiki (3.20091203) UNRELEASED; urgency=low
   * cvs: Add missing bit to Automator.
   * Add complete Spanish basewiki translation done by Fernando Gonzalez de
     Requena.
+  * Improve javascript onload handling.
+  * monotone: Deal with format change in version 0.45.
+    (Thanks, Richard Levitte)
 
  -- Joey Hess <joeyh@debian.org>  Wed, 02 Dec 2009 17:22:21 -0500
 
@@ -121,7 +124,7 @@ ikiwiki (3.20091113) unstable; urgency=low
   * httpauth: Add cgiauthurl setting that can be used to do http basic auth
     only when ikiwiki needs authentication, rather than for any access to 
     the cgi/wiki.
-  * inline: Do not generated feeds for nested inlines.
+  * inline: Do not generate feeds for nested inlines.
   * inline: Allow direct inclusion of non-page files in raw mode.
   * inline: Fix display of all pages when archive=yes or show=0 are used.
 
