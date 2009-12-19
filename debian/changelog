@@ -1,21 +1,16 @@
-ikiwiki (3.20091203+nmu2) unstable; urgency=low
+ikiwiki (3.20091218) unstable; urgency=low
 
-  [ Joey Hess ]
-  * [b4bc7d] rename: Fix some utf-8 problems.
-  * [bb1ce7] attachment: Fix several utf-8 problems.
-  * [cdbdf1] attachment: Fix reversion in attachment sorting by age.
-  * [4ee754] remove: Fix problem removing pages with utf-8 in the name.
-  * [40078b] 404: fix utf-8 encoding of REDIRECT_URL
-  * [2bceb1] 404/goto: Fix 404 display of utf-8 pages.
-  * [c0e938] fix typo
-  * [f9190f] reorg
-  * [183206] declutter
+  * Add complete Spanish basewiki translation done by Fernando Gonzalez de
+    Requena.
+  * Improve javascript onload handling.
+  * monotone: Deal with format change in version 0.45.
+    (Thanks, Richard Levitte)
+  * cvs: Add missing bit to Automator.
+  * attachment: Fix reversion in attachment sorting by age.
+  * Fix utf-8 problems in rename, remove, attachment, 404, sourcepage, and
+    goto.
 
-  [ Simon Kjikàqawej ]
-  * [57d137] add in the newest mediawiki.pm from the github repo, with
-    sligh mods (typos, etc.)
-
- -- Simon Kjikàqawej <simon.raven@gmail.com>  Fri, 18 Dec 2009 00:50:43 +0000
+ -- Joey Hess <joeyh@debian.org>  Fri, 18 Dec 2009 20:47:24 -0500
 
 ikiwiki (3.20091203+nmu1) unstable; urgency=low
 
