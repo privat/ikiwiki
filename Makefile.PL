@@ -131,7 +131,7 @@ extra_install: underlay_install
 
 WriteMakefile(
 	NAME		=> 'IkiWiki',
-	PREFIX		=> "/usr/local",
+	PREFIX		=> "/usr",
 	PM_FILTER	=> './pm_filter $(PREFIX) $(VER) $(PROBABLE_INST_LIB)',
 	MAN1PODS	=> {},
 	PREREQ_PM	=> {
