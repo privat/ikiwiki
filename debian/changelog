@@ -1,3 +1,11 @@
+ikiwiki (3.20091218+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * rebuild locally with our usual stuff
+  * add in te new mediawiki.pm from github
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Sat, 19 Dec 2009 19:26:32 +0000
+
 ikiwiki (3.20091218) unstable; urgency=low
 
   * Add complete Spanish basewiki translation done by Fernando Gonzalez de
