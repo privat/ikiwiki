@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki-bg\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 18:31-0400\n"
+"POT-Creation-Date: 2009-12-20 05:24+0000\n"
 "PO-Revision-Date: 2007-01-12 01:19+0200\n"
 "Last-Translator: Damyan Ivanov <dam@modsodtsys.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -30,7 +30,7 @@ msgstr ""
 msgid "login failed, perhaps you need to turn on cookies?"
 msgstr ""
 
-#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:314
+#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:318
 msgid "Your login session has expired."
 msgstr ""
 
@@ -51,11 +51,11 @@ msgstr ""
 msgid "Preferences saved."
 msgstr "Предпочитанията са запазени."
 
-#: ../IkiWiki/CGI.pm:278
+#: ../IkiWiki/CGI.pm:282
 msgid "You are banned."
 msgstr "Достъпът ви е забранен."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
+#: ../IkiWiki/CGI.pm:409 ../IkiWiki/CGI.pm:410 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Грешка"
 
@@ -160,6 +160,58 @@ msgstr "Грешка при изпращане на поща"
 #, fuzzy
 msgid "Failed to delete file from S3: "
 msgstr "грешка при запис на файла „%s”: %s"
+
+#: ../IkiWiki/Plugin/attach.pm:28
+msgid "Can't create attachment directory: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:31
+msgid "Invalid MIME strategy specified"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:43
+msgid "Uploads are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:46
+msgid "You must specify a file to attach"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:49
+#, fuzzy
+msgid "Invalid page"
+msgstr "грешка при четене на „%s”: %s"
+
+#: ../IkiWiki/Plugin/attach.pm:58
+msgid "Uploads to this page are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:73
+#, fuzzy
+msgid "Upload failed: "
+msgstr "грешшка в приставката „fortune”"
+
+#: ../IkiWiki/Plugin/attach.pm:89
+#, fuzzy
+msgid "Failed to create target directory"
+msgstr "Грешка при изпращане на поща"
+
+#: ../IkiWiki/Plugin/attach.pm:108
+#, perl-format
+msgid "Attachment conflicted: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:131 ../IkiWiki/Plugin/attach.pm:136
+msgid "Forbidden MIME type"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:145
+msgid "The attachment is too big."
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:152
+msgid "Banned IP address"
+msgstr ""
 
 #: ../IkiWiki/Plugin/attachment.pm:49
 #, perl-format
@@ -328,22 +380,22 @@ msgstr ""
 msgid "fortune failed"
 msgstr "грешшка в приставката „fortune”"
 
-#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+#: ../IkiWiki/Plugin/getsource.pm:63 ../IkiWiki/Plugin/goto.pm:56
 #, fuzzy
 msgid "missing page"
 msgstr "липсващ параметър „id” на шаблона"
 
-#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#: ../IkiWiki/Plugin/getsource.pm:65 ../IkiWiki/Plugin/goto.pm:58
 #, perl-format
 msgid "The page %s does not exist."
 msgstr ""
 
-#: ../IkiWiki/Plugin/getsource.pm:73
+#: ../IkiWiki/Plugin/getsource.pm:74
 #, fuzzy
 msgid "not a page"
 msgstr "грешка при четене на „%s”: %s"
 
-#: ../IkiWiki/Plugin/getsource.pm:75
+#: ../IkiWiki/Plugin/getsource.pm:76
 #, perl-format
 msgid "%s is an attachment, not a page."
 msgstr ""
@@ -453,7 +505,7 @@ msgstr ""
 msgid "nonexistant template %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/inline.pm:598
+#: ../IkiWiki/Plugin/inline.pm:621
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "модулът „RPC::XML::Client” не е намерен; източникът не е проверен"
 
@@ -514,11 +566,11 @@ msgstr ""
 msgid "getctime not implemented"
 msgstr "функцията „getctime” не е реализирана"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr ""
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "Получаване на OpenID номер"
 
@@ -608,7 +660,7 @@ msgstr ""
 msgid "rebuilding all pages to fix meta titles"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:638
+#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:652
 #, fuzzy, perl-format
 msgid "building %s"
 msgstr "промяна на %s"
@@ -847,20 +899,20 @@ msgstr "обновяване на страницата „%s”"
 msgid "Also rename SubPages and attachments"
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:247
+#: ../IkiWiki/Plugin/rename.pm:248
 msgid "Only one attachment can be renamed at a time."
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:250
+#: ../IkiWiki/Plugin/rename.pm:251
 msgid "Please select the attachment to rename."
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:347
+#: ../IkiWiki/Plugin/rename.pm:348
 #, perl-format
 msgid "rename %s to %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:571
+#: ../IkiWiki/Plugin/rename.pm:572
 #, fuzzy, perl-format
 msgid "update for rename of %s to %s"
 msgstr "обновяване на страниците от уики „%s”: %s от потребител „%s”"
@@ -1058,32 +1110,32 @@ msgstr "пропускане на невалидното име на файл �
 msgid "%s has multiple possible source pages"
 msgstr ""
 
-#: ../IkiWiki/Render.pm:395
+#: ../IkiWiki/Render.pm:410
 #, perl-format
 msgid "removing old page %s"
 msgstr "премахване на старата страница „%s”"
 
-#: ../IkiWiki/Render.pm:471
+#: ../IkiWiki/Render.pm:483
 #, fuzzy, perl-format
 msgid "building %s, which links to %s"
 msgstr "обновяване на страницата „%s”, съдържаща препратки към „%s”"
 
-#: ../IkiWiki/Render.pm:480
+#: ../IkiWiki/Render.pm:492
 #, fuzzy, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "премахване на „%s” понеже не се генерира от „%s”"
 
-#: ../IkiWiki/Render.pm:603
+#: ../IkiWiki/Render.pm:615
 #, fuzzy, perl-format
 msgid "building %s, which depends on %s"
 msgstr "обновяване на страницата „%s”, зависеща от „%s”"
 
-#: ../IkiWiki/Render.pm:616
+#: ../IkiWiki/Render.pm:628
 #, fuzzy, perl-format
 msgid "building %s, to update its backlinks"
 msgstr "обновяване на „%s” и осъвременяване на обратните връзки"
 
-#: ../IkiWiki/Render.pm:679
+#: ../IkiWiki/Render.pm:693
 #, fuzzy, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki: неуспех при обновяване на страницата „%s”"
@@ -1099,16 +1151,16 @@ msgstr "грешка при четене на „%s”: %s"
 msgid "you must enter a wikiname (that contains alphanumerics)"
 msgstr ""
 
-#: ../IkiWiki/Setup/Automator.pm:76
+#: ../IkiWiki/Setup/Automator.pm:79
 #, perl-format
 msgid "unsupported revision control system %s"
 msgstr ""
 
-#: ../IkiWiki/Setup/Automator.pm:102
+#: ../IkiWiki/Setup/Automator.pm:105
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr ""
 
-#: ../IkiWiki/Setup/Automator.pm:120
+#: ../IkiWiki/Setup/Automator.pm:123
 #, perl-format
 msgid "** Disabling plugin %s, since it is failing with this message:"
 msgstr ""

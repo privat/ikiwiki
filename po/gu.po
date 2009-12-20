@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki-gu\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 18:31-0400\n"
+"POT-Creation-Date: 2009-12-20 05:24+0000\n"
 "PO-Revision-Date: 2007-01-11 16:05+0530\n"
 "Last-Translator: Kartik Mistry <kartik.mistry@gmail.com>\n"
 "Language-Team: Gujarati <team@utkarsh.org>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "login failed, perhaps you need to turn on cookies?"
 msgstr "પ્રવેશ નિષ્ફળ, કદાચ તમારી કુકીઓ સક્રિય બનાવવી પડશે?"
 
-#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:314
+#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:318
 msgid "Your login session has expired."
 msgstr ""
 
@@ -50,11 +50,11 @@ msgstr ""
 msgid "Preferences saved."
 msgstr "પ્રાથમિકતાઓ સંગ્રહાઇ."
 
-#: ../IkiWiki/CGI.pm:278
+#: ../IkiWiki/CGI.pm:282
 msgid "You are banned."
 msgstr "તમારા પર પ્રતિબંધ છે."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
+#: ../IkiWiki/CGI.pm:409 ../IkiWiki/CGI.pm:410 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "ક્ષતિ"
 
@@ -158,6 +158,58 @@ msgstr "મેઇલ મોકલવામાં નિષ્ફળ"
 #, fuzzy
 msgid "Failed to delete file from S3: "
 msgstr "માપ બદલવામાં નિષ્ફળ: %s"
+
+#: ../IkiWiki/Plugin/attach.pm:28
+msgid "Can't create attachment directory: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:31
+msgid "Invalid MIME strategy specified"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:43
+msgid "Uploads are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:46
+msgid "You must specify a file to attach"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:49
+#, fuzzy
+msgid "Invalid page"
+msgstr "વાંચી શકાતી નથી %s: %s"
+
+#: ../IkiWiki/Plugin/attach.pm:58
+msgid "Uploads to this page are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:73
+#, fuzzy
+msgid "Upload failed: "
+msgstr "ભવિષ્ય નિષ્ફળ"
+
+#: ../IkiWiki/Plugin/attach.pm:89
+#, fuzzy
+msgid "Failed to create target directory"
+msgstr "મેઇલ મોકલવામાં નિષ્ફળ"
+
+#: ../IkiWiki/Plugin/attach.pm:108
+#, perl-format
+msgid "Attachment conflicted: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:131 ../IkiWiki/Plugin/attach.pm:136
+msgid "Forbidden MIME type"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:145
+msgid "The attachment is too big."
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:152
+msgid "Banned IP address"
+msgstr ""
 
 #: ../IkiWiki/Plugin/attachment.pm:49
 #, perl-format
@@ -326,22 +378,22 @@ msgstr ""
 msgid "fortune failed"
 msgstr "ભવિષ્ય નિષ્ફળ"
 
-#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+#: ../IkiWiki/Plugin/getsource.pm:63 ../IkiWiki/Plugin/goto.pm:56
 #, fuzzy
 msgid "missing page"
 msgstr "ખોવાયેલ કિંમતો"
 
-#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#: ../IkiWiki/Plugin/getsource.pm:65 ../IkiWiki/Plugin/goto.pm:58
 #, perl-format
 msgid "The page %s does not exist."
 msgstr ""
 
-#: ../IkiWiki/Plugin/getsource.pm:73
+#: ../IkiWiki/Plugin/getsource.pm:74
 #, fuzzy
 msgid "not a page"
 msgstr "વાંચી શકાતી નથી %s: %s"
 
-#: ../IkiWiki/Plugin/getsource.pm:75
+#: ../IkiWiki/Plugin/getsource.pm:76
 #, fuzzy, perl-format
 msgid "%s is an attachment, not a page."
 msgstr "%s એ સુધારી શકાય તેવું પાનું નથી"
@@ -448,7 +500,7 @@ msgstr "આ શિર્ષકથી નવું પોસ્ટ ઉમેર�
 msgid "nonexistant template %s"
 msgstr "અસ્તિત્વમાં ન હોય તેવું ટેમ્પલેટ %s"
 
-#: ../IkiWiki/Plugin/inline.pm:598
+#: ../IkiWiki/Plugin/inline.pm:621
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "RPC::XML::Client મળ્યું નહી, પિંગ કરવામાં આવતું નથી"
 
@@ -504,11 +556,11 @@ msgstr "વધુ"
 msgid "getctime not implemented"
 msgstr "getctime અમલમાં મૂકાયેલ નથી"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr ""
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "ઓપનઆઇડી મેળવો"
 
@@ -598,7 +650,7 @@ msgstr ""
 msgid "rebuilding all pages to fix meta titles"
 msgstr ""
 
-#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:638
+#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:652
 #, fuzzy, perl-format
 msgid "building %s"
 msgstr "%s સુધારે છે"
@@ -837,20 +889,20 @@ msgstr "રેન્ડર કરે છે %s"
 msgid "Also rename SubPages and attachments"
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:247
+#: ../IkiWiki/Plugin/rename.pm:248
 msgid "Only one attachment can be renamed at a time."
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:250
+#: ../IkiWiki/Plugin/rename.pm:251
 msgid "Please select the attachment to rename."
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:347
+#: ../IkiWiki/Plugin/rename.pm:348
 #, perl-format
 msgid "rename %s to %s"
 msgstr ""
 
-#: ../IkiWiki/Plugin/rename.pm:571
+#: ../IkiWiki/Plugin/rename.pm:572
 #, fuzzy, perl-format
 msgid "update for rename of %s to %s"
 msgstr "%s નો સુધારો %s નાં %s વડે"
@@ -1044,32 +1096,32 @@ msgstr "ખરાબ ફાઇલ નામ છોડી દે છે %s"
 msgid "%s has multiple possible source pages"
 msgstr ""
 
-#: ../IkiWiki/Render.pm:395
+#: ../IkiWiki/Render.pm:410
 #, perl-format
 msgid "removing old page %s"
 msgstr "જુનાં પાનાં દૂર કરે છે %s"
 
-#: ../IkiWiki/Render.pm:471
+#: ../IkiWiki/Render.pm:483
 #, fuzzy, perl-format
 msgid "building %s, which links to %s"
 msgstr "રેન્ડર કરે છે %s, જે %s સાથે જોડાણ ધરાવે છે"
 
-#: ../IkiWiki/Render.pm:480
+#: ../IkiWiki/Render.pm:492
 #, fuzzy, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "દૂર કરે છે %s, હવે %s વડે રેન્ડર કરાતું નથી"
 
-#: ../IkiWiki/Render.pm:603
+#: ../IkiWiki/Render.pm:615
 #, fuzzy, perl-format
 msgid "building %s, which depends on %s"
 msgstr "રેન્ડર કરે છે %s, જે %s પર આધારિત છે"
 
-#: ../IkiWiki/Render.pm:616
+#: ../IkiWiki/Render.pm:628
 #, fuzzy, perl-format
 msgid "building %s, to update its backlinks"
 msgstr "રેન્ડર કરે છે %s, તેનાં પાછળનાં જોડાણો સુધારવા માટે"
 
-#: ../IkiWiki/Render.pm:679
+#: ../IkiWiki/Render.pm:693
 #, fuzzy, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki: %s રેન્ડર કરી શકાતું નથી"
@@ -1085,16 +1137,16 @@ msgstr "વાંચી શકાતી નથી %s: %s"
 msgid "you must enter a wikiname (that contains alphanumerics)"
 msgstr ""
 
-#: ../IkiWiki/Setup/Automator.pm:76
+#: ../IkiWiki/Setup/Automator.pm:79
 #, perl-format
 msgid "unsupported revision control system %s"
 msgstr ""
 
-#: ../IkiWiki/Setup/Automator.pm:102
+#: ../IkiWiki/Setup/Automator.pm:105
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr ""
 
-#: ../IkiWiki/Setup/Automator.pm:120
+#: ../IkiWiki/Setup/Automator.pm:123
 #, perl-format
 msgid "** Disabling plugin %s, since it is failing with this message:"
 msgstr ""

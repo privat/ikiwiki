@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ikiwiki 3.14159\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 18:31-0400\n"
+"POT-Creation-Date: 2009-12-20 05:24+0000\n"
 "PO-Revision-Date: 2009-07-23 01:07+0200\n"
 "Last-Translator: Jonas Smedegaard <dr@jones.dk>\n"
 "Language-Team: None\n"
@@ -35,7 +35,7 @@ msgstr ""
 msgid "login failed, perhaps you need to turn on cookies?"
 msgstr "Pålogning mislykkedes, måske skal du tillade infokager (cookies)?"
 
-#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:314
+#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:318
 msgid "Your login session has expired."
 msgstr "Din kørsel (login session) er udløbet"
 
@@ -55,11 +55,11 @@ msgstr "Admin"
 msgid "Preferences saved."
 msgstr "Indstillinger gemt"
 
-#: ../IkiWiki/CGI.pm:278
+#: ../IkiWiki/CGI.pm:282
 msgid "You are banned."
 msgstr "Du er banlyst."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
+#: ../IkiWiki/CGI.pm:409 ../IkiWiki/CGI.pm:410 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Fejl"
 
@@ -163,6 +163,59 @@ msgstr "Arkivering af fil i S3 mislykkedes: "
 #, fuzzy
 msgid "Failed to delete file from S3: "
 msgstr "Sletning af fil fra S3 mislykkedes: "
+
+#: ../IkiWiki/Plugin/attach.pm:28
+msgid "Can't create attachment directory: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:31
+msgid "Invalid MIME strategy specified"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:43
+msgid "Uploads are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:46
+#, fuzzy
+msgid "You must specify a file to attach"
+msgstr "skal angive format og tekst"
+
+#: ../IkiWiki/Plugin/attach.pm:49
+#, fuzzy
+msgid "Invalid page"
+msgstr "kan ikke få sider til at passe sammen: %s"
+
+#: ../IkiWiki/Plugin/attach.pm:58
+msgid "Uploads to this page are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:73
+#, fuzzy
+msgid "Upload failed: "
+msgstr "kommando fejlede"
+
+#: ../IkiWiki/Plugin/attach.pm:89
+#, fuzzy
+msgid "Failed to create target directory"
+msgstr "Oprettelse af bundt i S3 mislykkedes: "
+
+#: ../IkiWiki/Plugin/attach.pm:108
+#, perl-format
+msgid "Attachment conflicted: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:131 ../IkiWiki/Plugin/attach.pm:136
+msgid "Forbidden MIME type"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:145
+msgid "The attachment is too big."
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:152
+msgid "Banned IP address"
+msgstr ""
 
 #: ../IkiWiki/Plugin/attachment.pm:49
 #, perl-format
@@ -330,21 +383,21 @@ msgstr "skal angive format og tekst"
 msgid "fortune failed"
 msgstr "spådom (fortune) fejlede"
 
-#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+#: ../IkiWiki/Plugin/getsource.pm:63 ../IkiWiki/Plugin/goto.pm:56
 msgid "missing page"
 msgstr "manglende side"
 
-#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#: ../IkiWiki/Plugin/getsource.pm:65 ../IkiWiki/Plugin/goto.pm:58
 #, perl-format
 msgid "The page %s does not exist."
 msgstr "Siden %s eksisterer ikke."
 
-#: ../IkiWiki/Plugin/getsource.pm:73
+#: ../IkiWiki/Plugin/getsource.pm:74
 #, fuzzy
 msgid "not a page"
 msgstr "kan ikke få sider til at passe sammen: %s"
 
-#: ../IkiWiki/Plugin/getsource.pm:75
+#: ../IkiWiki/Plugin/getsource.pm:76
 #, fuzzy, perl-format
 msgid "%s is an attachment, not a page."
 msgstr "%s er ikke en redigérbar side"
@@ -450,7 +503,7 @@ msgstr "Tilføj nyt indlæg med følgende titel:"
 msgid "nonexistant template %s"
 msgstr "ikke-eksisterende skabelon: %s"
 
-#: ../IkiWiki/Plugin/inline.pm:598
+#: ../IkiWiki/Plugin/inline.pm:621
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "RPC::XML::Client ikke fundet, pinger ikke"
 
@@ -508,11 +561,11 @@ msgstr "mere"
 msgid "getctime not implemented"
 msgstr "getctime ikke implementeret"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr "Log på med"
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "Skaf en OpenID"
 
@@ -605,7 +658,7 @@ msgstr ""
 msgid "rebuilding all pages to fix meta titles"
 msgstr "gendanner alle sider for at korrigere meta titler"
 
-#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:638
+#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:652
 #, perl-format
 msgid "building %s"
 msgstr "danner %s"
@@ -845,20 +898,20 @@ msgstr "omdøb %s"
 msgid "Also rename SubPages and attachments"
 msgstr "Omdøb også UnderSider og vedhæftninger"
 
-#: ../IkiWiki/Plugin/rename.pm:247
+#: ../IkiWiki/Plugin/rename.pm:248
 msgid "Only one attachment can be renamed at a time."
 msgstr "Kun en vedhæftning kan blive omdøbt ad gangen."
 
-#: ../IkiWiki/Plugin/rename.pm:250
+#: ../IkiWiki/Plugin/rename.pm:251
 msgid "Please select the attachment to rename."
 msgstr "Vælg vedhæftningen som skal omdøbes."
 
-#: ../IkiWiki/Plugin/rename.pm:347
+#: ../IkiWiki/Plugin/rename.pm:348
 #, perl-format
 msgid "rename %s to %s"
 msgstr "omdøb %s til %s"
 
-#: ../IkiWiki/Plugin/rename.pm:571
+#: ../IkiWiki/Plugin/rename.pm:572
 #, perl-format
 msgid "update for rename of %s to %s"
 msgstr "opdatering til omdøbning af %s til %s"
@@ -1052,32 +1105,32 @@ msgstr "udelader forkert filnavn %s"
 msgid "%s has multiple possible source pages"
 msgstr "%s har flere mulige kildesider"
 
-#: ../IkiWiki/Render.pm:395
+#: ../IkiWiki/Render.pm:410
 #, perl-format
 msgid "removing old page %s"
 msgstr "fjerner gammel side %s"
 
-#: ../IkiWiki/Render.pm:471
+#: ../IkiWiki/Render.pm:483
 #, perl-format
 msgid "building %s, which links to %s"
 msgstr "danner %s, som henviser til %s"
 
-#: ../IkiWiki/Render.pm:480
+#: ../IkiWiki/Render.pm:492
 #, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "fjerner %s, ikke længere dannet af %s"
 
-#: ../IkiWiki/Render.pm:603
+#: ../IkiWiki/Render.pm:615
 #, perl-format
 msgid "building %s, which depends on %s"
 msgstr "danner %s, som afhænger af %s"
 
-#: ../IkiWiki/Render.pm:616
+#: ../IkiWiki/Render.pm:628
 #, perl-format
 msgid "building %s, to update its backlinks"
 msgstr "danner %s, for at opdatere dens krydshenvisninger (backlinks)"
 
-#: ../IkiWiki/Render.pm:679
+#: ../IkiWiki/Render.pm:693
 #, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki: kan ikke danne %s"
@@ -1093,16 +1146,16 @@ msgstr "kan ikke læse %s: %s"
 msgid "you must enter a wikiname (that contains alphanumerics)"
 msgstr "du skal angive et wikinavn (som indeholder alfanumeriske tegn)"
 
-#: ../IkiWiki/Setup/Automator.pm:76
+#: ../IkiWiki/Setup/Automator.pm:79
 #, perl-format
 msgid "unsupported revision control system %s"
 msgstr "revisionskontrolsystem %s ikke understøttet"
 
-#: ../IkiWiki/Setup/Automator.pm:102
+#: ../IkiWiki/Setup/Automator.pm:105
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr "opsætning af depotet med ikiwiki-makerepo mislykkedes"
 
-#: ../IkiWiki/Setup/Automator.pm:120
+#: ../IkiWiki/Setup/Automator.pm:123
 #, perl-format
 msgid "** Disabling plugin %s, since it is failing with this message:"
 msgstr "** Deaktiverer udvidelse %s, da den fejler med denne besked:"

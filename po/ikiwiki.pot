@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-19 21:31+0000\n"
+"POT-Creation-Date: 2009-12-20 05:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -154,6 +154,55 @@ msgstr ""
 
 #: ../IkiWiki/Plugin/amazon_s3.pm:243
 msgid "Failed to delete file from S3: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:28
+msgid "Can't create attachment directory: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:31
+msgid "Invalid MIME strategy specified"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:43
+msgid "Uploads are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:46
+msgid "You must specify a file to attach"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:49
+msgid "Invalid page"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:58
+msgid "Uploads to this page are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:73
+msgid "Upload failed: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:89
+msgid "Failed to create target directory"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:108
+#, perl-format
+msgid "Attachment conflicted: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:131 ../IkiWiki/Plugin/attach.pm:136
+msgid "Forbidden MIME type"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:145
+msgid "The attachment is too big."
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:152
+msgid "Banned IP address"
 msgstr ""
 
 #: ../IkiWiki/Plugin/attachment.pm:49

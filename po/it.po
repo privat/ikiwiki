@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Ikiwiki\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-31 18:31-0400\n"
+"POT-Creation-Date: 2009-12-20 05:24+0000\n"
 "PO-Revision-Date: 2009-08-16 11:01+0100\n"
 "Last-Translator: Luca Bruno <lucab@debian.org>\n"
 "Language-Team: Italian TP <tp@lists.linux.it>\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "login failed, perhaps you need to turn on cookies?"
 msgstr "errore nell'accesso, probabilmente i cookie sono disabilitati?"
 
-#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:314
+#: ../IkiWiki/CGI.pm:169 ../IkiWiki/CGI.pm:318
 msgid "Your login session has expired."
 msgstr "La sessione è scaduta."
 
@@ -49,11 +49,11 @@ msgstr "Amministrazione"
 msgid "Preferences saved."
 msgstr "Preferenze salvate."
 
-#: ../IkiWiki/CGI.pm:278
+#: ../IkiWiki/CGI.pm:282
 msgid "You are banned."
 msgstr "Avete ricevuto un ban."
 
-#: ../IkiWiki/CGI.pm:405 ../IkiWiki/CGI.pm:406 ../IkiWiki.pm:1282
+#: ../IkiWiki/CGI.pm:409 ../IkiWiki/CGI.pm:410 ../IkiWiki.pm:1282
 msgid "Error"
 msgstr "Errore"
 
@@ -155,6 +155,59 @@ msgstr "Impossibile salvare il file sul S3: "
 #: ../IkiWiki/Plugin/amazon_s3.pm:243
 msgid "Failed to delete file from S3: "
 msgstr "Impossibile eliminare il file dal S3: "
+
+#: ../IkiWiki/Plugin/attach.pm:28
+msgid "Can't create attachment directory: "
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:31
+msgid "Invalid MIME strategy specified"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:43
+msgid "Uploads are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:46
+#, fuzzy
+msgid "You must specify a file to attach"
+msgstr "occorre specificare formato e testo"
+
+#: ../IkiWiki/Plugin/attach.pm:49
+#, fuzzy
+msgid "Invalid page"
+msgstr "non è una pagina"
+
+#: ../IkiWiki/Plugin/attach.pm:58
+msgid "Uploads to this page are disabled"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:73
+#, fuzzy
+msgid "Upload failed: "
+msgstr "errore nel comando"
+
+#: ../IkiWiki/Plugin/attach.pm:89
+#, fuzzy
+msgid "Failed to create target directory"
+msgstr "Impossibile creare il contenitore S3: "
+
+#: ../IkiWiki/Plugin/attach.pm:108
+#, perl-format
+msgid "Attachment conflicted: %s"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:131 ../IkiWiki/Plugin/attach.pm:136
+msgid "Forbidden MIME type"
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:145
+msgid "The attachment is too big."
+msgstr ""
+
+#: ../IkiWiki/Plugin/attach.pm:152
+msgid "Banned IP address"
+msgstr ""
 
 #: ../IkiWiki/Plugin/attachment.pm:49
 #, perl-format
@@ -322,20 +375,20 @@ msgstr "occorre specificare formato e testo"
 msgid "fortune failed"
 msgstr "errore nel fortune"
 
-#: ../IkiWiki/Plugin/getsource.pm:62 ../IkiWiki/Plugin/goto.pm:55
+#: ../IkiWiki/Plugin/getsource.pm:63 ../IkiWiki/Plugin/goto.pm:56
 msgid "missing page"
 msgstr "pagina mancante"
 
-#: ../IkiWiki/Plugin/getsource.pm:64 ../IkiWiki/Plugin/goto.pm:57
+#: ../IkiWiki/Plugin/getsource.pm:65 ../IkiWiki/Plugin/goto.pm:58
 #, perl-format
 msgid "The page %s does not exist."
 msgstr "La pagina %s non esiste."
 
-#: ../IkiWiki/Plugin/getsource.pm:73
+#: ../IkiWiki/Plugin/getsource.pm:74
 msgid "not a page"
 msgstr "non è una pagina"
 
-#: ../IkiWiki/Plugin/getsource.pm:75
+#: ../IkiWiki/Plugin/getsource.pm:76
 #, perl-format
 msgid "%s is an attachment, not a page."
 msgstr "%s è un allegato, non una pagina."
@@ -441,7 +494,7 @@ msgstr "Aggiungere un nuovo articolo dal titolo:"
 msgid "nonexistant template %s"
 msgstr "modello %s non esistente"
 
-#: ../IkiWiki/Plugin/inline.pm:598
+#: ../IkiWiki/Plugin/inline.pm:621
 msgid "RPC::XML::Client not found, not pinging"
 msgstr "RPC::XML::Client non trovato, impossibile inviare ping"
 
@@ -498,11 +551,11 @@ msgstr "altro"
 msgid "getctime not implemented"
 msgstr "getctime non implementata"
 
-#: ../IkiWiki/Plugin/openid.pm:61
+#: ../IkiWiki/Plugin/openid.pm:62
 msgid "Log in with"
 msgstr "Accedi tramite"
 
-#: ../IkiWiki/Plugin/openid.pm:64
+#: ../IkiWiki/Plugin/openid.pm:65
 msgid "Get an OpenID"
 msgstr "Ottieni un OpenID"
 
@@ -598,7 +651,7 @@ msgstr ""
 msgid "rebuilding all pages to fix meta titles"
 msgstr "rigenerazione di tutte le pagine per sistemare i meta-titoli"
 
-#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:638
+#: ../IkiWiki/Plugin/po.pm:389 ../IkiWiki/Render.pm:652
 #, perl-format
 msgid "building %s"
 msgstr "compilazione di %s"
@@ -841,20 +894,20 @@ msgstr "rinomina di %s"
 msgid "Also rename SubPages and attachments"
 msgstr "Rinomina anche SottoPagine e allegati"
 
-#: ../IkiWiki/Plugin/rename.pm:247
+#: ../IkiWiki/Plugin/rename.pm:248
 msgid "Only one attachment can be renamed at a time."
 msgstr "Si può rinominare un solo allegato alla volta."
 
-#: ../IkiWiki/Plugin/rename.pm:250
+#: ../IkiWiki/Plugin/rename.pm:251
 msgid "Please select the attachment to rename."
 msgstr "Selezionare l'allegato da rinominare."
 
-#: ../IkiWiki/Plugin/rename.pm:347
+#: ../IkiWiki/Plugin/rename.pm:348
 #, perl-format
 msgid "rename %s to %s"
 msgstr "rinomina %s in %s"
 
-#: ../IkiWiki/Plugin/rename.pm:571
+#: ../IkiWiki/Plugin/rename.pm:572
 #, perl-format
 msgid "update for rename of %s to %s"
 msgstr "aggiornamento per rinomina di %s in %s"
@@ -1048,32 +1101,32 @@ msgstr "ignorato il file dal nome scorretto %s"
 msgid "%s has multiple possible source pages"
 msgstr "%s ha diverse pagine sorgenti possibili"
 
-#: ../IkiWiki/Render.pm:395
+#: ../IkiWiki/Render.pm:410
 #, perl-format
 msgid "removing old page %s"
 msgstr "rimozione della vecchia pagina %s"
 
-#: ../IkiWiki/Render.pm:471
+#: ../IkiWiki/Render.pm:483
 #, perl-format
 msgid "building %s, which links to %s"
 msgstr "compilazione di %s, che è collegato a %s"
 
-#: ../IkiWiki/Render.pm:480
+#: ../IkiWiki/Render.pm:492
 #, perl-format
 msgid "removing %s, no longer built by %s"
 msgstr "rimozione di %s, non più richiesto da %s"
 
-#: ../IkiWiki/Render.pm:603
+#: ../IkiWiki/Render.pm:615
 #, perl-format
 msgid "building %s, which depends on %s"
 msgstr "compilazione di %s, che dipende da %s"
 
-#: ../IkiWiki/Render.pm:616
+#: ../IkiWiki/Render.pm:628
 #, perl-format
 msgid "building %s, to update its backlinks"
 msgstr "compilazione di %s, per aggiornare i collegamenti ai precedenti"
 
-#: ../IkiWiki/Render.pm:679
+#: ../IkiWiki/Render.pm:693
 #, perl-format
 msgid "ikiwiki: cannot build %s"
 msgstr "ikiwiki: impossibile compilare %s"
@@ -1089,16 +1142,16 @@ msgstr "impossibile leggere %s: %s"
 msgid "you must enter a wikiname (that contains alphanumerics)"
 msgstr "occorre inserire un wikiname (contente caratteri alfanumerici)"
 
-#: ../IkiWiki/Setup/Automator.pm:76
+#: ../IkiWiki/Setup/Automator.pm:79
 #, perl-format
 msgid "unsupported revision control system %s"
 msgstr "sistema di controllo di revisione %s non supportato"
 
-#: ../IkiWiki/Setup/Automator.pm:102
+#: ../IkiWiki/Setup/Automator.pm:105
 msgid "failed to set up the repository with ikiwiki-makerepo"
 msgstr "impossibile creare un repository tramite ikiwiki-makerepo"
 
-#: ../IkiWiki/Setup/Automator.pm:120
+#: ../IkiWiki/Setup/Automator.pm:123
 #, perl-format
 msgid "** Disabling plugin %s, since it is failing with this message:"
 msgstr ""
