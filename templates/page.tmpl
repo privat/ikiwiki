@@ -27,7 +27,7 @@
 <span>
 <span class="parentlinks">
 <TMPL_LOOP NAME="PARENTLINKS">
-<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/ 
+<a href="<TMPL_VAR URL>"><TMPL_VAR PAGE></a>/
 </TMPL_LOOP>
 </span>
 <span class="title">
@@ -111,6 +111,26 @@
 <div class="addcomment">Comments on this page are closed.</div>
 </TMPL_IF>
 </div>
+</TMPL_IF>
+
+<TMPL_IF NAME="ATTACH_FORM">
+<div id="attachments">
+<form action="<TMPL_VAR CGIURL>" enctype="multipart/form-data" method="post">
+    <div class="attachement">Attachment: <input type="file" name="datafile" size="40"></div>
+    <input type="submit" value="Attach" />
+    <input type="hidden" name="do" value="attach" />
+    <input type="hidden" name="pagename" value="<TMPL_VAR PAGENAME>" />
+</form>
+</div>
+</TMPL_IF>
+
+<TMPL_IF NAME=ATTACHMENTS>
+<h2>Attachments</h2>
+<ul>
+<TMPL_LOOP NAME=ATTACHMENTS>
+    <li><a href="<TMPL_VAR NAME=ATTACHMENT>"><TMPL_VAR NAME=ATTACHMENT></a></li>
+</TMPL_LOOP>
+</ul>
 </TMPL_IF>
 
 <div id="footer" class="pagefooter">
