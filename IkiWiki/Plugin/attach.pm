@@ -3,7 +3,7 @@
 package IkiWiki::Plugin::attach;
 
 use strict;
-use IkiWiki 2.00;
+use IkiWiki 3.00;
 
 our ($dir, $max_kbs, $srcdir_max_kbs, $mime_strategy, %mime_allow, %mime_deny, $DEFAULT_MAX_KBS, %want_form);
 
