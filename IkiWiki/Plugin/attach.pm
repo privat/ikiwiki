@@ -8,10 +8,10 @@ use IkiWiki 2.00;
 our ($dir, $max_kbs, $srcdir_max_kbs, $mime_strategy, %mime_allow, %mime_deny, $DEFAULT_MAX_KBS, %want_form);
 
 sub import { #{{{
-  hook(type => "checkconfig",  id=>"attach",   call => \&checkconfig);
-     hook(type => "sessioncgi",   id => "attach", call => \&attach);
-  hook(type => "pagetemplate", id => "attach", call => \&pagetemplate);
-  hook(type => "preprocess",   id => "attach", call => \&preprocess);
+    hook(type => "checkconfig",  id=>"attach",   call => \&checkconfig);
+    hook(type => "sessioncgi",   id => "attach", call => \&attach);
+    hook(type => "pagetemplate", id => "attach", call => \&pagetemplate);
+    hook(type => "preprocess",   id => "attach", call => \&preprocess);
 } # }}}
 
 sub checkconfig {
