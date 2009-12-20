@@ -8,8 +8,8 @@ use IkiWiki 2.00;
 our ($dir, $max_kbs, $srcdir_max_kbs, $mime_strategy, %mime_allow, %mime_deny, $DEFAULT_MAX_KBS, %want_form);
 
 sub import { #{{{
-  hook(type => "checkconfig",  id=>"attach",   call => \&checkconfig); 
-	 hook(type => "sessioncgi",   id => "attach", call => \&attach);
+  hook(type => "checkconfig",  id=>"attach",   call => \&checkconfig);
+     hook(type => "sessioncgi",   id => "attach", call => \&attach);
   hook(type => "pagetemplate", id => "attach", call => \&pagetemplate);
   hook(type => "preprocess",   id => "attach", call => \&preprocess);
 } # }}}
@@ -17,13 +17,13 @@ sub import { #{{{
 sub checkconfig {
   my $config = $config{attach};
   return unless $config{attach}{enabled} == 1;
-  
+
   $DEFAULT_MAX_KBS = 1024; #Maximumn size in kilobytes of each upload
-    
+
   $max_kbs = ($config{attach}{max_kbs} >= 0 && $config{attach}{max_kbs} =~ /^\d+$/) ?
                 $config{attach}{max_kbs} : $DEFAULT_MAX_KBS;
   $config{attach}{dir} ||= 'attachments';
-  $dir     = $config{srcdir}.'/.'.$config{attach}{dir}; 
+  $dir     = $config{srcdir}.'/.'.$config{attach}{dir};
   unless (-e $dir) {
     mkdir $dir or error(gettext("Can't create attachment directory: ").$!);
   }
@@ -44,9 +44,9 @@ sub attach ($) {
   }
 
   my $filename = $q->param('datafile') or error(gettext("You must specify a file to attach"));
-  
+
   unless ($pagesources{ $q->param('pagename') }) {
-    error(gettext("Invalid page"));  
+    error(gettext("Invalid page"));
   }
 
   #If 'every_page' isn't set, the page must contain the 'attach' directive.
@@ -58,15 +58,15 @@ sub attach ($) {
       error(gettext("Uploads to this page are disabled"));
     }
   }
-  
+
   #This may return a spoofed or undefined MIME type; we can check it again after the upload
   mime_ok( $q->upload_info($filename, 'mime') );
- 
+
   #This may return a spoofed value; we can check it again after the upload
-  size_ok( $q->upload_info($filename, 'size') ); 
-  
+  size_ok( $q->upload_info($filename, 'size') );
+
   ip_ok();
- 
+
   my $new_filename = $filename;
   $new_filename =~ s/[^[:alnum:]._:-]//g;
   my $ok = $q->upload( $filename, $dir.'/'.$new_filename );
@@ -74,40 +74,40 @@ sub attach ($) {
 
 
   #Post upload checks here
-  
+
   #If a file's attached to the main page of the wiki, the pagename is 'index'
   #We want these files to reside in the top-level directory; not an 'index'
   #subdirectory, so we special-case this.
-  
+
   my $srcdir_target = $config{srcdir}.'/'.$q->param('pagename');
   $srcdir_target =~ s/\/index$//;
   my $target_filename = $q->param('pagename').'/'.$new_filename;
-  $target_filename =~ s/^index\///;  
+  $target_filename =~ s/^index\///;
 
 
   unless (-d $srcdir_target) {
     mkdir $srcdir_target or error(gettext("Failed to create target directory"));
   }
   rename($dir.'/'.$new_filename, $srcdir_target.'/'.$new_filename) or error($!);
-  
+
   #(Pilfered from IkiWiki/CGI.pm):
   if ($config{rcs}) {
     my $message="Attaching to ".$q->param('pagename');
     my $rcs_token = IkiWiki::rcs_prepedit($target_filename);
     eval { IkiWiki::rcs_add($target_filename) };
-		
+
     # Prevent deadlock with post-commit hook by
-		# signaling to it that it should not try to
-		# do anything (except send commit mails).
-		IkiWiki::disable_commit_hook();
-		my $conflict=IkiWiki::rcs_commit($target_filename, $message,
-				$rcs_token,
-				$session->param('name'), $ENV{REMOTE_ADDR});
-		IkiWiki::enable_commit_hook();
-		IkiWiki::rcs_update();
+        # signaling to it that it should not try to
+        # do anything (except send commit mails).
+        IkiWiki::disable_commit_hook();
+        my $conflict=IkiWiki::rcs_commit($target_filename, $message,
+                $rcs_token,
+                $session->param('name'), $ENV{REMOTE_ADDR});
+        IkiWiki::enable_commit_hook();
+        IkiWiki::rcs_update();
     error(gettext("Attachment conflicted: %s",$conflict)) if defined($conflict);
-	}
-    
+    }
+
   #Copies file to destdir
   IkiWiki::render($target_filename) or error("render failed");
   #Makes file dependency of page
@@ -116,12 +116,12 @@ sub attach ($) {
   IkiWiki::refresh();
   #Write what we just did to the index so future attachments work, too
   IkiWiki::saveindex();
-  
+
   #TODO: Inline this message into template
-  print $q->header; 
+  print $q->header;
   print "Attached <a href='".$config{url}.'/'.$target_filename."'>$new_filename</a> to ".
-        "<a href='".$config{url}.'/'.$q->param('pagename')."?updated'>".$q->param('pagename')."</a>"; 
-  exit; 
+        "<a href='".$config{url}.'/'.$q->param('pagename')."?updated'>".$q->param('pagename')."</a>";
+  exit;
 }
 
 sub mime_ok {
@@ -158,7 +158,7 @@ sub pagetemplate {
 
   my (@loop_data, %attachments); #TODO: make %attachments GLOBAL
   my $pagepath = $config{srcdir}.'/'.$params{page};
-  
+
   if (-d $pagepath) { #Potentially has attachments
     opendir(DIR,$pagepath) or warn $!;
     while (my $f = readdir(DIR)) {
@@ -180,7 +180,7 @@ sub pagetemplate {
   my $template = $params{template};
   $template->param( 'CGIURL' => $config{cgiurl} );
   $template->param('ATTACHMENTS' =>  \@loop_data);
-  
+
   if ($config{attach}{enabled} && ($want_form{ $params{'destpage'} } || $config{attach}{'every_page'})) {
     $template->param('ATTACH_FORM' => 1);
   }
