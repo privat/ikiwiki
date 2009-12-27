@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-12-20 05:24+0000\n"
+"POT-Creation-Date: 2009-12-22 00:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -507,15 +507,15 @@ msgstr ""
 msgid "failed to load Markdown.pm perl module (%s) or /usr/bin/markdown (%s)"
 msgstr ""
 
-#: ../IkiWiki/Plugin/meta.pm:161
+#: ../IkiWiki/Plugin/meta.pm:172
 msgid "stylesheet not found"
 msgstr ""
 
-#: ../IkiWiki/Plugin/meta.pm:199
+#: ../IkiWiki/Plugin/meta.pm:210
 msgid "redir page not found"
 msgstr ""
 
-#: ../IkiWiki/Plugin/meta.pm:213
+#: ../IkiWiki/Plugin/meta.pm:224
 msgid "redir cycle is not allowed"
 msgstr ""
 
