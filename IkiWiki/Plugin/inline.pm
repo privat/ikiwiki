@@ -209,7 +209,7 @@ sub preprocess_inline (@) {
 		if ($params{show}) {
 			$num=$params{show};
 		}
-		if ($params{feedshow} && $num < $params{feedshow}) {
+		if ($params{feedshow} && $num < $params{feedshow} && $num > 0) {
 			$num=$params{feedshow};
 		}
 		if ($params{skip} && $num) {
@@ -357,9 +357,9 @@ sub preprocess_inline (@) {
 					my $file = $pagesources{$page};
 					my $type = pagetype($file);
 					if ($config{discussion}) {
-						if ($page !~ /.*\/\Q$config{discussionpage}\E$/ &&
+						if ($page !~ /.*\/\Q$config{discussionpage}\E$/i &&
 						    (length $config{cgiurl} ||
-						     exists $pagesources{$page."/".$config{discussionpage}})) {
+						     exists $pagesources{$page."/".lc($config{discussionpage})})) {
 							$template->param(have_actions => 1);
 							$template->param(discussionlink =>
 								htmllink($page,
