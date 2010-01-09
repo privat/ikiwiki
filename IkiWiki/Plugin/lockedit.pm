@@ -39,8 +39,9 @@ sub canedit ($$) {
 		    user => $session->param("name"),
 		    ip => $ENV{REMOTE_ADDR},
 	    )) {
-		if (! defined $user ||
-		    ! IkiWiki::userinfo_get($session->param("name"), "regdate")) {
+		if ((! defined $user ||
+		    ! IkiWiki::userinfo_get($session->param("name"), "regdate")) &&
+		    exists $IkiWiki::hooks{auth}) {
 			return sub { IkiWiki::needsignin($cgi, $session) };
 		}
 		else {

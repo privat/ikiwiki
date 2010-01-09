@@ -64,7 +64,7 @@ smaller.
 	
 	\[[!inline pages="blog/* and link(tag)" show=0 archive=yes quick=yes]]
 
-Only downsides: This won't show titles set by the [[!ikiwiki/directive/meta]]
+Only downsides: This won't show titles set by the [[ikiwiki/directive/meta]]
 directive. And there's no RSS feed for users to use -- but if this page
 is only for the archives or tag for your blog, users should be subscribing
 to the blog's main page's RSS feed instead.
@@ -85,7 +85,7 @@ The resulting html file might get big and expensive to generate as you
 keep adding pages.
 
 First, consider removing the "show=title". Then the map will not show page
-titles set by the [[!ikiwiki/directive/meta]] directive -- but will also
+titles set by the [[ikiwiki/directive/meta]] directive -- but will also
 only need to be generated when pages are added or removed, not for every
 page change.
 
@@ -168,7 +168,7 @@ Finally, let's think about how huge number of pages can affect ikiwiki.
   quickly, but still, lots more pages will make PageSpecs more expensive.
 
 * The backlinks calculation has to consider every link on every page
-  in the wiki. (In practice, most pages only like to at most a few dozen
+  in the wiki. (In practice, most pages only link to at most a few dozen
   other pages, so this is not a `O(N^2)`, but closer to `O(N)`.)
 
 * Ikiwiki also reads and writes an `index` file, which contains information

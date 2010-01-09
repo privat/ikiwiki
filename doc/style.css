@@ -82,6 +82,14 @@ div.tags {
 	text-align: center;
 }
 
+.align-left {
+	float:left;
+}
+
+.align-right {
+	float:right;
+}
+
 #backlinks {
 	margin-top: 1em;
 }

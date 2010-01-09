@@ -16,3 +16,41 @@ and a whitelist of OpenIDs in `locked_pages`...)
 > to bounce through the cgiauthurl and actually sign in. This would be
 > significantly different than the regular httpauth process, in which the
 > user signs in in passing. --[[Joey]]
+
+>> My primary userbase has grown accustomed to the seamlessness of
+>> httpauth with SPNEGO, so I'd rather not reintroduce a seam into
+>> their web-editing experience in order to let relatively few outsiders
+>> edit relatively few pages. When is the decision made about whether
+>> the current page can be edited by the current user (if any)? What
+>> if there were a way to require particular auth plugins for particular
+>> PageSpecs? --[[schmonz]]
+
+>>> The decision about whether a user can edit a page is made by plugins
+>>> such as signinedit and lockedit, that also use canedit hooks to redirect
+>>> the user to a signin page if necessary.
+>>> 
+>>> A tweak on my earlier suggestion would be to have httpauth notice when the 
+>>> Signin page is being built and immediatly redirect to the cgiauthurl
+>>> before the page can be shown to the user. This would, though, not play
+>>> well with other authentication methods like openid, since the user
+>>> would never see the Signin form. --[[Joey]]
+
+>>>> Would I be able to do what I want with a local plugin that
+>>>> abuses canedit (and auth) to reach in and call the appropriate
+>>>> plugin's auth method -- e.g., if the page matches */Discussion,
+>>>> call `openid:auth()`, else `httpauth:auth()`? --[[schmonz]]
+
+>>>>> That seems it would be
+>>>>> annoying for httpauth users (who were not currently authed),
+>>>>> as they would then see the openid signin form when going to edit a
+>>>>> Discussion page.
+>>>>> --[[Joey]]
+
+>>>>>> I finally see the problem, I think. When you initially
+>>>>>> suggested "a link they could follow to bounce through the
+>>>>>> cgiauthurl", presumably this could _be_ the Edit link for
+>>>>>> non-Discussion pages, so that the typical case of an httpauth
+>>>>>> user editing an editable-only-by-httpauth page doesn't visibly
+>>>>>> change. And then the Edit link for Discussion subpages could do
+>>>>>> as you suggest, adding one click for the httpauth user, who won't
+>>>>>> often need to edit those subpages. --[[schmonz]]
