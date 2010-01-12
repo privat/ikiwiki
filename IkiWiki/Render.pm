@@ -128,6 +128,8 @@ sub genpage ($$) {
 		more_backlinks => $more_backlinks,
 		mtime => displaytime($pagemtime{$page}),
 		ctime => displaytime($pagectime{$page}),
+		mdatetime => date_3339($pagemtime{$page}),
+		cdatetime => date_3339($pagectime{$page}),
 		baseurl => baseurl($page),
 	);
 
