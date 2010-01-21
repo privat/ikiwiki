@@ -1,11 +1,3 @@
-ikiwiki (3.20100104+nmu1) unstable; urgency=low
-
-  * Non-maintainer upload.
-  * Render.pm patch: add {m,c}datetime to template vars to support
-    HTML5's time element.
-
- -- Simon Kjikàqawej <simon.raven@gmail.com>  Tue, 12 Jan 2010 21:45:25 +0000
-
 ikiwiki (3.20100104) UNRELEASED; urgency=low
 
   * inline: Avoid showing edit links if page editing is disabled.
