@@ -51,6 +51,9 @@ sub checkconfig () {
 			wrappermode => (defined $config{git_wrappermode} ? $config{git_wrappermode} : "06755"),
 		};
 	}
+
+	# Avoid notes, parser does not handle and they only slow things down.
+	$ENV{GIT_NOTES_REF}="";
 	
 	# Run receive test only if being called by the wrapper, and not
 	# when generating same.
@@ -419,7 +422,10 @@ sub git_sha1 (;$) {
 		'--', $file);
 	if ($sha1) {
 		($sha1) = $sha1 =~ m/($sha1_pattern)/; # sha1 is untainted now
-	} else { debug("Empty sha1sum for '$file'.") }
+	}
+	else {
+		debug("Empty sha1sum for '$file'.");
+	}
 	return defined $sha1 ? $sha1 : q{};
 }
 
