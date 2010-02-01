@@ -1,3 +1,10 @@
+ikiwiki (3.20100123+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Build for Lenny.
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Mon, 01 Feb 2010 21:58:00 +0000
+
 ikiwiki (3.20100123) UNRELEASED; urgency=low
 
   * template: Preprocess parameters before htmlizing.
