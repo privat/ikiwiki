@@ -50,6 +50,7 @@ Projects & Organizations
 * [The XCB library](http://xcb.freedesktop.org/)
 * [The Philolexian Society of Columbia University](http://www.columbia.edu/cu/philo/)
 * [Fachschaft Informatik HU Berlin](http://fachschaft.informatik.hu-berlin.de/)
+* [Wetknee Books](http://www.wetknee.com/)
 
 Personal sites and blogs
 ========================
@@ -81,7 +82,6 @@ Personal sites and blogs
 * [Proper Treatment 正當作法](http://conway.rutgers.edu/~ccshan/wiki/)
 * [lost scraps](http://web.mornfall.net), pages/blog of Petr Ročkai aka mornfall
 * [Ronan Le Hy's blog](http://bayesien.org), in French.
-* <http://iainmclaren.com>.
 * [formorers blog and website](http://www.formorer.de/webwiki/)
 * [Mark Jaroski's blog](http://movemearound.org/)
 * I keep my personal project notes and specs in a private ikiwiki - it's the perfect tool for this task. - [the daniel](http://neoglam.com)
@@ -131,6 +131,9 @@ Personal sites and blogs
 * [Jimmy Tang - personal blog and wiki](http://www.sgenomics.org/~jtang)
 * [Nico Schottelius' homepage](http://www.nico.schottelius.org)
 * [Andreas Zwinkaus homepage](http://beza1e1.tuxen.de)
+* [Walden Effect](http://waldeneffect.org)
+* [Avian Aqua Miser](http://www.avianaquamiser.com/)
+* [Cosmic Cookout](http://www.cosmiccookout.com/)
 
 Please feel free to add your own ikiwiki site!
 
