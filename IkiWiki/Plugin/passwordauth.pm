@@ -104,11 +104,11 @@ sub formbuilder_setup (@) {
 	my $session=$params{session};
 	my $cgi=$params{cgi};
 
-	if ($form->title eq "signin" || $form->title eq "register") {
+	if ($form->title eq "signin" || $form->title eq "register" || $cgi->param("do") eq "register") {
 		$form->field(name => "name", required => 0);
 		$form->field(name => "password", type => "password", required => 0);
 		
-		if ($form->submitted eq "Register" || $form->submitted eq "Create Account") {
+		if ($form->submitted eq "Register" || $form->submitted eq "Create Account" || $cgi->param("do") eq "register") {
 			$form->field(name => "confirm_password", type => "password");
 			$form->field(name => "account_creation_password", type => "password")
 				 if (defined $config{account_creation_password} &&
@@ -207,19 +207,34 @@ sub formbuilder_setup (@) {
 		}
 	}
 	elsif ($form->title eq "preferences") {
-		$form->field(name => "name", disabled => 1, 
-			value => $session->param("name"), force => 1,
-			fieldset => "login");
-		$form->field(name => "password", type => "password",
-			fieldset => "login",
-			validate => sub {
-				shift eq $form->field("confirm_password");
-			}),
-		$form->field(name => "confirm_password", type => "password",
-			fieldset => "login",
-			validate => sub {
-				shift eq $form->field("password");
-			}),
+		my $user=$session->param("name");
+		if (! IkiWiki::openiduser($user)) {
+			$form->field(name => "name", disabled => 1, 
+				value => $user, force => 1,
+				fieldset => "login");
+			$form->field(name => "password", type => "password",
+				fieldset => "login",
+				validate => sub {
+					shift eq $form->field("confirm_password");
+				});
+			$form->field(name => "confirm_password", type => "password",
+				fieldset => "login",
+				validate => sub {
+					shift eq $form->field("password");
+				});
+			
+			my $userpage=IkiWiki::userpage($user);
+			if (exists $pagesources{$userpage}) {
+				$form->text(gettext("Your user page: ").
+					htmllink("", "", $userpage,
+						noimageinline => 1));
+			}
+			else {
+				$form->text("<a href=\"".
+					IkiWiki::cgiurl(do => "edit", page => $userpage).
+					"\">".gettext("Create your user page")."</a>");
+			}
+		}
 	}
 }
 
@@ -232,7 +247,7 @@ sub formbuilder (@) {
 	my $buttons=$params{buttons};
 
 	if ($form->title eq "signin" || $form->title eq "register") {
-		if ($form->submitted && $form->validate) {
+		if (($form->submitted && $form->validate) || $cgi->param("do") eq "register") {
 			if ($form->submitted eq 'Login') {
 				$session->param("name", $form->field("name"));
 				IkiWiki::cgi_postsignin($cgi, $session);
@@ -295,7 +310,7 @@ sub formbuilder (@) {
 				$form->field(name => "name", required => 0);
 				push @$buttons, "Reset Password";
 			}
-			elsif ($form->submitted eq "Register") {
+			elsif ($form->submitted eq "Register" || $cgi->param("do") eq "register") {
 				@$buttons="Create Account";
 			}
 		}
@@ -334,6 +349,14 @@ sub sessioncgi ($$) {
 
 		$session->param("name", $name);
 		IkiWiki::cgi_prefs($q, $session);
+		exit;
+	}
+	elsif ($q->param("do") eq "register") {
+		# After registration, need to go somewhere, so show prefs page.
+		$session->param(postsignin => "do=prefs");
+		# Due to do=register, this will run in registration-only
+		# mode.
+		IkiWiki::cgi_signin($q, $session);
 		exit;
 	}
 }

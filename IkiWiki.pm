@@ -1091,6 +1091,11 @@ sub htmllink ($$$;@) {
 	return "<a href=\"$bestlink\"@attrs>$linktext</a>";
 }
 
+sub userpage ($) {
+	my $user=shift;
+	return length $config{userdir} ? "$config{userdir}/$user" : $user;
+}
+
 sub openiduser ($) {
 	my $user=shift;
 
@@ -1099,11 +1104,10 @@ sub openiduser ($) {
 		my $display;
 
 		if (Net::OpenID::VerifiedIdentity->can("DisplayOfURL")) {
-			# this works in at least 2.x
 			$display = Net::OpenID::VerifiedIdentity::DisplayOfURL($user);
 		}
 		else {
-			# this only works in 1.x
+			# backcompat with old version
 			my $oid=Net::OpenID::VerifiedIdentity->new(identity => $user);
 			$display=$oid->display;
 		}
@@ -1124,23 +1128,6 @@ sub openiduser ($) {
 		return escapeHTML($display);
 	}
 	return;
-}
-
-sub userlink ($) {
-	my $user=shift;
-
-	my $oiduser=eval { openiduser($user) };
-	if (defined $oiduser) {
-		return "<a href=\"$user\">$oiduser</a>";
-	}
-	else {
-		eval q{use CGI 'escapeHTML'};
-		error($@) if $@;
-
-		return htmllink("", "", escapeHTML(
-			length $config{userdir} ? $config{userdir}."/".$user : $user
-		), noimageinline => 1);
-	}
 }
 
 sub htmlize ($$$$) {
