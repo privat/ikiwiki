@@ -1,3 +1,7 @@
+**UPDATE** I have created a [[page|tips/follow_wikilinks_from_inside_vim]] in
+the tips section about the plugin, how to get it, install it and use it. Check
+that out. --[[jerojasro]]
+
 I wrote a vim function to help me navigate the wiki when I'm editing it. It extends the 'gf' (goto file) functionality. Once installed, you place the cursor on a wiki page name and press 'gf' (without the quotes); if the file exists, it gets loaded.
 
 This function takes into account the ikiwiki linking rules when deciding which file to go to.
@@ -67,7 +71,24 @@ the plugin has, as of now, two problems:
 >
 >> GPL version 2 or later (if that doesn't cause any problems here). I'll add it
 >> to the file --[[jerojasro]]
-> 
+>>
+>>> I see you've put the plugin on vim.org. Do you think it makes sense to
+>>> also include a copy in ikiwiki? --[[Joey]] 
+>>> 
+>>>> mmm, no. There would be two copies of it, and the git repo. I'd rather have 
+>>>> a unique place for the "official" version (vim.org), and another for the dev 
+>>>> version (its git repo).
+>>>> 
+>>>> actually, I would also suggest to upload the [[`ikiwiki.vim`|tips/vim_syntax_highlighting]] file to vim.org --[[jerojasro]]
+>>>>>
+>>>>> If you have any interest in maintaining the syntax highlighting
+>>>>> plugin and putting it there, I'd be fine with that. I think it needs
+>>>>> some slight work to catch up with changes to ikiwiki's directives
+>>>>> (!-prefixed now), and wikilinks (able to have spaces now). --[[Joey]]
+>>>>> 
+>>>>>> I don't really know too much about syntax definitions in vim. But I'll give it a stab. I know it fails when there are 2 \[[my text|link]] wikilinks in the same page.
+>>>>>> I'm not promising anything, though ;) --[[jerojasro]]
+>
 > Also, I have a possible other approach for finding ikiwiki's root. One
 > could consider that any subdirectory of an ikiwiki wiki is itself
 > a standalone wiki, though probably one missing a toplevel index page.

@@ -1,17 +1,12 @@
-ikiwiki (3.20100123+nmu2) unstable; urgency=low
+ikiwiki (3.20100213) UNRELEASED; urgency=low
 
-  * Build for Lenny, include latest updates from ikiwiki.info.
+  * comments: Display number of comments in comment action link.
+  * Rebuild wikis on upgrade to this version to get the comment counts
+    added to existing pages.
 
- -- Simon Kjikàqawej <simon.raven@gmail.com>  Sun, 07 Feb 2010 20:35:08 +0000
+ -- Joey Hess <joeyh@debian.org>  Sun, 14 Feb 2010 17:02:10 -0500
 
-ikiwiki (3.20100123+nmu1) unstable; urgency=low
-
-  * Non-maintainer upload.
-  * Build for Lenny.
-
- -- Simon Kjikàqawej <simon.raven@gmail.com>  Mon, 01 Feb 2010 21:58:00 +0000
-
-ikiwiki (3.20100123) UNRELEASED; urgency=low
+ikiwiki (3.20100212) unstable; urgency=low
 
   * template: Preprocess parameters before htmlizing.
   * img: Fix a bug that could taint @links with undef values.
@@ -26,8 +21,19 @@ ikiwiki (3.20100123) UNRELEASED; urgency=low
   * auto-blog.setup: Lock all pages, so only admin can post to the blog
     by default, and enable opendiscussion so others can comment.
   * Fix color and format plugins to appear in the websetup interface.
+  * amazon_s3: Fix to support the EU S3 datacenter, which is more picky
+    about attempts to create already existing buckets.
+  * httpauth: When cgiauthurl is configured, httpauth can now be used
+    alongside other authentication methods (like openid or anonok). Rather
+    than always redirect to the cgiauthurl for authentication, there is now
+    a button on the login form to use it.
+  * httpauth: Add httpauth_pagespec setting that can be used to limit
+    pages to only being edited via users authed with httpauth.
+  * Allow globs to be used in user() pagespecs.
+  * Group related plugins into sections in the setup file, and drop
+    unused rcs plugins from the setup file.
 
- -- Joey Hess <joeyh@debian.org>  Tue, 26 Jan 2010 22:25:33 -0500
+ -- Joey Hess <joeyh@debian.org>  Fri, 12 Feb 2010 16:45:50 -0500
 
 ikiwiki (3.20100122) unstable; urgency=low
 

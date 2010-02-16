@@ -38,6 +38,7 @@ sub getsetup () {
 		plugin => {
 			safe => 1,
 			rebuild => 1,
+			section => "web",
 		},
 		comments_pagespec => {
 			type => 'pagespec',
@@ -735,39 +736,43 @@ sub pagetemplate (@) {
 		}
 
 		if ($shown && commentsopen($page)) {
-			my $addcommenturl = IkiWiki::cgiurl(do => 'comment',
-				page => $page);
-			$template->param(addcommenturl => $addcommenturl);
+			$template->param(addcommenturl => addcommenturl($page));
 		}
 	}
 
-	if ($template->query(name => 'commentsurl')) {
-		if ($shown) {
+	if ($shown) {
+		if ($template->query(name => 'commentsurl')) {
 			$template->param(commentsurl =>
 				urlto($page, undef, 1).'#comments');
 		}
-	}
 
-	if ($template->query(name => 'atomcommentsurl') && $config{usedirs}) {
-		if ($shown) {
+		if ($template->query(name => 'atomcommentsurl') && $config{usedirs}) {
 			# This will 404 until there are some comments, but I
 			# think that's probably OK...
 			$template->param(atomcommentsurl =>
 				urlto($page, undef, 1).'comments.atom');
 		}
-	}
 
-	if ($template->query(name => 'commentslink')) {
-		# XXX Would be nice to say how many comments there are in
-		# the link. But, to update the number, blog pages
-		# would have to update whenever comments of any inlines
-		# page are added, which is not currently done.
-		if ($shown) {
-			$template->param(commentslink =>
-				htmllink($page, $params{destpage}, $page,
-					linktext => gettext("Comments"),
+		if ($template->query(name => 'commentslink')) {
+			my $num=num_comments($page, $config{srcdir});
+			my $link;
+			if ($num > 0) {
+				$link = htmllink($page, $params{destpage}, $page,
+					linktext => sprintf(ngettext("%i comment", "%i comments", $num), $num),
 					anchor => "comments",
-					noimageinline => 1));
+					noimageinline => 1
+				);
+			}
+			elsif (commentsopen($page)) {
+				$link = "<a href=\"".addcommenturl($page)."\">".
+					#translators: Here "Comment" is a verb;
+					#translators: the user clicks on it to
+					#translators: post a comment.
+					gettext("Comment").
+					"</a>";
+			}
+			$template->param(commentslink => $link)
+				if defined $link;
 		}
 	}
 
@@ -813,6 +818,12 @@ sub pagetemplate (@) {
 			page => $page));
 		$template->param(have_actions => 1);
 	}
+}
+
+sub addcommenturl ($) {
+	my $page=shift;
+
+	return IkiWiki::cgiurl(do => 'comment', page => $page);
 }
 
 sub num_comments ($$) {

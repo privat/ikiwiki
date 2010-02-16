@@ -90,10 +90,26 @@ sub gendump ($) {
 	# disable logging to syslog while dumping
 	$config{syslog}=undef;
 
+	eval q{use Text::Wrap};
+	die $@ if $@;
+
+	my %section_plugins;
 	push @ret, dumpvalues(\%setup, IkiWiki::getsetup());
 	foreach my $pair (IkiWiki::Setup::getsetup()) {
 		my $plugin=$pair->[0];
 		my $setup=$pair->[1];
+		my %s=@{$setup};
+		my $section=$s{plugin}->{section};
+		push @{$section_plugins{$section}}, $plugin;
+		if (@{$section_plugins{$section}} == 1) {
+			push @ret, "", "\t".("#" x 70), "\t# $section plugins",
+				sub {
+					wrap("\t#   (", "\t#    ",
+						join(", ", @{$section_plugins{$section}})).")"
+				},
+				"\t".("#" x 70);
+		}
+
 		my @values=dumpvalues(\%setup, @{$setup});
 		if (@values) {
 			push @ret, "", "\t# $plugin plugin", @values;
@@ -111,7 +127,7 @@ sub gendump ($) {
 		"use IkiWiki::Setup::Standard {";
 	push @ret, "}";
 
-	return @ret;
+	return map { ref $_ ? $_->() : $_ } @ret;
 }
 
 1

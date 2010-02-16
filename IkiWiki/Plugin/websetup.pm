@@ -18,6 +18,7 @@ sub getsetup () {
 		plugin => {
 			safe => 1,
 			rebuild => 0,
+			section => "web",
 		},
 		websetup_force_plugins => {
 			type => "string",
@@ -66,6 +67,11 @@ sub showfields ($$$@) {
 	while (@_) {
 		my $key=shift;
 		my %info=%{shift()};
+		
+		if ($key eq 'plugin') {
+			%plugininfo=%info;
+			next;
+		}
 
 		# skip internal settings
 		next if defined $info{type} && $info{type} eq "internal";
@@ -78,15 +84,12 @@ sub showfields ($$$@) {
 		# these are handled specially, so don't show
 		next if $key eq 'add_plugins' || $key eq 'disable_plugins';
 
-		if ($key eq 'plugin') {
-			%plugininfo=%info;
-			next;
-		}
-		
 		push @show, $key, \%info;
 	}
 
-	my $section=defined $plugin ? $plugin." ".gettext("plugin") : "main";
+	my $section=defined $plugin
+		? sprintf(gettext("%s plugin:"), $plugininfo{section}).$plugin
+		: "main";
 	my %enabledfields;
 	my $shownfields=0;
 	
@@ -95,6 +98,16 @@ sub showfields ($$$@) {
 	if ($plugin_forced && ! $enabled) {
 		# plugin is forced disabled, so skip its settings
 		@show=();
+	}
+
+	my $section_fieldset;
+	if (defined $plugin) {
+		# Define the combined fieldset for the plugin's section.
+		# This ensures that this fieldset comes first.
+		$section_fieldset=sprintf(gettext("%s plugins"), $plugininfo{section});
+		$form->field(name => "placeholder.$plugininfo{section}",
+			type => "hidden",
+			fieldset => $section_fieldset);
 	}
 
 	# show plugin toggle
@@ -137,10 +150,13 @@ sub showfields ($$$@) {
 		my $name=defined $plugin ? $plugin.".".$key : $section.".".$key;
 
 		my $value=$config{$key};
+		if (! defined $value) {
+			$value="";
+		}
 
-		if ($info{safe} && (ref $value eq 'ARRAY' || ref $info{example} eq 'ARRAY')) {
-			$value=[(ref $value eq 'ARRAY' ? map { Encode::encode_utf8($_) }  @{$value} : ""),
-				"", ""]; # blank items for expansion
+		if (ref $value eq 'ARRAY' || ref $info{example} eq 'ARRAY') {
+			$value=[(ref $value eq 'ARRAY' ? map { Encode::encode_utf8($_) }  @{$value} : "")];
+			push @$value, "", "" if $info{safe}; # blank items for expansion
 		}
 		else {
 			$value=Encode::encode_utf8($value);
@@ -203,11 +219,11 @@ sub showfields ($$$@) {
 		$shownfields++;
 	}
 	
-	# if no fields were shown for the plugin, drop it into the
-	# plugins fieldset
+	# if no fields were shown for the plugin, drop it into a combined
+	# fieldset for its section
 	if (defined $plugin && (! $plugin_forced || $config{websetup_advanced}) &&
 	    ! $shownfields) {
-		$form->field(name => "enable.$plugin", fieldset => "plugins");
+		$form->field(name => "enable.$plugin", fieldset => $section_fieldset);
 	}
 
 	return %enabledfields;
@@ -258,7 +274,6 @@ sub showform ($$) {
 		params => $cgi,
 		fieldsets => [
 			[main => gettext("main")], 
-			[plugins => gettext("plugins")]
 		],
 		action => $config{cgiurl},
 		template => {type => 'div'},

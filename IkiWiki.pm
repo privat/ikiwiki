@@ -20,7 +20,7 @@ use Exporter q{import};
 our @EXPORT = qw(hook debug error template htmlpage deptype
                  add_depends pagespec_match pagespec_match_list bestlink
 		 htmllink readfile writefile pagetype srcfile pagename
-		 displaytime will_render gettext urlto targetpage
+		 displaytime will_render gettext ngettext urlto targetpage
 		 add_underlay pagetitle titlepage linkpage newpagefile
 		 inject add_link
                  %config %links %pagestate %wikistate %renderedfiles
@@ -941,7 +941,12 @@ sub linkpage ($) {
 sub cgiurl (@) {
 	my %params=@_;
 
-	return $config{cgiurl}."?".
+	my $cgiurl=$config{cgiurl};
+	if (exists $params{cgiurl}) {
+		$cgiurl=$params{cgiurl};
+		delete $params{cgiurl};
+	}
+	return $cgiurl."?".
 		join("&amp;", map $_."=".uri_escape_utf8($params{$_}), keys %params);
 }
 
@@ -1816,32 +1821,48 @@ sub file_pruned ($;$) {
 sub define_gettext () {
 	# If translation is needed, redefine the gettext function to do it.
 	# Otherwise, it becomes a quick no-op.
-	no warnings 'redefine';
+	my $gettext_obj;
+	my $getobj;
 	if ((exists $ENV{LANG} && length $ENV{LANG}) ||
 	    (exists $ENV{LC_ALL} && length $ENV{LC_ALL}) ||
 	    (exists $ENV{LC_MESSAGES} && length $ENV{LC_MESSAGES})) {
-	    	*gettext=sub {
-			my $gettext_obj=eval q{
+	    	$getobj=sub {
+			$gettext_obj=eval q{
 				use Locale::gettext q{textdomain};
 				Locale::gettext->domain('ikiwiki')
 			};
-
-			if ($gettext_obj) {
-				$gettext_obj->get(shift);
-			}
-			else {
-				return shift;
-			}
 		};
 	}
-	else {
-		*gettext=sub { return shift };
-	}
+
+	no warnings 'redefine';
+	*gettext=sub {
+		$getobj->() if $getobj;
+		if ($gettext_obj) {
+			$gettext_obj->get(shift);
+		}
+		else {
+			return shift;
+		}
+	};
+  	*ngettext=sub {
+		$getobj->() if $getobj;
+		if ($gettext_obj) {
+			$gettext_obj->nget(@_);
+		}
+		else {
+			return ($_[2] == 1 ? $_[0] : $_[1])
+		}
+	};
 }
 
 sub gettext {
 	define_gettext();
 	gettext(@_);
+}
+
+sub ngettext {
+	define_gettext();
+	ngettext(@_);
 }
 
 sub yesno ($) {
@@ -2262,11 +2283,13 @@ sub match_user ($$;@) {
 	my $user=shift;
 	my %params=@_;
 	
+	my $regexp=IkiWiki::glob2re($user);
+	
 	if (! exists $params{user}) {
 		return IkiWiki::ErrorReason->new("no user specified");
 	}
 
-	if (defined $params{user} && lc $params{user} eq lc $user) {
+	if (defined $params{user} && $params{user}=~/^$regexp$/i) {
 		return IkiWiki::SuccessReason->new("user is $user");
 	}
 	elsif (! defined $params{user}) {
