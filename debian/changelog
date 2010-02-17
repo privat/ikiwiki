@@ -1,3 +1,10 @@
+ikiwiki (3.20100213+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Build our local repo for Lenny.
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Wed, 17 Feb 2010 18:13:13 +0000
+
 ikiwiki (3.20100213) UNRELEASED; urgency=low
 
   * comments: Display number of comments in comment action link.
