@@ -52,6 +52,7 @@ Projects & Organizations
 * [Wetknee Books](http://www.wetknee.com/)
 * [IPOL Image Processing On Line](http://www.ipol.im)
 * [Debian Costa Rica](http://cr.debian.net/)
+* [Fvwm Wiki](http://fvwmwiki.xteddy.org)
 
 Personal sites and blogs
 ========================
@@ -137,6 +138,8 @@ Personal sites and blogs
 * [Cosmic Cookout](http://www.cosmiccookout.com/)
 * [Backyard Deer](http://www.backyarddeer.com/)
 * [Alex Ghitza homepage and blog](http://aghitza.org/)
+* [Mukund's homepage](http://www.mukund.org/)
+* [Andreas's homepage](http://0x7.ch/) - Ikiwiki, Subversion and CSS template
 
 Please feel free to add your own ikiwiki site!
 

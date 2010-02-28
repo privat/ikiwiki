@@ -40,17 +40,19 @@ sub import (@) {
 	my $this=shift;
 	IkiWiki::Setup::merge({@_});
 
-	# Avoid overwriting any existing files.
-	foreach my $key (qw{srcdir destdir repository dumpsetup}) {
-		next unless exists $config{$key};
-		my $add="";
-		my $dir=IkiWiki::dirname($config{$key})."/";
-		my $base=IkiWiki::basename($config{$key});
-		while (-e $dir.$add.$base) {
-			$add=1 if ! $add;
-			$add++;
+	if (! $config{force_overwrite}) {
+		# Avoid overwriting any existing files.
+		foreach my $key (qw{srcdir destdir repository dumpsetup}) {
+			next unless exists $config{$key};
+			my $add="";
+			my $dir=IkiWiki::dirname($config{$key})."/";
+			my $base=IkiWiki::basename($config{$key});
+			while (-e $dir.$add.$base) {
+				$add=1 if ! $add;
+				$add++;
+			}
+			$config{$key}=$dir.$add.$base;
 		}
-		$config{$key}=$dir.$add.$base;
 	}
 	
 	# Set up wrapper
@@ -142,7 +144,7 @@ sub import (@) {
 
 	# Create admin user(s).
 	foreach my $admin (@{$config{adminuser}}) {
-		next if $admin=~/^http\?:\/\//; # openid
+		next if defined IkiWiki::openiduser($admin);
 		
 		# Prompt for password w/o echo.
 		my ($password, $password2);
