@@ -18,7 +18,7 @@ IkiWiki::Plugin::report - Produce templated reports from page field data.
 
 This plugin provides the **report** directive.  This enables one to report on
 the structured data ("field" values) of multiple pages; the output is formatted
-via a template.  This depends on the "field" plugin.
+via a template.  This depends on the [[plugins/contrib/field]] plugin.
 
 The pages to report on are selected by a PageSpec given by the "pages"
 parameter.  The template is given by the "template" parameter.
@@ -89,7 +89,7 @@ The "mood_summary" template might be like this:
     ## <TMPL_VAR NAME="HEADER1">
     </TMPL_IF>
     ### <TMPL_VAR NAME="TITLE">
-    (<TMPL_VAR NAME="DATE">) \[[<TMPL_VAR NAME="PAGE"]]
+    (<TMPL_VAR NAME="DATE">) \[[<TMPL_VAR NAME="PAGE">]]
     <TMPL_VAR NAME="DESCRIPTION">
     
 ### Advanced Options
