@@ -839,7 +839,7 @@ sub unique_comment_location ($$$) {
 
 	eval q{use Digest::MD5 'md5_hex'};
 	error($@) if $@;
-	my $content_md5=md5_hex(shift);
+	my $content_md5=md5_hex(Encode::encode_utf8(shift));
 
 	my $dir=shift;
 
@@ -855,14 +855,14 @@ sub unique_comment_location ($$$) {
 
 sub page_to_id ($) {
 	# Converts a comment page name into a unique, legal html id
-	# addtibute value, that can be used as an anchor to link to the
+	# attribute value, that can be used as an anchor to link to the
 	# comment.
 	my $page=shift;
 
 	eval q{use Digest::MD5 'md5_hex'};
 	error($@) if $@;
 
-	return "comment-".md5_hex($page);
+	return "comment-".md5_hex(Encode::encode_utf8(($page));
 }
 	
 package IkiWiki::PageSpec;
