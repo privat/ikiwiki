@@ -1,6 +1,19 @@
-ikiwiki (3.20100303) UNRELEASED; urgency=low
+ikiwiki (3.20100312) unstable; urgency=HIGH
 
   * Fix utf8 issues in calls to md5_hex.
+  * moderatedcomments: Added moderate_pagespec that can be used
+    to control which users or comment locations are moderated.
+    This can be used, just for example, to moderate "user(http://myopenid.com/*)"
+    if you're getting a lot of spammers from one particular openid
+    provider (who should perhaps answer your emails about them),
+    while not moderating other users.
+  * moderatedcomments: The moderate_users setting is deprecated. Instead,
+    set moderate_pagespec to "!admin()" or "user(*)".
+  * Fix missing span on recentchanges page template.
+  * search: Avoid '$' in the wikiname appearing unescaped on omega's
+    query template, where it might crash omega.
+  * htmlscrubber: Security fix: In data:image/* uris, only allow a few
+    whitelisted image types. No svg.
 
  -- Joey Hess <joeyh@debian.org>  Tue, 09 Mar 2010 19:46:35 -0500
 
