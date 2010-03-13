@@ -1,3 +1,10 @@
+ikiwiki (3.20100312+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Build for the network.
+
+ -- Simon Kjikàqawej <simon.raven@gmail.com>  Sat, 13 Mar 2010 15:34:35 +0000
+
 ikiwiki (3.20100312) unstable; urgency=HIGH
 
   * Fix utf8 issues in calls to md5_hex.
