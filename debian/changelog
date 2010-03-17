@@ -1,9 +1,27 @@
+ikiwiki (3.20100313) UNRELEASED; urgency=low
+
+  * websetup: Add websetup_unsafe to allow marking other settings
+    as unsafe.
+  * openid: Use Openid Simple Registration or OpenID Attribute Exchange
+    to get the user's email address and username.
+  * Improve openid url munging; do not display anchors and cgi parameters,
+    as used by yahoo and google urls.
+  * Add complete German basewiki and directives translation done by
+    Sebastian Kuhnert.
+  * Add a include setting, which can be used to make ikiwiki process
+    wiki source files, such as .htaccess, that would normally be skipped
+    for security or other reasons. Closes: #447267
+    (Thanks to Aaron Wilson for the original patch.)
+
+ -- Joey Hess <joeyh@debian.org>  Sat, 13 Mar 2010 14:48:10 -0500
+
 ikiwiki (3.20100312+nmu1) unstable; urgency=low
 
   * Non-maintainer upload.
   * Build for the network.
 
  -- Simon Kjikàqawej <simon.raven@gmail.com>  Sat, 13 Mar 2010 15:34:35 +0000
+
 
 ikiwiki (3.20100312) unstable; urgency=HIGH
 

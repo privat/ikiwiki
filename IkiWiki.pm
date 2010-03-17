@@ -334,6 +334,15 @@ sub getsetup () {
 		safe => 0, # paranoia
 		rebuild => 0,
 	},
+	include => {
+		type => "string",
+		default => undef,
+		example => '^\.htaccess$',
+		description => "regexp of normally ignored source files to include",
+		advanced => 1,
+		safe => 0, # regexp
+		rebuild => 1,
+	},
 	exclude => {
 		type => "string",
 		default => undef,
@@ -1132,7 +1141,7 @@ sub openiduser ($) {
 		# Convert "http://somehost.com/user" to "user [somehost.com]".
 		# (also "https://somehost.com/user/")
 		if ($display !~ /\[/) {
-			$display=~s/^https?:\/\/(.+)\/([^\/]+)\/?$/$2 [$1]/;
+			$display=~s/^https?:\/\/(.+)\/([^\/#?]+)\/?(?:[#?].*)?$/$2 [$1]/;
 		}
 		$display=~s!^https?://!!; # make sure this is removed
 		eval q{use CGI 'escapeHTML'};
@@ -1811,6 +1820,7 @@ sub deptype (@) {
 	return $deptype;
 }
 
+my $file_prune_regexp;
 sub file_pruned ($;$) {
 	my $file=shift;
 	if (@_) {
@@ -1821,8 +1831,15 @@ sub file_pruned ($;$) {
 		$file =~ s#^\Q$base\E/+##;
 	}
 
-	my $regexp='('.join('|', @{$config{wiki_file_prune_regexps}}).')';
-	return $file =~ m/$regexp/;
+	if (defined $config{include} && length $config{include}) {
+		return 0 if $file =~ m/$config{include}/;
+	}
+
+	if (! defined $file_prune_regexp) {
+		$file_prune_regexp='('.join('|', @{$config{wiki_file_prune_regexps}}).')';
+		$file_prune_regexp=qr/$file_prune_regexp/;
+	}
+	return $file =~ m/$file_prune_regexp/;
 }
 
 sub define_gettext () {
