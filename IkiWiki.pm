@@ -1797,7 +1797,7 @@ sub add_depends ($$;$) {
 
 	# Add explicit dependencies for influences.
 	my $sub=pagespec_translate($pagespec);
-	return if $@;
+	return unless defined $sub;
 	foreach my $p (keys %pagesources) {
 		my $r=$sub->($p, location => $page);
 		my $i=$r->influences;
@@ -2002,7 +2002,7 @@ sub pagespec_match ($$;@) {
 
 	my $sub=pagespec_translate($spec);
 	return IkiWiki::ErrorReason->new("syntax error in pagespec \"$spec\"")
-		if $@ || ! defined $sub;
+		if ! defined $sub;
 	return $sub->($page, @params);
 }
 
@@ -2020,7 +2020,7 @@ sub pagespec_match_list ($$;@) {
 
 	my $sub=pagespec_translate($pagespec);
 	error "syntax error in pagespec \"$pagespec\""
-		if $@ || ! defined $sub;
+		if ! defined $sub;
 
 	my @candidates;
 	if (exists $params{list}) {
@@ -2093,8 +2093,7 @@ sub pagespec_match_list ($$;@) {
 sub pagespec_valid ($) {
 	my $spec=shift;
 
-	my $sub=pagespec_translate($spec);
-	return ! $@;
+	return defined pagespec_translate($spec);
 }
 
 sub glob2re ($) {
@@ -2216,7 +2215,7 @@ sub match_link ($$;@) {
 	my $from=exists $params{location} ? $params{location} : '';
 
 	my $links = $IkiWiki::links{$page};
-	return IkiWiki::FailReason->new("$page has no links", "" => 1)
+	return IkiWiki::FailReason->new("$page has no links", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
 		unless $links && @{$links};
 	my $bestlink = IkiWiki::bestlink($from, $link);
 	foreach my $p (@{$links}) {
@@ -2233,7 +2232,7 @@ sub match_link ($$;@) {
 				if match_glob($p_rel, $link, %params);
 		}
 	}
-	return IkiWiki::FailReason->new("$page does not link to $link", "" => 1);
+	return IkiWiki::FailReason->new("$page does not link to $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1);
 }
 
 sub match_backlink ($$;@) {

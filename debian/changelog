@@ -1,16 +1,16 @@
-ikiwiki (3.20100320+nmu1) unstable; urgency=low
+ikiwiki (3.20100324+nmu1) unstable; urgency=low
 
   * Non-maintainer upload.
-  * local kisikew build
+  [ Simon ]
+  * merge conflict resolution
+  * local network update
 
- -- Simon Kjika'qawej <simon.raven@gmail.com>  Tue, 23 Mar 2010 01:08:05 +0000
+ -- Simon Kjika'qawej <simon.raven@gmail.com>  Tue, 30 Mar 2010 11:49:49 +0000
 
-ikiwiki (3.20100320) UNRELEASED; urgency=low
+ikiwiki (3.20100324) UNRELEASED; urgency=low
 
   * websetup: Add websetup_unsafe to allow marking other settings
     as unsafe.
-  * openid: Use Openid Simple Registration or OpenID Attribute Exchange
-    to get the user's email address and username.
   * Improve openid url munging; do not display anchors and cgi parameters,
     as used by yahoo and google urls.
   * Add complete German basewiki and directives translation done by
@@ -19,10 +19,28 @@ ikiwiki (3.20100320) UNRELEASED; urgency=low
     wiki source files, such as .htaccess, that would normally be skipped
     for security or other reasons. Closes: #447267
     (Thanks to Aaron Wilson for the original patch.)
-  * Allow wrappers to be built using tcc.
   * Add support for setup files written in YAML.
+  * Add --set-yaml switch for setting more complex config file options.
+  * filecheck: Fix bugs that prevented the pagespecs from matching when
+    not called by attachment plugin.
+  * Fix incorrect influence info returned by a failing link() pagespec,
+    that could lead to bad dependency handling in certian situations.
+  * Add preprocessed 'use lib' line to ikiwiki-transition and ikiwiki-calendar
+    if necessary for unusual install.
+  * auto-blog.setup: Set tagbase by default, since most bloggers will want it.
+  * Allow wrappers to be built using tcc. (Workaround #452876)
+  * openid: Use Openid Simple Registration or OpenID Attribute Exchange
+    to get the user's email address and username. (Neither is yet
+    used, but they are available in the session object now.)
 
  -- Joey Hess <joeyh@debian.org>  Sat, 13 Mar 2010 14:48:10 -0500
+
+ikiwiki (3.20100320+nmu1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * local kisikew build
+
+ -- Simon Kjika'qawej <simon.raven@gmail.com>  Tue, 23 Mar 2010 01:08:05 +0000
 
 ikiwiki (3.20100312+nmu1) unstable; urgency=low
 

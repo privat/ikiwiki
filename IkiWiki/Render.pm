@@ -567,7 +567,7 @@ sub render_dependent ($$$$$$$) {
 		if (exists $depends{$p} && ! defined $reason) {
 			foreach my $dep (keys %{$depends{$p}}) {
 				my $sub=pagespec_translate($dep);
-				next if $@ || ! defined $sub;
+				next unless defined $sub;
 
 				# only consider internal files
 				# if the page explicitly depends

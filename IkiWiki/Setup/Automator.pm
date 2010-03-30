@@ -72,9 +72,15 @@ sub import (@) {
 		}
 		elsif ($config{rcs} eq 'bzr') {
 			# TODO
+			print STDERR "warning: do not know how to set up the bzr_wrapper hook!\n";
 		}
 		elsif ($config{rcs} eq 'mercurial') {
 			# TODO
+			print STDERR "warning: do not know how to set up the mercurial_wrapper hook!\n";
+		}
+		elsif ($config{rcs} eq 'tla') {
+			# TODO
+			print STDERR "warning: do not know how to set up the tla_wrapper hook!\n";
 		}
 		elsif ($config{rcs} eq 'cvs') {
 			$config{cvs_wrapper}=$config{repository}."/CVSROOT/post-commit";
@@ -124,9 +130,10 @@ sub import (@) {
 				IkiWiki::run_hooks(checkconfig => sub { shift->() });
 			};
 			if ($@) {
+				my $err=$@;
 				print STDERR sprintf(gettext("** Disabling plugin %s, since it is failing with this message:"),
 					$plugin)."\n";
-				print STDERR "$@\n";
+				print STDERR "$err\n";
 				push @{$bakconfig{disable_plugins}}, $plugin;
 			}
 		}
