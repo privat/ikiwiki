@@ -43,7 +43,7 @@ run() {
 	return 0
 }
 
-echo "1..7"
+echo "1..9"
 run main "--disable-plugin sidebar" \
 	'Main' \
 	'Sidebar Banner Notasidebar' \
@@ -72,4 +72,13 @@ run main "--plugin sidebar --set-yaml active_sidebars='[banner, notasidebar]'" \
 	'Main Banner' \
 	'Sidebar Notasidebar' \
 	'active_sidebars=[banner, notasidebar]'
+
+run directive "--plugin sidebar" \
+	'Directive Special1' \
+	'Special2 Sidebar Banner Notasidebar' \
+	'directive'
+run directive "--plugin sidebar --set-yaml active_sidebars='[sidebar, banner]'" \
+	'Directive Special1 Special2' \
+	'Sidebar Banner Notasidebar' \
+	'directive active_sidebars=[sidebar, banner]'
 EOF
