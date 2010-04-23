@@ -28,6 +28,7 @@ run() {
 	return 0
 }
 
+echo "1..7"
 run "$IKIWIKI --render t/sidebar/main.mdwn --disable-plugin sidebar" \
 	'Main' \
 	'Sidebar|Banner|Notasidebar' \
