@@ -73,31 +73,40 @@ sub bzr_log ($) {
 	my @infos = ();
 	my $key = undef;
 
+	my %info;
 	while (<$out>) {
 		my $line = $_;
 		my ($value);
 		if ($line =~ /^message:/) {
 			$key = "message";
-			$infos[$#infos]{$key} = "";
+			$info{$key} = "";
 		}
 		elsif ($line =~ /^(modified|added|renamed|renamed and modified|removed):/) {
 			$key = "files";
-			unless (defined($infos[$#infos]{$key})) { $infos[$#infos]{$key} = ""; }
+			$info{$key} = "" unless defined $info{$key};
 		}
 		elsif (defined($key) and $line =~ /^  (.*)/) {
-			$infos[$#infos]{$key} .= "$1\n";
+			$info{$key} .= "$1\n";
 		}
 		elsif ($line eq "------------------------------------------------------------\n") {
+			push @infos, {%info} if keys %info;
+			%info = ();
 			$key = undef;
-			push (@infos, {});
 		}
-		else {
+		elsif ($line =~ /: /) {
 			chomp $line;
+			if ($line =~ /^revno: (\d+)/) {
+			    $key = "revno";
+			    $value = $1;
+			}
+			else {
 				($key, $value) = split /: +/, $line, 2;
-			$infos[$#infos]{$key} = $value;
-		} 
+			}
+			$info{$key} = $value;
+		}
 	}
 	close $out;
+	push @infos, {%info} if keys %info;
 
 	return @infos;
 }
@@ -213,7 +222,7 @@ sub rcs_recentchanges ($) {
 	foreach my $info (bzr_log($out)) {
 		my @pages = ();
 		my @message = ();
-        
+
 		foreach my $msgline (split(/\n/, $info->{message})) {
 			push @message, { line => $msgline };
 		}

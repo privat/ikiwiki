@@ -10,6 +10,9 @@ title over the page name, but for compatibility, I'm not going to (I do wonder
 whether it would be worth making sort=name an alias for the current sort=title,
 and changing the meaning of sort=title in 4.0, though).
 
+> What compatability concerns, exactly, are there that prevent making that
+> change now? --[[Joey]] 
+
 *[sort-hooks branch now withdrawn in favour of sort-package --s]*
 
 I briefly tried to turn *all* the current sort types into hook functions, and
@@ -20,7 +23,7 @@ That earlier version of the branch is also available for comparison:
 
 >> I wonder if IkiWiki would benefit from the concept of a "sortspec", like a [[ikiwiki/PageSpec]] but dedicated to sorting lists of pages rather than defining lists of pages?  Rather than defining a sort-hook, define a SortSpec class, and enable people to add their own sort methods as functions defined inside that class, similarly to the way they can add their own pagespec definitions. --[[KathrynAndersen]]
 
->>> [[!template id=gitbranch branch=smcv/sort-package author="[[Simon_McVittie|smcv]]"]]
+>>> [[!template id=gitbranch branch=smcv/ready/sort-package author="[[Simon_McVittie|smcv]]"]]
 >>> I'd be inclined to think that's overkill, but it wasn't very hard to
 >>> implement, and in a way is more elegant. I set it up so sort mechanisms
 >>> share the `IkiWiki::PageSpec` package, but with a `cmp_` prefix. Gitweb:
@@ -40,7 +43,7 @@ That earlier version of the branch is also available for comparison:
 
 >>>>>> `SortSpec` --[[Joey]] 
 
->>>>>>> Done. --s
+>>>>>>> [[Done]]. --s
 
 >>>> I would be inclined to drop the `check_` stuff. --[[Joey]] 
 
@@ -165,7 +168,6 @@ That earlier version of the branch is also available for comparison:
 >>>>>>> I've kept the semantics from `report` as-is, then:
 >>>>>>> e.g. `sort="age -title"`. --s
 
->>>>>
 >>>>> Perhaps we could borrow from `meta updated` and use `update_age`?
 >>>>> `updateage` would perhaps be a more normal IkiWiki style - but that
 >>>>> makes me think that updateage is a quantity analagous to tonnage or
@@ -180,6 +182,73 @@ That earlier version of the branch is also available for comparison:
 > I feel it sould be clearer to call that "sortas", since "sort=" is used
 > to specify a sort method in other directives. --[[Joey]]
 >> Done. --[[smcv]]
+
+## speed
+
+I notice the implementation does not use the magic `$a` and `$b` globals.
+That nasty perl optimisation is still worthwhile:
+
+	perl -e 'use warnings; use strict; use Benchmark; sub a { $a <=> $b } sub b ($$) { $_[0] <=> $_[1] }; my @list=reverse(1..9999); timethese(10000, {a => sub {my @f=sort a @list}, b => sub {my @f=sort b  @list}, c => => sub {my @f=sort { b($a,$b) } @list}})'
+	Benchmark: timing 10000 iterations of a, b, c...
+	         a: 80 wallclock secs (76.74 usr +  0.05 sys = 76.79 CPU) @ 130.23/s (n=10000)
+	         b: 112 wallclock secs (106.14 usr +  0.20 sys = 106.34 CPU) @ 94.04/s (n=10000)
+	         c: 330 wallclock secs (320.25 usr +  0.17 sys = 320.42 CPU) @ 31.21/s (n=10000)
+
+Unfortunatly, I think that c is closest to the new implementation.
+--[[Joey]]
+
+> Unfortunately, `$a` isn't always `$main::a` - it's `$Package::a` where
+> `Package` is the call site of the sort call. This was a showstopper when
+> `sort` was a hook implemented in many packages, but now that it's a
+> `SortSpec`, I may be able to fix this by putting a `sort` wrapper in the
+> `SortSpec` namespace, so it's like this:
+>
+>     sub sort ($@)
+>     {
+>         my $cmp = shift;
+>         return sort $cmp @_;
+>     }
+>
+> which would mean that the comparison used `$IkiWiki::SortSpec::a`.
+> --s
+
+>> I've now done this. On a wiki with many [[plugins/contrib/album]]s
+>> (a full rebuild takes half an hour!), I tested a refresh after
+>> `touch tags/*.mdwn` (my tag pages contain inlines of the form
+>> `tagged(foo)` sorted by date, so they exercise sorting).
+>> I also tried removing sorting from `pagespec_match_list`
+>> altogether, as an upper bound for how fast we can possibly make it.
+>>
+>> * `master` at branch point: 63.72user 0.29system
+>> * `master` at branch point: 63.91user 0.37system
+>> * my branch, with `@_`: 65.28user 0.29system
+>> * my branch, with `@_`: 65.21user 0.28system
+>> * my branch, with `$a`: 64.09user 0.28system
+>> * my branch, with `$a`: 63.83user 0.36system
+>> * not sorted at all: 58.99user 0.29system
+>> * not sorted at all: 58.92user 0.29system
+>>
+>> --s
+
+> I do notice that `pagespec_match_list` performs the sort before the
+> filter by pagespec. Is this a deliberate design choice, or
+> coincidence? I can see that when `limit` is used, this could be
+> used to only run the pagespec match function until `limit` pages
+> have been selected, but the cost is that every page in the wiki
+> is sorted. Or, it might be useful to do the filtering first, then
+> sort the sub-list thus produced, then finally apply the limit? --s
+
+>> Yes, it was deliberate, pagespec matching can be expensive enough that
+>> needing to sort a lot of pages seems likely to be less work. (I don't
+>> remember what benchmarking was done though.) --[[Joey]]
+
+>>> We discussed this on IRC and Joey pointed out that this also affects
+>>> dependency calculation, so I'm not going to get into this now... --s
+
+Joey pointed out on IRC that the `titlesort` feature duplicates all the
+meta titles. I did that in order to sort by the unescaped version, but
+I've now changed the branch to only store that if it makes a difference.
+--s
 
 ## Documentation from sort-package branch
 
@@ -223,13 +292,13 @@ Similarly, it's possible to write plugins that add new functions as
 the IkiWiki::SortSpec package named `cmp_foo`, which will be used when sorting
 by `foo` or `foo(...)` is requested.
 
-The function will be passed three or more parameters. The first two are
-page names, and the third is `undef` if invoked as `foo`, or the parameter
-`"bar"` if invoked as `foo(bar)`. It may also be passed additional, named
-parameters.
+The names of pages to be compared are in the global variables `$a` and `$b`
+in the IkiWiki::SortSpec package. The function should return the same thing
+as Perl's `cmp` and `<=>` operators: negative if `$a` is less than `$b`,
+positive if `$a` is greater, or zero if they are considered equal. It may
+also raise an error using `error`, for instance if it needs a parameter but
+one isn't provided.
 
-It should return the same thing as Perl's `cmp` and `<=>` operators: negative
-if the first argument is less than the second, positive if the first argument
-is greater, or zero if they are considered equal. It may also raise an
-error using `error`, for instance if it needs a parameter but one isn't
-provided.
+The function will also be passed one or more parameters. The first is
+`undef` if invoked as `foo`, or the parameter `"bar"` if invoked as `foo(bar)`;
+it may also be passed additional, named parameters.

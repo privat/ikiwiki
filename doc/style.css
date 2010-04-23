@@ -228,14 +228,15 @@ div.recentchanges {
 .bigPC { font-size: 115%; }
 .biggestPC { font-size: 130%; }
 
-#sidebar {
-	line-height: 3ex;
-	width: 20ex;
+.sidebar {
+	width: 30ex;
 	float: right;
-	margin-left: 40px;
-	margin-bottom: 40px;
-	padding: 2ex 2ex;
+	margin-left: 4px;
+	margin-bottom: 4px;
+	margin-top: -1px;
+	padding: 0ex 2ex;
 	background: white;
+	border: 1px solid black;
 	color: black !important;
 }
 
@@ -430,3 +431,11 @@ pre.hl { color:#000000; background-color:#ffffff; }
 /* For the calendar plugin. */
 .month-calendar-day-this-day { background-color: #eee; }
 .year-calendar-this-month { background-color: #eee; }
+.month-calendar-arrow A:link,
+.year-calendar-arrow A:link,
+.month-calendar-arrow A:visited,
+.year-calendar-arrow A:visited {
+	text-decoration: none;
+	font-weight: normal;
+	font-size: 150%;
+}

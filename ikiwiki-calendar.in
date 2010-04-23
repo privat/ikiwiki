@@ -15,7 +15,10 @@ GetOptions(
 	"force" => \$force,
 ) || usage();
 my $setup=shift		|| usage();
-my $pagespec=shift	|| "*";
+my $pagespec;
+if (@ARGV && $ARGV[0] !~ /^\d+$/) {
+	$pagespec=shift;
+}
 my $startyear=shift	|| 1900+(localtime(time))[5];
 my $endyear=shift	|| $startyear;
 
@@ -26,6 +29,10 @@ IkiWiki::checkconfig();
 
 my $archivebase = 'archives';
 $archivebase = $config{archivebase} if defined $config{archivebase};
+
+if (! defined $pagespec) {
+	$pagespec=$config{archive_pagespec} || "*";
+}
 
 sub writearchive ($$;$) {
 	my $template=template(shift);
@@ -55,4 +62,5 @@ foreach my $y ($startyear..$endyear) {
 IkiWiki::rcs_commit_staged(gettext("calendar update"), undef, undef)
 	if $config{rcs};
 
-system("ikiwiki", "-setup", $setup, "-refresh");
+exec("ikiwiki", "-setup", $setup, "-refresh");
+die "failed to run ikiwiki -setup $setup -refresh\n";

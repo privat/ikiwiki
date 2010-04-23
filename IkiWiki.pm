@@ -14,7 +14,7 @@ use open qw{:utf8 :std};
 use vars qw{%config %links %oldlinks %pagemtime %pagectime %pagecase
 	    %pagestate %wikistate %renderedfiles %oldrenderedfiles
 	    %pagesources %destsources %depends %depends_simple %hooks
-	    %forcerebuild %loaded_plugins};
+	    %forcerebuild %loaded_plugins %typedlinks %oldtypedlinks};
 
 use Exporter q{import};
 our @EXPORT = qw(hook debug error template htmlpage deptype
@@ -24,7 +24,7 @@ our @EXPORT = qw(hook debug error template htmlpage deptype
 		 add_underlay pagetitle titlepage linkpage newpagefile
 		 inject add_link
                  %config %links %pagestate %wikistate %renderedfiles
-                 %pagesources %destsources);
+                 %pagesources %destsources %typedlinks);
 our $VERSION = 3.00; # plugin interface version, next is ikiwiki version
 our $version='unknown'; # VERSION_AUTOREPLACE done by Makefile, DNE
 our $installdir='/usr'; # INSTALLDIR_AUTOREPLACE done by Makefile, DNE
@@ -37,6 +37,7 @@ our $DEPEND_LINKS=4;
 # Optimisation.
 use Memoize;
 memoize("abs2rel");
+memoize("sortspec_translate");
 memoize("pagespec_translate");
 memoize("template_file");
 
@@ -1164,7 +1165,7 @@ sub htmlize ($$$$) {
 	my $content=shift;
 	
 	my $oneline = $content !~ /\n/;
-
+	
 	if (exists $hooks{htmlize}{$type}) {
 		$content=$hooks{htmlize}{$type}{call}->(
 			page => $page,
@@ -1185,10 +1186,9 @@ sub htmlize ($$$$) {
 	
 	if ($oneline) {
 		# hack to get rid of enclosing junk added by markdown
-		# and other htmlizers
+		# and other htmlizers/sanitizers
 		$content=~s/^<p>//i;
-		$content=~s/<\/p>$//i;
-		chomp $content;
+		$content=~s/<\/p>\n*$//i;
 	}
 
 	return $content;
@@ -1503,7 +1503,7 @@ sub loadindex () {
 	if (! $config{rebuild}) {
 		%pagesources=%pagemtime=%oldlinks=%links=%depends=
 		%destsources=%renderedfiles=%pagecase=%pagestate=
-		%depends_simple=();
+		%depends_simple=%typedlinks=%oldtypedlinks=();
 	}
 	my $in;
 	if (! open ($in, "<", "$config{wikistatedir}/indexdb")) {
@@ -1569,6 +1569,14 @@ sub loadindex () {
 			if (exists $d->{state}) {
 				$pagestate{$page}=$d->{state};
 			}
+			if (exists $d->{typedlinks}) {
+				$typedlinks{$page}=$d->{typedlinks};
+
+				while (my ($type, $links) = each %{$typedlinks{$page}}) {
+					next unless %$links;
+					$oldtypedlinks{$page}{$type} = {%$links};
+				}
+			}
 		}
 		$oldrenderedfiles{$page}=[@{$d->{dest}}];
 	}
@@ -1615,6 +1623,10 @@ sub saveindex () {
 
 		if (exists $depends_simple{$page}) {
 			$index{page}{$src}{depends_simple} = $depends_simple{$page};
+		}
+
+		if (exists $typedlinks{$page} && %{$typedlinks{$page}}) {
+			$index{page}{$src}{typedlinks} = $typedlinks{$page};
 		}
 
 		if (exists $pagestate{$page}) {
@@ -1926,12 +1938,82 @@ sub inject {
 	use warnings;
 }
 
-sub add_link ($$) {
+sub add_link ($$;$) {
 	my $page=shift;
 	my $link=shift;
+	my $type=shift;
 
 	push @{$links{$page}}, $link
 		unless grep { $_ eq $link } @{$links{$page}};
+
+	if (defined $type) {
+		$typedlinks{$page}{$type}{$link} = 1;
+	}
+}
+
+sub sortspec_translate ($$) {
+	my $spec = shift;
+	my $reverse = shift;
+
+	my $code = "";
+	my @data;
+	while ($spec =~ m{
+		\s*
+		(-?)		# group 1: perhaps negated
+		\s*
+		(		# group 2: a word
+			\w+\([^\)]*\)	# command(params)
+			|
+			[^\s]+		# or anything else
+		)
+		\s*
+	}gx) {
+		my $negated = $1;
+		my $word = $2;
+		my $params = undef;
+
+		if ($word =~ m/^(\w+)\((.*)\)$/) {
+			# command with parameters
+			$params = $2;
+			$word = $1;
+		}
+		elsif ($word !~ m/^\w+$/) {
+			error(sprintf(gettext("invalid sort type %s"), $word));
+		}
+
+		if (length $code) {
+			$code .= " || ";
+		}
+
+		if ($negated) {
+			$code .= "-";
+		}
+
+		if (exists $IkiWiki::SortSpec::{"cmp_$word"}) {
+			if (defined $params) {
+				push @data, $params;
+				$code .= "IkiWiki::SortSpec::cmp_$word(\$data[$#data])";
+			}
+			else {
+				$code .= "IkiWiki::SortSpec::cmp_$word(undef)";
+			}
+		}
+		else {
+			error(sprintf(gettext("unknown sort type %s"), $word));
+		}
+	}
+
+	if (! length $code) {
+		# undefined sorting method... sort arbitrarily
+		return sub { 0 };
+	}
+
+	if ($reverse) {
+		$code="-($code)";
+	}
+
+	no warnings;
+	return eval 'sub { '.$code.' }';
 }
 
 sub pagespec_translate ($) {
@@ -2020,6 +2102,8 @@ sub pagespec_match_list ($$;@) {
 	my $sub=pagespec_translate($pagespec);
 	error "syntax error in pagespec \"$pagespec\""
 		if ! defined $sub;
+	my $sort=sortspec_translate($params{sort}, $params{reverse})
+		if defined $params{sort};
 
 	my @candidates;
 	if (exists $params{list}) {
@@ -2032,38 +2116,18 @@ sub pagespec_match_list ($$;@) {
 			? grep { ! $params{filter}->($_) } keys %pagesources
 			: keys %pagesources;
 	}
-
-	if (defined $params{sort}) {
-		my $f;
-		if ($params{sort} eq 'title') {
-			$f=sub { pagetitle(basename($a)) cmp pagetitle(basename($b)) };
-		}
-		elsif ($params{sort} eq 'title_natural') {
-			eval q{use Sort::Naturally};
-			if ($@) {
-				error(gettext("Sort::Naturally needed for title_natural sort"));
-			}
-			$f=sub { Sort::Naturally::ncmp(pagetitle(basename($a)), pagetitle(basename($b))) };
-                }
-		elsif ($params{sort} eq 'mtime') {
-			$f=sub { $pagemtime{$b} <=> $pagemtime{$a} };
-		}
-		elsif ($params{sort} eq 'age') {
-			$f=sub { $pagectime{$b} <=> $pagectime{$a} };
-		}
-		else {
-			error sprintf(gettext("unknown sort type %s"), $params{sort});
-		}
-		@candidates = sort { &$f } @candidates;
-	}
-
-	@candidates=reverse(@candidates) if $params{reverse};
-	
-	$depends{$page}{$pagespec} |= ($params{deptype} || $DEPEND_CONTENT);
 	
 	# clear params, remainder is passed to pagespec
+	$depends{$page}{$pagespec} |= ($params{deptype} || $DEPEND_CONTENT);
 	my $num=$params{num};
 	delete @params{qw{num deptype reverse sort filter list}};
+	
+	# when only the top matches will be returned, it's efficient to
+	# sort before matching to pagespec,
+	if (defined $num && defined $sort) {
+		@candidates=IkiWiki::SortSpec::sort_pages(
+			$sort, @candidates);
+	}
 	
 	my @matches;
 	my $firstfail;
@@ -2086,7 +2150,15 @@ sub pagespec_match_list ($$;@) {
 		$depends_simple{$page}{lc $k} |= $i->{$k};
 	}
 
-	return @matches;
+	# when all matches will be returned, it's efficient to
+	# sort after matching
+	if (! defined $num && defined $sort) {
+		return IkiWiki::SortSpec::sort_pages(
+			$sort, @matches);
+	}
+	else {
+		return @matches;
+	}
 }
 
 sub pagespec_valid ($) {
@@ -2212,6 +2284,11 @@ sub match_link ($$;@) {
 
 	$link=derel($link, $params{location});
 	my $from=exists $params{location} ? $params{location} : '';
+	my $linktype=$params{linktype};
+	my $qualifier='';
+	if (defined $linktype) {
+		$qualifier=" with type $linktype";
+	}
 
 	my $links = $IkiWiki::links{$page};
 	return IkiWiki::FailReason->new("$page has no links", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
@@ -2219,19 +2296,22 @@ sub match_link ($$;@) {
 	my $bestlink = IkiWiki::bestlink($from, $link);
 	foreach my $p (@{$links}) {
 		if (length $bestlink) {
-			return IkiWiki::SuccessReason->new("$page links to $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
-				if $bestlink eq IkiWiki::bestlink($page, $p);
+			if ((!defined $linktype || exists $IkiWiki::typedlinks{$page}{$linktype}{$p}) && $bestlink eq IkiWiki::bestlink($page, $p)) {
+				return IkiWiki::SuccessReason->new("$page links to $link$qualifier", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
+			}
 		}
 		else {
-			return IkiWiki::SuccessReason->new("$page links to page $p matching $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
-				if match_glob($p, $link, %params);
+			if ((!defined $linktype || exists $IkiWiki::typedlinks{$page}{$linktype}{$p}) && match_glob($p, $link, %params)) {
+				return IkiWiki::SuccessReason->new("$page links to page $p$qualifier, matching $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
+			}
 			my ($p_rel)=$p=~/^\/?(.*)/;
 			$link=~s/^\///;
-			return IkiWiki::SuccessReason->new("$page links to page $p_rel matching $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
-				if match_glob($p_rel, $link, %params);
+			if ((!defined $linktype || exists $IkiWiki::typedlinks{$page}{$linktype}{$p_rel}) && match_glob($p_rel, $link, %params)) {
+				return IkiWiki::SuccessReason->new("$page links to page $p_rel$qualifier, matching $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1)
+			}
 		}
 	}
-	return IkiWiki::FailReason->new("$page does not link to $link", $page => $IkiWiki::DEPEND_LINKS, "" => 1);
+	return IkiWiki::FailReason->new("$page does not link to $link$qualifier", $page => $IkiWiki::DEPEND_LINKS, "" => 1);
 }
 
 sub match_backlink ($$;@) {
@@ -2365,5 +2445,23 @@ sub match_ip ($$;@) {
 		return IkiWiki::FailReason->new("IP is $params{ip}, not $ip");
 	}
 }
+
+package IkiWiki::SortSpec;
+
+# This is in the SortSpec namespace so that the $a and $b that sort() uses
+# are easily available in this namespace, for cmp functions to use them.
+sub sort_pages {
+	my $f=shift;
+	sort $f @_
+}
+
+sub cmp_title {
+	IkiWiki::pagetitle(IkiWiki::basename($a))
+	cmp
+	IkiWiki::pagetitle(IkiWiki::basename($b))
+}
+
+sub cmp_mtime { $IkiWiki::pagemtime{$b} <=> $IkiWiki::pagemtime{$a} }
+sub cmp_age { $IkiWiki::pagectime{$b} <=> $IkiWiki::pagectime{$a} }
 
 1
